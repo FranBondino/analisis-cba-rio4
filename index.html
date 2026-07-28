@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe Técnico de Auditoría 360° — IGA Córdoba & Río Cuarto | FUNN Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #07090E;
+  --surface: #0D111A;
+  --surface-card: #131924;
+  --surface-accent: #192233;
+  --border: #212B3E;
+  --border-subtle: #182030;
+  --text-main: #F3F4F6;
+  --text-muted: #9CA3AF;
+  --text-dim: #6B7280;
+  --primary: #6366F1;
+  --primary-light: #818CF8;
+  --primary-glow: rgba(99, 102, 241, 0.12);
+  --accent-green: #10B981;
+  --accent-green-bg: rgba(16, 185, 129, 0.08);
+  --accent-red: #EF4444;
+  --accent-red-bg: rgba(239, 68, 68, 0.08);
+  --accent-amber: #F59E0B;
+  --accent-amber-bg: rgba(245, 158, 11, 0.08);
+  --accent-blue: #3B82F6;
+  --accent-blue-bg: rgba(59, 130, 246, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+/* HEADER */
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+.brand-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #FFF;
+}
+.brand-title span { color: var(--primary-light); }
+.brand-sub {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--text-dim);
+  margin-top: 4px;
+  font-weight: 600;
+}
+.report-badge {
+  background: var(--surface-accent);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* TITLE SECTION */
+.doc-header-section { margin-bottom: 40px; }
+.doc-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #FFF;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.doc-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 880px;
+}
+
+/* METADATA GRID */
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 50px;
+}
+.meta-item .meta-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.meta-item .meta-val {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* SECTIONS */
+.section { margin-bottom: 60px; }
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.section-tag {
+  background: var(--primary-glow);
+  color: var(--primary-light);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFF;
+}
+h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 28px 0 16px 0;
+}
+p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  line-height: 1.65;
+}
+p strong { color: var(--text-main); }
+
+/* GLOSSARY BOXES */
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.glossary-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px;
+}
+.glossary-term {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.glossary-acronym {
+  font-size: 0.72rem;
+  background: var(--surface-card);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+.glossary-def {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+.glossary-example {
+  background: var(--surface-card);
+  border-left: 3px solid var(--primary);
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  color: var(--text-main);
+  margin-top: 10px;
+  border-radius: 0 4px 4px 0;
+}
+
+/* KPI CARDS */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+.kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+}
+.kpi-card.accent-red { border-left: 3px solid var(--accent-red); }
+.kpi-card.accent-green { border-left: 3px solid var(--accent-green); }
+.kpi-card.accent-amber { border-left: 3px solid var(--accent-amber); }
+.kpi-card.accent-primary { border-left: 3px solid var(--primary); }
+
+.kpi-title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-dim);
+  font-weight: 700;
+}
+.kpi-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #FFF;
+  margin: 8px 0 4px 0;
+}
+.kpi-subtext {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* STATISTICAL PANEL */
+.stat-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 30px;
+}
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+.stat-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 16px;
+}
+.stat-card h4 {
+  font-size: 0.85rem;
+  color: #FFF;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  padding: 4px 0;
+  color: var(--text-muted);
+}
+.stat-row span:last-child { color: var(--text-main); font-weight: 600; }
+.stat-row.val-green span:last-child { color: var(--accent-green); font-weight: 700; }
+.stat-row.val-red span:last-child { color: var(--accent-red); font-weight: 700; }
+
+/* FINDINGS & AUDIT CARDS */
+.finding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.finding-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+}
+.finding-card.severity-high { border-left: 4px solid var(--accent-red); }
+.finding-card.severity-medium { border-left: 4px solid var(--accent-amber); }
+.finding-card.severity-positive { border-left: 4px solid var(--accent-green); }
+
+.tag-severity {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.tag-high { background: var(--accent-red-bg); color: var(--accent-red); border: 1px solid rgba(239, 68, 68, 0.2); }
+.tag-medium { background: var(--accent-amber-bg); color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.2); }
+.tag-positive { background: var(--accent-green-bg); color: var(--accent-green); border: 1px solid rgba(16, 185, 129, 0.2); }
+
+.finding-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFF;
+  margin-bottom: 8px;
+}
+.finding-body {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* TABLES */
+.table-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+th {
+  background: var(--surface-card);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+tr:hover td { background: rgba(255, 255, 255, 0.015); }
+
+.cell-name { white-space: normal; min-width: 240px; }
+.name-text { font-weight: 600; color: var(--text-main); font-size: 0.82rem; }
+.obj-tag { display: inline-block; font-size: 0.65rem; padding: 2px 6px; border-radius: 3px; font-weight: 700; margin-top: 3px; }
+.obj-msg { background: var(--accent-blue-bg); color: var(--accent-blue); }
+.obj-eng { background: var(--accent-amber-bg); color: var(--accent-amber); }
+.obj-traffic { background: rgba(255, 255, 255, 0.05); color: var(--text-muted); }
+
+.status-badge { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 0.65rem; font-weight: 700; }
+.badge-active { background: var(--accent-green-bg); color: var(--accent-green); }
+.badge-completed { background: var(--accent-blue-bg); color: var(--accent-blue); }
+.badge-inactive { background: var(--accent-amber-bg); color: var(--accent-amber); }
+.badge-archived { background: rgba(255, 255, 255, 0.05); color: var(--text-dim); }
+
+.text-center { text-align: center; }
+.text-end { text-align: right; }
+.fw700 { font-weight: 700; }
+.text-violet { color: var(--primary-light); }
+.dim { color: var(--text-dim); }
+
+.row-winner { background: rgba(16, 185, 129, 0.03) !important; border-left: 3px solid var(--accent-green); }
+.row-danger { background: rgba(239, 68, 68, 0.03) !important; border-left: 3px solid var(--accent-red); }
+
+/* CHAT EVIDENCE GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.chat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.chat-header {
+  background: var(--surface-card);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-body {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  background: #000;
+}
+.chat-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 480px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  object-fit: contain;
+}
+.chat-caption {
+  padding: 12px 16px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  background: var(--surface);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ROADMAP STYLES */
+.roadmap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.roadmap-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.step-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: var(--surface-accent);
+  color: var(--primary-light);
+  border: 1px solid var(--border);
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-content h4 {
+  font-size: 0.98rem;
+  color: #FFF;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.step-content p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 0 20px;
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+@media print {
+  body { background: #FFF !important; color: #000 !important; }
+  .container { max-width: 100% !important; padding: 0 !important; }
+  .kpi-card, .finding-card, .stat-panel, .chat-card, .table-container, .glossary-card { background: #FFF !important; border: 1px solid #CCC !important; color: #000 !important; }
+  h2, h3, .doc-title, .kpi-num, .finding-title, .glossary-term { color: #000 !important; }
+  p, td, .stat-row, .chat-caption, .glossary-def { color: #333 !important; }
+  th { background: #F3F4F6 !important; color: #000 !important; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header-bar">
+    <div>
+      <div class="brand-title">FUNN <span>AGENCY</span></div>
+      <div class="brand-sub">Performance & Growth Marketing</div>
+    </div>
+    <div class="report-badge">Informe de Auditoría Integral 360°</div>
+  </header>
+
+  <!-- TITLE -->
+  <div class="doc-header-section">
+    <h1 class="doc-title">Diagnóstico Estratégico de Infraestructura, Meta Ads y Proceso Comercial</h1>
+    <div class="doc-desc">Auditoría consolidada para el Instituto Gastronómico de las Américas (Filiales Córdoba y Río Cuarto). Evaluación técnica del ecosistema publicitario Meta Ads de IGA Córdoba (6 meses), análisis de dispersión estadística y diagnóstico operativo Mystery Shopping en atención por WhatsApp para ambas filiales.</div>
+  </div>
+
+  <!-- METADATA -->
+  <div class="meta-grid">
+    <div class="meta-item"><div class="meta-label">Cliente</div><div class="meta-val">IGA Córdoba & IGA Río Cuarto</div></div>
+    <div class="meta-item"><div class="meta-label">Período Auditado Meta Ads</div><div class="meta-val">27 Feb 2026 – 27 Jul 2026 (IGA Córdoba)</div></div>
+    <div class="meta-item"><div class="meta-label">Muestra Publicitaria</div><div class="meta-val">N = 77 Campañas · 89 Ad Sets (Córdoba)</div></div>
+    <div class="meta-item"><div class="meta-label">Muestra Comercial</div><div class="meta-val">Mystery Shopping WhatsApp (CBA & Río 4)</div></div>
+    <div class="meta-item"><div class="meta-label">Emisión del Informe</div><div class="meta-val">28 de Julio de 2026</div></div>
+  </div>
+
+  <!-- ACLARACIÓN DE ALCANCE GEOGRÁFICO -->
+  <div style="background:var(--surface-accent);border:1px solid var(--border);border-left:4px solid var(--accent-blue);border-radius:6px;padding:16px 20px;margin-bottom:40px;font-size:0.88rem;color:var(--text-main)">
+    <strong>Nota de Alcance Metodológico:</strong> Los datos cuantitativos de inversión publicitaria y rendimiento numérico reportados en las Secciones 01, 03, 04 y 08 corresponden a la cuenta publicitaria proporcionada de <strong>IGA Córdoba</strong>. Para la filial de <strong>IGA Río Cuarto</strong>, las campañas publicitarias se gestionan mediante promociones directas desde la aplicación y el acceso a su cuenta publicitaria se encuentra pendiente de recepción para su auditoría numérica posterior. En este informe, IGA Río Cuarto es evaluada integralmente en el módulo cualitativo de <strong>Mystery Shopping y atención comercial por WhatsApp</strong> (Sección 07).
+  </div>
+
+  <!-- SECCIÓN 1: EXECUTIVE SUMMARY -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">01</span>
+      <h2>Resumen Ejecutivo y Métricas Consolidadas (IGA Córdoba)</h2>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card accent-primary">
+        <div class="kpi-title">Inversión Auditada (5 Meses)</div>
+        <div class="kpi-num">$17.732.883,28</div>
+        <div class="kpi-subtext">Ejecución total en la cuenta publicitaria Meta (Córdoba)</div>
+      </div>
+      <div class="kpi-card accent-green">
+        <div class="kpi-title">Conversaciones Comerciales</div>
+        <div class="kpi-num">5.962</div>
+        <div class="kpi-subtext">Consultas entrantes reportadas en Ad Sets</div>
+      </div>
+      <div class="kpi-card accent-amber">
+        <div class="kpi-title">CPA Mediano por Lead</div>
+        <div class="kpi-num">$3.816,37</div>
+        <div class="kpi-subtext">Mediana estadística por conversación iniciada</div>
+      </div>
+      <div class="kpi-card accent-red">
+        <div class="kpi-title">Frecuencia de Exposición</div>
+        <div class="kpi-num">6.65x</div>
+        <div class="kpi-subtext">Impacto reiterado sin exclusión de audiencias</div>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-title">Alcance Único Acumulado</div>
+        <div class="kpi-num">1.405.137</div>
+        <div class="kpi-subtext">Usuarios únicos impactados en el período</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">Impresiones Publicitarias</div>
+        <div class="kpi-num">9.338.426</div>
+        <div class="kpi-subtext">Volumen total de reproducciones/vistas</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">CTR Promedio (Todos los Clics)</div>
+        <div class="kpi-num">0.87%</div>
+        <div class="kpi-subtext">Mediana: 0.74% | Máx: 2.03%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-title">CPC Promedio (Todos los Clics)</div>
+        <div class="kpi-num">$217,86</div>
+        <div class="kpi-subtext">Mediana: $281,47</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: GLOSARIO EJECUTIVO Y MARCO CONCEPTUAL -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">02</span>
+      <h2>Glosario Ejecutivo y Marco Conceptual de Métricas</h2>
+    </div>
+
+    <p>Para facilitar la toma de decisiones por parte de la directiva y los franquiciados de IGA, este apartado define formalmente los conceptos técnicos y metodologías estadísticas aplicadas en la auditoría.</p>
+
+    <div class="glossary-grid">
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>CPA (Costo por Adquisición / Conversación)</span>
+          <span class="glossary-acronym">CPA</span>
+        </div>
+        <div class="glossary-def">
+          Indica cuánto dinero en publicidad debe invertir la institución para generar <strong>un único prospecto comercial directo</strong> (conversación iniciada por WhatsApp o Instagram). Se calcula dividiendo la inversión total entre el número de consultas obtenidas.
+        </div>
+        <div class="glossary-example">
+          <strong>Aplicación IGA:</strong> Un CPA bajo ($1.158 ARS) significa máxima eficiencia; un CPA alto ($9.896 ARS) implica desperdicio de presupuesto.
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>CTR (Click-Through Rate)</span>
+          <span class="glossary-acronym">CTR</span>
+        </div>
+        <div class="glossary-def">
+          Porcentaje de personas que, tras ver un anuncio en su pantalla, hacen clic en él. Es el principal indicador de la <strong>atractividad visual y relevancia del mensaje</strong> publicitario.
+        </div>
+        <div class="glossary-example">
+          <strong>Fórmula:</strong> (Clics Totales / Impresiones) × 100. En educación superior, un CTR superior al 1.2% se considera óptimo.
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>CPC (Costo por Clic)</span>
+          <span class="glossary-acronym">CPC</span>
+        </div>
+        <div class="glossary-def">
+          El costo financiero promedio que cobra la plataforma publicitaria cada vez que un usuario interactúa haciendo clic en la pieza. A menor CPC, mayor volumen de tráfico atraído con el mismo presupuesto.
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>CPM (Costo por Mil Impresiones)</span>
+          <span class="glossary-acronym">CPM</span>
+        </div>
+        <div class="glossary-def">
+          El costo de subasta que cobra Meta por mostrar 1.000 veces un anuncio en las pantallas del público objetivo. Refleja qué tan disputada o costosa es la audiencia geográfica seleccionada.
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>Alcance Único vs. Impresiones</span>
+          <span class="glossary-acronym">AUDIENCIA</span>
+        </div>
+        <div class="glossary-def">
+          El <strong>Alcance</strong> representa la cantidad de <em>personas distintas</em> (personas físicas) que vieron la publicidad. Las <strong>Impresiones</strong> representan la cantidad de <em>veces totales</em> que los anuncios se mostraron en pantallas.
+        </div>
+        <div class="glossary-example">
+          <strong>Ejemplo:</strong> Si 10.000 personas ven un anuncio 3 veces cada una, el Alcance es 10.000 y las Impresiones son 30.000.
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>Frecuencia de Exposición</span>
+          <span class="glossary-acronym">SATURACIÓN</span>
+        </div>
+        <div class="glossary-def">
+          Promedio de veces que una misma persona vio los anuncios de la institución. Se calcula dividiendo las Impresiones sobre el Alcance Único.
+        </div>
+        <div class="glossary-example">
+          <strong>Evaluación IGA:</strong> Una frecuencia superior a 3.0x en un período corto indica <em>fatiga publicitaria</em>: el usuario se satura de ver la misma imagen y la efectividad decae.
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>Mediana (Q₂) vs. Media Aritmética (Promedio)</span>
+          <span class="glossary-acronym">ESTADÍSTICA</span>
+        </div>
+        <div class="glossary-def">
+          El <strong>Promedio</strong> suma todos los costos y los divide por la cantidad de campañas. Sin embargo, si hubo 2 o 3 campañas catastróficamente caras, el promedio se "distorsiona" y parece engañosamente alto.
+          <br><br>
+          La <strong>Mediana</strong> es el valor ubicado exactamente en el centro del conjunto de datos ordenados. Representa con absoluta precisión el rendimiento real de la mayoría de los anuncios, aislando el impacto de distorsiones o errores puntuales.
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>Cuartiles (Q₁, Q₃) e Intercuartil (IQR)</span>
+          <span class="glossary-acronym">DISPERSIÓN</span>
+        </div>
+        <div class="glossary-def">
+          Los cuartiles dividen la muestra de anuncios en 4 partes iguales:
+          <ul>
+            <li><strong>Q₁ (Primer Cuartil - 25%):</strong> El umbral del 25% de mejores anuncios (menor costo).</li>
+            <li><strong>Q₃ (Tercer Cuartil - 75%):</strong> El umbral donde empieza el 25% de peores anuncios.</li>
+            <li><strong>IQR (Rango Intercuartílico):</strong> La diferencia entre Q₃ y Q₁, que mide el núcleo central de rendimiento institucional.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>Outliers (Valores Atípicos)</span>
+          <span class="glossary-acronym">TUKEY</span>
+        </div>
+        <div class="glossary-def">
+          Campañas cuyo comportamiento se aleja drásticamente del comportamiento normal de la cuenta (calculado matemáticamente mediante la regla de Tukey: fuera de Q₃ + 1.5×IQR).
+        </div>
+        <div class="glossary-example">
+          <strong>Outliers Eficientes (Verde):</strong> Anuncios extremadamente rentables que deben ser duplicados.<br>
+          <strong>Outliers Ineficientes (Rojo):</strong> Anuncios que malgastan dinero y deben pausarse de inmediato.
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>Meta Business Portfolio / Business Manager</span>
+          <span class="glossary-acronym">INFRAESTRUCTURA</span>
+        </div>
+        <div class="glossary-def">
+          El panel empresarial centralizado y de propiedad institucional donde se registran legalmente las páginas de Facebook, perfiles de Instagram, tarjetas de crédito, cuentas de anuncios, Píxeles y permisos de empleados o agencias.
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>Conversions API (CAPI) y Píxel</span>
+          <span class="glossary-acronym">TECNOLOGÍA</span>
+        </div>
+        <div class="glossary-def">
+          El <strong>Píxel</strong> es un código instalado en el sitio web que mide las acciones del visitante. La <strong>API de Conversiones (CAPI)</strong> conecta directamente los servidores de IGA con Meta de forma encriptada, evitando la pérdida de datos que provocan los bloqueadores de anuncios de navegadores y las restricciones de privacidad de iPhones (iOS).
+        </div>
+      </div>
+
+      <div class="glossary-card">
+        <div class="glossary-term">
+          <span>Mystery Shopping (Comprador Incógnito)</span>
+          <span class="glossary-acronym">AUDITORÍA VENTAS</span>
+        </div>
+        <div class="glossary-def">
+          Técnica de auditoría cualitativa donde un evaluador simula ser un cliente interesado real en matricularse en IGA, evaluando de forma encubierta los tiempos de respuesta, la calidad del trato, la venta consultiva y la proactividad del equipo comercial en WhatsApp.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: INFRAESTRUCTURA Y SALUD TÉCNICA -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">03</span>
+      <h2>Diagnóstico de Infraestructura y Salud Técnica</h2>
+    </div>
+
+    <p>El análisis técnico de la pauta revela vulnerabilidades estructurales en la configuración de la publicidad digital y en la administración de los activos institucionales.</p>
+
+    <div class="finding-grid">
+      <div class="finding-card severity-high">
+        <span class="tag-severity tag-high">Riesgo Operativo Crítico</span>
+        <div class="finding-title">Ausencia de Meta Business Portfolio Centralizado</div>
+        <div class="finding-body">
+          La gestión publicitaria opera sin un Business Portfolio institucional. La propiedad técnica de la cuenta de Instagram, página de Facebook y Píxeles queda dispersa en perfiles personales.
+          <br><br>
+          <strong>Impacto Directo:</strong>
+          <ul>
+            <li>Riesgo real de pérdida de activos y accesos ante rotación de personal o disputas.</li>
+            <li>Imposibilidad de implementar Conversions API (CAPI) y verificación de dominio (pérdida del 20% al 35% de atribución de eventos por bloqueadores y iOS).</li>
+            <li>Falta de gobierno centralizado para gestionar y auditar múltiples sedes (Córdoba y Río Cuarto).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="finding-card severity-high">
+        <span class="tag-severity tag-high">Deficiencia Metodológica</span>
+        <div class="finding-title">Pauta Ejecutada mediante "Botón Promocionar" (Boosted Posts)</div>
+        <div class="finding-body">
+          Tanto en Córdoba como en Río Cuarto prima la práctica de promocionar publicaciones directamente desde la aplicación móvil en lugar de utilizar el Administrador de Anuncios (Meta Ads Manager).
+          <br><br>
+          <strong>Impacto Directo:</strong>
+          <ul>
+            <li>El algoritmo optimiza para "likes" e interacciones vacías, no para prospectos calificados.</li>
+            <li>Sin públicos personalizados (CRM) ni lookalikes (similares a matriculados).</li>
+            <li>Imposibilidad de realizar pruebas A/B creativas o secuencias de embudo (funnel).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARATIVE TABLE: BOOSTED vs ADS MANAGER -->
+    <h3>Cuadro Comparativo: Metodología de Pauta</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Parámetro Técnico</th>
+            <th>Pauta Actual (Botón Promocionar)</th>
+            <th>Pauta Propuesta (Meta Ads Manager)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Objetivo Algorítmico</strong></td>
+            <td>Interacción (Likes, comentarios vacíos, clics accidentales)</td>
+            <td>Leads Calificados / Conversiones Comerciales directas</td>
+          </tr>
+          <tr>
+            <td><strong>Calidad de Tráfico</strong></td>
+            <td>Baja (Usuarios curiosos sin intención real de compra)</td>
+            <td>Alta (Prospectos filtrados por comportamiento de conversión)</td>
+          </tr>
+          <tr>
+            <td><strong>Exclusión de Audiencias</strong></td>
+            <td>Imposible (Gasto recurrente en impactar alumnos actuales)</td>
+            <td>Precisa (Exclusión de matriculados y leads contactados)</td>
+          </tr>
+          <tr>
+            <td><strong>Segmentación Avanzada</strong></td>
+            <td>Básica (Limitada a radio demográfico estándar)</td>
+            <td>Personalizada (Bases de datos CRM, Lookalikes 1%-3%)</td>
+          </tr>
+          <tr>
+            <td><strong>Trazabilidad y Atribución</strong></td>
+            <td>Incompleta (Perdida de datos por restricciones web/iOS)</td>
+            <td>Robusta (Integración Píxel + Conversions API CAPI)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: RIGOR ESTADÍSTICO Y RENDIMIENTO -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">04</span>
+      <h2>Análisis Estadístico de Rendimiento Publicitario (IGA Córdoba)</h2>
+    </div>
+
+    <p>Cálculo de métricas de tendencia central y dispersión sobre la muestra auditada de IGA Córdoba (N = 61 campañas activas con inversión &gt; $0). Aplicación del criterio de Tukey para aislamiento de outliers.</p>
+
+    <div class="stat-panel">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:#FFF;margin-bottom:12px">Distribución Estadística de la Pauta (Córdoba)</div>
+      <div class="stat-grid">
+
+        <div class="stat-card">
+          <h4>Gasto por Anuncio (ARS) · N=61</h4>
+          <div class="stat-row"><span>Media (μ):</span><span>$290.703,00</span></div>
+          <div class="stat-row"><span>Mediana (Q₂):</span><span>$192.168,29</span></div>
+          <div class="stat-row"><span>Desviación Estándar (σ):</span><span>$350.673,97</span></div>
+          <div class="stat-row"><span>Primer Cuartil (Q₁):</span><span>$149.656,03</span></div>
+          <div class="stat-row"><span>Tercer Cuartil (Q₃):</span><span>$314.652,03</span></div>
+          <div class="stat-row"><span>Rango Intercuartílico (IQR):</span><span>$164.996,00</span></div>
+          <div class="stat-row val-red"><span>Coef. de Variación:</span><span>120.6%</span></div>
+        </div>
+
+        <div class="stat-card">
+          <h4>CPA por Conversación (ARS) · N=71</h4>
+          <div class="stat-row"><span>Media Aritmética:</span><span>$3.776,56</span></div>
+          <div class="stat-row"><span>Mediana (Q₂):</span><span>$3.816,37</span></div>
+          <div class="stat-row"><span>Desviación Estándar (σ):</span><span>$1.640,60</span></div>
+          <div class="stat-row"><span>Primer Cuartil (Q₁):</span><span>$2.470,60</span></div>
+          <div class="stat-row"><span>Tercer Cuartil (Q₃):</span><span>$4.749,19</span></div>
+          <div class="stat-row val-green"><span>Outlier Eficiente (Mínimo):</span><span>$1.158,41</span></div>
+          <div class="stat-row val-red"><span>Outlier Ineficiente (Máximo):</span><span>$9.896,98</span></div>
+        </div>
+
+        <div class="stat-card">
+          <h4>CTR (%) y CPC (ARS) · N=60</h4>
+          <div class="stat-row"><span>CTR — Media:</span><span>0.83%</span></div>
+          <div class="stat-row"><span>CTR — Mediana:</span><span>0.74%</span></div>
+          <div class="stat-row val-green"><span>CTR — Máximo:</span><span>2.03%</span></div>
+          <div class="stat-row"><span>CPC — Media:</span><span>$270,21</span></div>
+          <div class="stat-row"><span>CPC — Mediana:</span><span>$281,47</span></div>
+          <div class="stat-row val-green"><span>CPC — Mínimo:</span><span>$81,22</span></div>
+          <div class="stat-row val-red"><span>CPC — Máximo:</span><span>$434,38</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WINNERS & LOSERS -->
+    <h3>Análisis de Creativos Outliers (Ganadores vs. Ineficientes)</h3>
+    <div class="finding-grid">
+      <div class="finding-card severity-positive">
+        <span class="tag-severity tag-positive">Desempeño Destacado (CPA &lt; Q₁)</span>
+        <div class="finding-title">Creativos de Alta Eficiencia Conversión</div>
+        <div class="finding-body">
+          Formatos con excelente costo de adquisición que sufrieron de infrapauta por falta de gestión centralizada en Ads Manager:
+          <table style="margin-top:12px">
+            <thead>
+              <tr><th>Creativo</th><th class="text-end">CPA</th><th class="text-end">Leads</th><th class="text-end">Inversión</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Publicación: 󰠉 ¡Nuestros Cocineritos en ...</td><td class="text-end fw700 text-violet">$1.158,41</td><td class="text-end">268</td><td class="text-end">$310.454,55</td></tr><tr><td>Publicación: 👨‍🍳🔥 CONVERTÍ TU PASIÓN E...</td><td class="text-end fw700 text-violet">$2.492,27</td><td class="text-end">423</td><td class="text-end">$1.054.230,64</td></tr><tr><td>Publicación: 📢 ULTIMOS CUPOS!!...</td><td class="text-end fw700 text-violet">$3.749,73</td><td class="text-end">127</td><td class="text-end">$476.215,19</td></tr><tr><td>Publicación: 👨‍🍳✨ HACÉ DE TU PASIÓN UNA...</td><td class="text-end fw700 text-violet">$3.815,95</td><td class="text-end">689</td><td class="text-end">$2.629.189,53</td></tr><tr><td>Publicación: 📢 ULTIMOS CUPOS!!...</td><td class="text-end fw700 text-violet">$4.225,00</td><td class="text-end">116</td><td class="text-end">$490.100,50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="finding-card severity-high">
+        <span class="tag-severity tag-high">Desempeño Ineficiente (CPA &gt; Q₃ + 1.5×IQR)</span>
+        <div class="finding-title">Creativos con Fuga de Presupuesto</div>
+        <div class="finding-body">
+          Anuncios con costo por consulta desproporcionado (hasta <strong>8.5x más costosos</strong> que los ganadores):
+          <table style="margin-top:12px">
+            <thead>
+              <tr><th>Creativo</th><th class="text-end">CPA</th><th class="text-end">Leads</th><th class="text-end">Inversión</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Publicación: 📢 ULTIMOS CUPOS!!...</td><td class="text-end fw700 text-violet">$6.493,90</td><td class="text-end">6</td><td class="text-end">$38.963,41</td></tr><tr><td>Publicación: 👨‍🍳✨ HACÉ DE TU PASIÓN UNA...</td><td class="text-end fw700 text-violet">$5.333,09</td><td class="text-end">59</td><td class="text-end">$314.652,03</td></tr><tr><td>Publicación: 🔥 Tu futuro empieza en la c...</td><td class="text-end fw700 text-violet">$4.766,40</td><td class="text-end">105</td><td class="text-end">$500.471,56</td></tr><tr><td>Publicación: 🔥 Tu futuro empieza en la c...</td><td class="text-end fw700 text-violet">$4.713,12</td><td class="text-end">100</td><td class="text-end">$471.311,61</td></tr><tr><td>Publicación: 🔥 Tu futuro empieza en la c...</td><td class="text-end fw700 text-violet">$4.501,19</td><td class="text-end">105</td><td class="text-end">$472.625,25</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: EL BUCLE DE INEFICIENCIA -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">05</span>
+      <h2>El Bucle de Ineficiencia Publicidad-Ventas</h2>
+    </div>
+
+    <p>Existe una correlación directa entre las deficiencias técnicas de la pauta publicitaria en Meta Ads y el bajo rendimiento comercial registrado en las auditorías de Mystery Shopping en WhatsApp.</p>
+
+    <div class="finding-card severity-high" style="margin-bottom: 24px;">
+      <span class="tag-severity tag-high">Diagnóstico del Ciclo Operativo</span>
+      <div class="finding-title">Mapeo del Proceso de Degradación del Lead</div>
+      <div class="finding-body" style="font-family:'Space Grotesk',sans-serif;font-size:0.9rem;line-height:1.8">
+        <strong>1. Pauta por "Promocionar"</strong> &nbsp;&rarr;&nbsp; Trae tráfico de baja intención (usuarios curiosos/likes por impulso).<br>
+        <strong>2. Saturación en WhatsApp</strong> &nbsp;&rarr;&nbsp; El equipo comercial recibe volumen, pero de escasa calificación.<br>
+        <strong>3. Desgaste Comercial</strong> &nbsp;&rarr;&nbsp; El asesor adopta un rol puramente pasivo e "Informador" (envía PDF/precios).<br>
+        <strong>4. Fuga de Leads de Alta Intención</strong> &nbsp;&rarr;&nbsp; Cuando ingresa un lead listo para matricularse, se le trata con la misma inercia reactiva sin ejecutar venta consultiva.
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: AUDITORÍA MYSTERY SHOPPING CÓRDOBA -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">06</span>
+      <h2>Auditoría Mystery Shopping — WhatsApp IGA Córdoba</h2>
+    </div>
+
+    <!-- CASO 1 CÓRDOBA -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px;margin-bottom:30px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <h3 style="margin:0;font-size:1.15rem">IGA Córdoba — Caso 1 (Evaluación de Atención)</h3>
+        <span class="tag-severity tag-high" style="margin:0;font-size:0.8rem;padding:6px 14px">PUNTAJE: 5,8 / 10</span>
+      </div>
+
+      <p><strong>Conclusión del Caso 1:</strong> La atención cumple con la entrega básica de información estándar, pero carece por completo de enfoque comercial. El asesor actúa como informador administrativo y no como consultor de ventas.</p>
+
+      <div class="table-container" style="margin-top:16px">
+        <table>
+          <thead>
+            <tr>
+              <th>Indicador de Gestión Comercial</th>
+              <th class="text-center">Calificación</th>
+              <th>Evaluación Cualitativa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Calidad de la Información</strong></td>
+              <td class="text-center fw700">8,0 / 10</td>
+              <td>Información completa sobre duración, costos y piezas gráficas claras. Se priorizó enviar el PDF sobre asesorar.</td>
+            </tr>
+            <tr>
+              <td><strong>Detección de Necesidades</strong></td>
+              <td class="text-center fw700 text-violet">3,0 / 10</td>
+              <td>El prospecto indicó tener conocimientos básicos y duda entre opciones. No se indagaron objetivos ni disponibilidad.</td>
+            </tr>
+            <tr>
+              <td><strong>Asesoramiento Comercial</strong></td>
+              <td class="text-center fw700 text-violet">4,0 / 10</td>
+              <td>Respuesta limitada a envío de folletos. Sin recomendaciones personalizadas ni argumentos de valor.</td>
+            </tr>
+            <tr>
+              <td><strong>Manejo de Intención de Compra</strong></td>
+              <td class="text-center fw700 text-violet">2,0 / 10</td>
+              <td>El lead declaró: <em>"Estoy casi segura de iniciar con este curso"</em>. La asesora respondió: <em>"¿Qué dudas te quedaron?"</em> en lugar de proceder al cierre.</td>
+            </tr>
+            <tr>
+              <td><strong>Cierre Comercial</strong></td>
+              <td class="text-center fw700 text-violet">1,0 / 10</td>
+              <td>Cero intento de avanzar a la matrícula. Sin propuesta de reserva, link de pago o invitación concreta.</td>
+            </tr>
+            <tr>
+              <td><strong>Seguimiento Posterior</strong></td>
+              <td class="text-center fw700 text-violet">1,0 / 10</td>
+              <td>Ausencia total de contacto posterior para retomar la conversación.</td>
+            </tr>
+            <tr>
+              <td><strong>Tiempo de Respuesta</strong></td>
+              <td class="text-center fw700 text-violet">4,0 / 10</td>
+              <td>Demora superior a 18 horas en responder al prospecto con alta intención de compra.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- GALLERY CASO 1 -->
+      <h4 style="font-size:0.9rem;color:#FFF;margin-top:20px;margin-bottom:12px">Evidencia de Chat — IGA Córdoba (Caso 1)</h4>
+      <div class="gallery-grid">
+        <div class="chat-card">
+          <div class="chat-header"><span>Captura 1.1 — Inicio de Chat</span><span class="dim">Córdoba</span></div>
+          <div class="chat-body"><img src="img/extracted_img_4.jpg" class="chat-img" alt="Chat 1.1"></div>
+          <div class="chat-caption">El prospecto solicita recomendación entre Diplomatura o Chef Express. La asesora ignora la duda y envía mensaje predeterminado.</div>
+        </div>
+        <div class="chat-card">
+          <div class="chat-header"><span>Captura 1.2 — Alta Intención</span><span class="dim">Córdoba</span></div>
+          <div class="chat-body"><img src="img/extracted_img_5.jpg" class="chat-img" alt="Chat 1.2"></div>
+          <div class="chat-caption">El cliente declara estar casi seguro de iniciar. La respuesta llega 18 horas después sin validación de cierre.</div>
+        </div>
+        <div class="chat-card">
+          <div class="chat-header"><span>Captura 1.3 — Envío de Datos</span><span class="dim">Córdoba</span></div>
+          <div class="chat-body"><img src="img/extracted_img_1.jpg" class="chat-img" alt="Chat 1.3"></div>
+          <div class="chat-caption">Envío masivo de imágenes promocionales y costos sin personalización del discurso comercial.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASO 2 CÓRDOBA -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <h3 style="margin:0;font-size:1.15rem">IGA Córdoba — Caso 2 (Evaluación de Atención)</h3>
+        <span class="tag-severity tag-medium" style="margin:0;font-size:0.8rem;padding:6px 14px">PUNTAJE: 7,8 / 10</span>
+      </div>
+
+      <p><strong>Conclusión del Caso 2:</strong> Se detectó la intención de inscripción y se ofrecieron medios de pago, pero el proceso continuó siendo reactivo. El cliente tuvo que conducir cada paso de la interacción.</p>
+
+      <div class="table-container" style="margin-top:16px">
+        <table>
+          <thead>
+            <tr>
+              <th>Indicador de Gestión Comercial</th>
+              <th class="text-center">Calificación</th>
+              <th>Evaluación Cualitativa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Calidad de la Información</strong></td>
+              <td class="text-center fw700">8,0 / 10</td>
+              <td>Detalle rápido de fechas, modalidad y costos. Información estándar.</td>
+            </tr>
+            <tr>
+              <td><strong>Cierre Comercial</strong></td>
+              <td class="text-center fw700">8,0 / 10</td>
+              <td>Ante el <em>"Me gustaría anotarme"</em> del lead, la asesora presentó opciones de transferencia y presencial.</td>
+            </tr>
+            <tr>
+              <td><strong>Acompañamiento en Venta</strong></td>
+              <td class="text-center fw700 text-violet">6,0 / 10</td>
+              <td>Al indicar inscripción presencial, la asesora solo brindó el horario. Omitió Google Maps, dirección y requisitos.</td>
+            </tr>
+            <tr>
+              <td><strong>Tiempo de Respuesta</strong></td>
+              <td class="text-center fw700">7,0 / 10</td>
+              <td>Aceptable en general, aunque transcurrió casi un día completo entre el interés y la respuesta final.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- GALLERY CASO 2 -->
+      <h4 style="font-size:0.9rem;color:#FFF;margin-top:20px;margin-bottom:12px">Evidencia de Chat — IGA Córdoba (Caso 2)</h4>
+      <div class="gallery-grid">
+        <div class="chat-card">
+          <div class="chat-header"><span>Captura 2.1 — Intención de Cierre</span><span class="dim">Córdoba</span></div>
+          <div class="chat-body"><img src="img/extracted_img_6.jpg" class="chat-img" alt="Chat 2.1"></div>
+          <div class="chat-caption">El lead manifiesta deseo de anotarse. La respuesta ofrece alternativas pero frena la proactividad al dar solo el horario.</div>
+        </div>
+        <div class="chat-card">
+          <div class="chat-header"><span>Captura 2.2 — Envío de Programa</span><span class="dim">Córdoba</span></div>
+          <div class="chat-body"><img src="img/extracted_img_9.jpg" class="chat-img" alt="Chat 2.2"></div>
+          <div class="chat-caption">Respuestas formales estándar de plantilla sin indagación del perfil del estudiante.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 7: AUDITORÍA MYSTERY SHOPPING RÍO CUARTO -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">07</span>
+      <h2>Auditoría Mystery Shopping — WhatsApp IGA Río Cuarto</h2>
+    </div>
+
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px;margin-bottom:30px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+        <h3 style="margin:0;font-size:1.15rem">IGA Río Cuarto — Evaluación Comercial de Filial</h3>
+        <span class="tag-severity tag-high" style="margin:0;font-size:0.8rem;padding:6px 14px">ESTADO: CRÍTICO POR DEMORA</span>
+      </div>
+
+      <p><strong>Diagnóstico Ejecutivo IGA Río Cuarto:</strong> La atención comercial en la filial Río Cuarto presenta demoras extremas en el primer contacto (superiores a 12 horas). La propia asesora incluye una disculpa automatizada por retrasos en la respuesta, evidenciando un problema de capacidad operativa o falta de protocolo diario.</p>
+
+      <div class="finding-grid" style="margin-top:16px">
+        <div class="finding-card severity-high">
+          <span class="tag-severity tag-high">Falla de Tiempo de Respuesta</span>
+          <div class="finding-title">Demora de +12 Horas en Primer Contacto</div>
+          <div class="finding-body">
+            Consulta ingresada a las 09:32 AM. La primera respuesta manual de la asesora llegó a las 21:20 PM (11 horas y 48 minutos después). En el mercado educativo actual, un lead no atendido en los primeros 15 minutos reduce su probabilidad de conversión en un 80%.
+          </div>
+        </div>
+
+        <div class="finding-card severity-medium">
+          <span class="tag-severity tag-medium">Protocolo Reactivo</span>
+          <div class="finding-title">Mensaje Institucional de Disculpas</div>
+          <div class="finding-body">
+            La asesora Julieta envía: <em>"Puedo presentar demoras en la respuesta a tu consulta. Desde ya, te pido disculpas..."</em>. Esto normaliza la demora frente al prospecto y deteriora la imagen institucional desde la primera interacción.
+          </div>
+        </div>
+      </div>
+
+      <!-- GALLERY RÍO CUARTO -->
+      <h4 style="font-size:0.9rem;color:#FFF;margin-top:20px;margin-bottom:12px">Evidencia de Chat — IGA Río Cuarto</h4>
+      <div class="gallery-grid">
+        <div class="chat-card">
+          <div class="chat-header"><span>Captura 3.1 — Demora de Contacto</span><span class="dim">Río Cuarto</span></div>
+          <div class="chat-body"><img src="img/extracted_img_12.jpg" class="chat-img" alt="Chat Río 4 1"></div>
+          <div class="chat-caption">Mensaje enviado a las 9:32 AM sin respuesta durante todo el horario de la mañana y tarde.</div>
+        </div>
+        <div class="chat-card">
+          <div class="chat-header"><span>Captura 3.2 — Respuesta Nocturna</span><span class="dim">Río Cuarto</span></div>
+          <div class="chat-body"><img src="img/extracted_img_10.jpg" class="chat-img" alt="Chat Río 4 2"></div>
+          <div class="chat-caption">Respuesta enviada a las 21:20 PM con mensaje predeterminado advirtiendo demoras en la atención.</div>
+        </div>
+        <div class="chat-card">
+          <div class="chat-header"><span>Captura 3.3 — Folleto Digital</span><span class="dim">Río Cuarto</span></div>
+          <div class="chat-body"><img src="img/extracted_img_11.jpg" class="chat-img" alt="Chat Río 4 3"></div>
+          <div class="chat-caption">Envío de pieza gráfica con precios al día siguiente (13:35 PM) sin seguimiento comercial activo.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPARATIVE TABLE BETWEEN SEDES -->
+    <h3>Cuadro Comparativo: Mystery Shopping por Sede</h3>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Indicador Comercial</th>
+            <th class="text-center">IGA Córdoba (Caso 1)</th>
+            <th class="text-center">IGA Córdoba (Caso 2)</th>
+            <th class="text-center">IGA Río Cuarto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Calidad de Información</strong></td>
+            <td class="text-center">8,0 / 10</td>
+            <td class="text-center">8,0 / 10</td>
+            <td class="text-center">7,0 / 10</td>
+          </tr>
+          <tr>
+            <td><strong>Detección de Necesidades</strong></td>
+            <td class="text-center fw700 text-violet">3,0 / 10</td>
+            <td class="text-center">5,0 / 10</td>
+            <td class="text-center fw700 text-violet">2,0 / 10</td>
+          </tr>
+          <tr>
+            <td><strong>Cierre Comercial</strong></td>
+            <td class="text-center fw700 text-violet">1,0 / 10</td>
+            <td class="text-center fw700">8,0 / 10</td>
+            <td class="text-center fw700 text-violet">3,0 / 10</td>
+          </tr>
+          <tr>
+            <td><strong>Tiempo de Respuesta</strong></td>
+            <td class="text-center fw700 text-violet">4,0 / 10</td>
+            <td class="text-center">7,0 / 10</td>
+            <td class="text-center fw700 text-violet">1,0 / 10 (+12h)</td>
+          </tr>
+          <tr style="background:var(--surface-accent)">
+            <td><strong>PUNTAJE CONSOLIDADO</strong></td>
+            <td class="text-center fw700 text-violet">5,8 / 10</td>
+            <td class="text-center fw700">7,8 / 10</td>
+            <td class="text-center fw700 text-violet">4,0 / 10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 8: ANEXO TABLA COMPLETA -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">08</span>
+      <h2>Anexo: Base de Datos de Campañas Auditadas — IGA Córdoba (N = 61)</h2>
+    </div>
+
+    <p style="font-size:0.8rem;color:var(--text-dim)">Visualización completa de las 61 campañas con ejecución presupuestaria en los últimos 6 meses (IGA Córdoba). Filas verdes indican creativos con CPA &lt; Q₁ ($1.620,98). Filas rojas indican creativos con CPA &gt; Q₃ + 1.5×IQR ($9.896,98).</p>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th class="text-center">#</th>
+            <th>Campaña / Anuncio</th>
+            <th class="text-center">Estado</th>
+            <th class="text-end">Inversión (ARS)</th>
+            <th class="text-end">Leads</th>
+            <th class="text-end">CPA</th>
+            <th class="text-end">Alcance</th>
+            <th class="text-end">Impresiones</th>
+            <th class="text-end">Freq.</th>
+            <th class="text-end">Clics</th>
+            <th class="text-end">CTR %</th>
+            <th class="text-end">CPC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="">
+      <td class="text-center">1</td>
+      <td class="cell-name"><div class="name-text">Publicación: 👨‍🍳✨ HACÉ DE TU PASIÓN UNA PROFESIÓN</div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-active">ACTIVE</span></td>
+      <td class="text-end fw700 text-violet">$2.629.189,53</td>
+      <td class="text-end">689</td>
+      <td class="text-end">$3.815,95</td>
+      <td class="text-end">418.126</td>
+      <td class="text-end">1.527.204</td>
+      <td class="text-end">3.65x</td>
+      <td class="text-end">16.972</td>
+      <td class="text-end">1.11%</td>
+      <td class="text-end">$154,91</td>
+    </tr>
+<tr class="">
+      <td class="text-center">2</td>
+      <td class="cell-name"><div class="name-text">Publicación: 👨‍🍳🔥 CONVERTÍ TU PASIÓN EN TU FUTURO</div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-completed">COMPLETED</span></td>
+      <td class="text-end fw700 text-violet">$1.054.230,64</td>
+      <td class="text-end">423</td>
+      <td class="text-end">$2.492,27</td>
+      <td class="text-end">152.918</td>
+      <td class="text-end">463.409</td>
+      <td class="text-end">3.03x</td>
+      <td class="text-end">4.601</td>
+      <td class="text-end">0.99%</td>
+      <td class="text-end">$229,13</td>
+    </tr>
+<tr class="">
+      <td class="text-center">3</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$630.944,52</td>
+      <td class="text-end">1.661</td>
+      <td class="text-end">$379,86</td>
+      <td class="text-end">186.961</td>
+      <td class="text-end">355.490</td>
+      <td class="text-end">1.90x</td>
+      <td class="text-end">2.463</td>
+      <td class="text-end">0.69%</td>
+      <td class="text-end">$256,17</td>
+    </tr>
+<tr class="">
+      <td class="text-center">4</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$630.876,18</td>
+      <td class="text-end">1.390</td>
+      <td class="text-end">$453,87</td>
+      <td class="text-end">146.690</td>
+      <td class="text-end">333.823</td>
+      <td class="text-end">2.28x</td>
+      <td class="text-end">1.550</td>
+      <td class="text-end">0.46%</td>
+      <td class="text-end">$407,02</td>
+    </tr>
+<tr class="">
+      <td class="text-center">5</td>
+      <td class="cell-name"><div class="name-text">Publicación: Cuando hacés lo que amás, se nota 󰞽✨</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$513.284,13</td>
+      <td class="text-end">47.046</td>
+      <td class="text-end">$10,91</td>
+      <td class="text-end">113.827</td>
+      <td class="text-end">192.694</td>
+      <td class="text-end">1.69x</td>
+      <td class="text-end">2.302</td>
+      <td class="text-end">1.19%</td>
+      <td class="text-end">$222,97</td>
+    </tr>
+<tr class="">
+      <td class="text-center">6</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-inactive">INACTIVE</span></td>
+      <td class="text-end fw700 text-violet">$512.350,87</td>
+      <td class="text-end">116</td>
+      <td class="text-end">$4.416,82</td>
+      <td class="text-end">138.905</td>
+      <td class="text-end">233.046</td>
+      <td class="text-end">1.68x</td>
+      <td class="text-end">1.707</td>
+      <td class="text-end">0.73%</td>
+      <td class="text-end">$300,15</td>
+    </tr>
+<tr class="">
+      <td class="text-center">7</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-inactive">INACTIVE</span></td>
+      <td class="text-end fw700 text-violet">$500.471,56</td>
+      <td class="text-end">105</td>
+      <td class="text-end">$4.766,40</td>
+      <td class="text-end">123.489</td>
+      <td class="text-end">198.495</td>
+      <td class="text-end">1.61x</td>
+      <td class="text-end">1.341</td>
+      <td class="text-end">0.68%</td>
+      <td class="text-end">$373,21</td>
+    </tr>
+<tr class="">
+      <td class="text-center">8</td>
+      <td class="cell-name"><div class="name-text">Publicación: 📢 ULTIMOS CUPOS!!</div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-inactive">INACTIVE</span></td>
+      <td class="text-end fw700 text-violet">$490.100,50</td>
+      <td class="text-end">116</td>
+      <td class="text-end">$4.225,00</td>
+      <td class="text-end">198.567</td>
+      <td class="text-end">321.789</td>
+      <td class="text-end">1.62x</td>
+      <td class="text-end">2.036</td>
+      <td class="text-end">0.63%</td>
+      <td class="text-end">$240,72</td>
+    </tr>
+<tr class="">
+      <td class="text-center">9</td>
+      <td class="cell-name"><div class="name-text">Publicación: 📢 ULTIMOS CUPOS!!</div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-inactive">INACTIVE</span></td>
+      <td class="text-end fw700 text-violet">$476.215,19</td>
+      <td class="text-end">127</td>
+      <td class="text-end">$3.749,73</td>
+      <td class="text-end">181.560</td>
+      <td class="text-end">303.341</td>
+      <td class="text-end">1.67x</td>
+      <td class="text-end">1.842</td>
+      <td class="text-end">0.61%</td>
+      <td class="text-end">$258,53</td>
+    </tr>
+<tr class="">
+      <td class="text-center">10</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-inactive">INACTIVE</span></td>
+      <td class="text-end fw700 text-violet">$472.625,25</td>
+      <td class="text-end">105</td>
+      <td class="text-end">$4.501,19</td>
+      <td class="text-end">130.566</td>
+      <td class="text-end">210.981</td>
+      <td class="text-end">1.62x</td>
+      <td class="text-end">1.347</td>
+      <td class="text-end">0.64%</td>
+      <td class="text-end">$350,87</td>
+    </tr>
+<tr class="">
+      <td class="text-center">11</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-inactive">INACTIVE</span></td>
+      <td class="text-end fw700 text-violet">$471.311,61</td>
+      <td class="text-end">100</td>
+      <td class="text-end">$4.713,12</td>
+      <td class="text-end">146.413</td>
+      <td class="text-end">217.341</td>
+      <td class="text-end">1.48x</td>
+      <td class="text-end">1.348</td>
+      <td class="text-end">0.62%</td>
+      <td class="text-end">$349,64</td>
+    </tr>
+<tr class="">
+      <td class="text-center">12</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$380.999,21</td>
+      <td class="text-end">1.827</td>
+      <td class="text-end">$208,54</td>
+      <td class="text-end">105.043</td>
+      <td class="text-end">238.686</td>
+      <td class="text-end">2.27x</td>
+      <td class="text-end">2.169</td>
+      <td class="text-end">0.91%</td>
+      <td class="text-end">$175,66</td>
+    </tr>
+<tr class="">
+      <td class="text-center">13</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$380.706,71</td>
+      <td class="text-end">1.928</td>
+      <td class="text-end">$197,46</td>
+      <td class="text-end">116.367</td>
+      <td class="text-end">253.936</td>
+      <td class="text-end">2.18x</td>
+      <td class="text-end">2.292</td>
+      <td class="text-end">0.90%</td>
+      <td class="text-end">$166,10</td>
+    </tr>
+<tr class="">
+      <td class="text-center">14</td>
+      <td class="cell-name"><div class="name-text">Publicación: A tu niño le gustaría aprender a cocinar como un...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$353.829,77</td>
+      <td class="text-end">1.568</td>
+      <td class="text-end">$225,66</td>
+      <td class="text-end">105.820</td>
+      <td class="text-end">229.530</td>
+      <td class="text-end">2.17x</td>
+      <td class="text-end">1.970</td>
+      <td class="text-end">0.86%</td>
+      <td class="text-end">$179,61</td>
+    </tr>
+<tr class="">
+      <td class="text-center">15</td>
+      <td class="cell-name"><div class="name-text">Publicación: 󰠉 ¡Nuestros Cocineritos en acción! 🍪 </div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$346.625,62</td>
+      <td class="text-end">2.934</td>
+      <td class="text-end">$118,14</td>
+      <td class="text-end">123.221</td>
+      <td class="text-end">227.693</td>
+      <td class="text-end">1.85x</td>
+      <td class="text-end">3.239</td>
+      <td class="text-end">1.42%</td>
+      <td class="text-end">$107,02</td>
+    </tr>
+<tr class="">
+      <td class="text-center">16</td>
+      <td class="cell-name"><div class="name-text">Publicación: 👨‍🍳✨ HACÉ DE TU PASIÓN UNA PROFESIÓN</div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-completed">COMPLETED</span></td>
+      <td class="text-end fw700 text-violet">$314.652,03</td>
+      <td class="text-end">59</td>
+      <td class="text-end">$5.333,09</td>
+      <td class="text-end">73.598</td>
+      <td class="text-end">135.098</td>
+      <td class="text-end">1.84x</td>
+      <td class="text-end">1.161</td>
+      <td class="text-end">0.86%</td>
+      <td class="text-end">$271,02</td>
+    </tr>
+<tr class="">
+      <td class="text-center">17</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$313.158,20</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">122.612</td>
+      <td class="text-end">173.806</td>
+      <td class="text-end">1.42x</td>
+      <td class="text-end">1.114</td>
+      <td class="text-end">0.64%</td>
+      <td class="text-end">$281,11</td>
+    </tr>
+<tr class="row-winner">
+      <td class="text-center">18</td>
+      <td class="cell-name"><div class="name-text">Publicación: 󰠉 ¡Nuestros Cocineritos en acción! 🍪 </div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-completed">COMPLETED</span></td>
+      <td class="text-end fw700 text-violet">$310.454,55</td>
+      <td class="text-end">268</td>
+      <td class="text-end">$1.158,41</td>
+      <td class="text-end">103.271</td>
+      <td class="text-end">210.246</td>
+      <td class="text-end">2.04x</td>
+      <td class="text-end">2.764</td>
+      <td class="text-end">1.31%</td>
+      <td class="text-end">$112,32</td>
+    </tr>
+<tr class="">
+      <td class="text-center">19</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$303.947,86</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">118.168</td>
+      <td class="text-end">170.677</td>
+      <td class="text-end">1.44x</td>
+      <td class="text-end">1.105</td>
+      <td class="text-end">0.65%</td>
+      <td class="text-end">$275,07</td>
+    </tr>
+<tr class="">
+      <td class="text-center">20</td>
+      <td class="cell-name"><div class="name-text">Publicación: 󰠉 ¡Nuestros Cocineritos en acción! 🍪 </div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$289.124,02</td>
+      <td class="text-end">2.907</td>
+      <td class="text-end">$99,46</td>
+      <td class="text-end">118.953</td>
+      <td class="text-end">187.177</td>
+      <td class="text-end">1.57x</td>
+      <td class="text-end">3.122</td>
+      <td class="text-end">1.67%</td>
+      <td class="text-end">$92,61</td>
+    </tr>
+<tr class="">
+      <td class="text-center">21</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$269.877,57</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">110.178</td>
+      <td class="text-end">151.830</td>
+      <td class="text-end">1.38x</td>
+      <td class="text-end">927</td>
+      <td class="text-end">0.61%</td>
+      <td class="text-end">$291,13</td>
+    </tr>
+<tr class="">
+      <td class="text-center">22</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$249.488,70</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">68.071</td>
+      <td class="text-end">103.643</td>
+      <td class="text-end">1.52x</td>
+      <td class="text-end">672</td>
+      <td class="text-end">0.65%</td>
+      <td class="text-end">$371,26</td>
+    </tr>
+<tr class="">
+      <td class="text-center">23</td>
+      <td class="cell-name"><div class="name-text">Publicación: Cuando hacés lo que amás, se nota 󰞽✨</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$240.087,96</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">70.106</td>
+      <td class="text-end">99.454</td>
+      <td class="text-end">1.42x</td>
+      <td class="text-end">1.138</td>
+      <td class="text-end">1.14%</td>
+      <td class="text-end">$210,97</td>
+    </tr>
+<tr class="">
+      <td class="text-center">24</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$223.175,71</td>
+      <td class="text-end">414</td>
+      <td class="text-end">$539,07</td>
+      <td class="text-end">45.322</td>
+      <td class="text-end">81.521</td>
+      <td class="text-end">1.80x</td>
+      <td class="text-end">780</td>
+      <td class="text-end">0.96%</td>
+      <td class="text-end">$286,12</td>
+    </tr>
+<tr class="">
+      <td class="text-center">25</td>
+      <td class="cell-name"><div class="name-text">Publicación: A tu niño le gustaría aprender a cocinar como un...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$220.452,60</td>
+      <td class="text-end">487</td>
+      <td class="text-end">$452,67</td>
+      <td class="text-end">44.622</td>
+      <td class="text-end">98.156</td>
+      <td class="text-end">2.20x</td>
+      <td class="text-end">871</td>
+      <td class="text-end">0.89%</td>
+      <td class="text-end">$253,10</td>
+    </tr>
+<tr class="">
+      <td class="text-center">26</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de transformar tu pasión en...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$218.956,45</td>
+      <td class="text-end">467</td>
+      <td class="text-end">$468,86</td>
+      <td class="text-end">41.389</td>
+      <td class="text-end">91.624</td>
+      <td class="text-end">2.21x</td>
+      <td class="text-end">643</td>
+      <td class="text-end">0.70%</td>
+      <td class="text-end">$340,52</td>
+    </tr>
+<tr class="">
+      <td class="text-center">27</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$218.937,66</td>
+      <td class="text-end">452</td>
+      <td class="text-end">$484,38</td>
+      <td class="text-end">56.539</td>
+      <td class="text-end">108.013</td>
+      <td class="text-end">1.91x</td>
+      <td class="text-end">800</td>
+      <td class="text-end">0.74%</td>
+      <td class="text-end">$273,67</td>
+    </tr>
+<tr class="">
+      <td class="text-center">28</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$211.702,02</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">60.606</td>
+      <td class="text-end">87.304</td>
+      <td class="text-end">1.44x</td>
+      <td class="text-end">659</td>
+      <td class="text-end">0.75%</td>
+      <td class="text-end">$321,25</td>
+    </tr>
+<tr class="">
+      <td class="text-center">29</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$204.575,73</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">65.372</td>
+      <td class="text-end">105.046</td>
+      <td class="text-end">1.61x</td>
+      <td class="text-end">741</td>
+      <td class="text-end">0.71%</td>
+      <td class="text-end">$276,08</td>
+    </tr>
+<tr class="">
+      <td class="text-center">30</td>
+      <td class="cell-name"><div class="name-text">Publicación: A tu niño le gustaría aprender a cocinar como un...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$194.558,16</td>
+      <td class="text-end">383</td>
+      <td class="text-end">$507,98</td>
+      <td class="text-end">45.768</td>
+      <td class="text-end">78.384</td>
+      <td class="text-end">1.71x</td>
+      <td class="text-end">675</td>
+      <td class="text-end">0.86%</td>
+      <td class="text-end">$288,23</td>
+    </tr>
+<tr class="">
+      <td class="text-center">31</td>
+      <td class="cell-name"><div class="name-text">Publicación: 󰠉 ¡Nuestros Cocineritos en acción! 🍪 </div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$192.168,29</td>
+      <td class="text-end">1.598</td>
+      <td class="text-end">$120,26</td>
+      <td class="text-end">69.399</td>
+      <td class="text-end">116.691</td>
+      <td class="text-end">1.68x</td>
+      <td class="text-end">2.366</td>
+      <td class="text-end">2.03%</td>
+      <td class="text-end">$81,22</td>
+    </tr>
+<tr class="">
+      <td class="text-center">32</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de transformar tu pasión en...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$190.332,82</td>
+      <td class="text-end">918</td>
+      <td class="text-end">$207,33</td>
+      <td class="text-end">56.604</td>
+      <td class="text-end">110.434</td>
+      <td class="text-end">1.95x</td>
+      <td class="text-end">1.024</td>
+      <td class="text-end">0.93%</td>
+      <td class="text-end">$185,87</td>
+    </tr>
+<tr class="">
+      <td class="text-center">33</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de transformar tu pasión en...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$190.322,79</td>
+      <td class="text-end">929</td>
+      <td class="text-end">$204,87</td>
+      <td class="text-end">60.686</td>
+      <td class="text-end">118.369</td>
+      <td class="text-end">1.95x</td>
+      <td class="text-end">1.036</td>
+      <td class="text-end">0.88%</td>
+      <td class="text-end">$183,71</td>
+    </tr>
+<tr class="">
+      <td class="text-center">34</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. No te pierdas...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$190.236,18</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">45.666</td>
+      <td class="text-end">126.962</td>
+      <td class="text-end">2.78x</td>
+      <td class="text-end">794</td>
+      <td class="text-end">0.63%</td>
+      <td class="text-end">$239,59</td>
+    </tr>
+<tr class="">
+      <td class="text-center">35</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$188.042,56</td>
+      <td class="text-end">491</td>
+      <td class="text-end">$382,98</td>
+      <td class="text-end">97.101</td>
+      <td class="text-end">128.587</td>
+      <td class="text-end">1.32x</td>
+      <td class="text-end">629</td>
+      <td class="text-end">0.49%</td>
+      <td class="text-end">$298,95</td>
+    </tr>
+<tr class="">
+      <td class="text-center">36</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$186.697,29</td>
+      <td class="text-end">574</td>
+      <td class="text-end">$325,26</td>
+      <td class="text-end">106.512</td>
+      <td class="text-end">144.220</td>
+      <td class="text-end">1.35x</td>
+      <td class="text-end">704</td>
+      <td class="text-end">0.49%</td>
+      <td class="text-end">$265,20</td>
+    </tr>
+<tr class="">
+      <td class="text-center">37</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$173.344,66</td>
+      <td class="text-end">6.460</td>
+      <td class="text-end">$26,83</td>
+      <td class="text-end">46.017</td>
+      <td class="text-end">55.478</td>
+      <td class="text-end">1.21x</td>
+      <td class="text-end">492</td>
+      <td class="text-end">0.89%</td>
+      <td class="text-end">$352,33</td>
+    </tr>
+<tr class="">
+      <td class="text-center">38</td>
+      <td class="cell-name"><div class="name-text">Publicación: Cuando hacés lo que amás, se nota 󰞽✨</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$170.276,80</td>
+      <td class="text-end">19.589</td>
+      <td class="text-end">$8,69</td>
+      <td class="text-end">59.494</td>
+      <td class="text-end">74.232</td>
+      <td class="text-end">1.25x</td>
+      <td class="text-end">901</td>
+      <td class="text-end">1.21%</td>
+      <td class="text-end">$188,99</td>
+    </tr>
+<tr class="">
+      <td class="text-center">39</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$158.231,07</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">66.964</td>
+      <td class="text-end">94.952</td>
+      <td class="text-end">1.42x</td>
+      <td class="text-end">663</td>
+      <td class="text-end">0.70%</td>
+      <td class="text-end">$238,66</td>
+    </tr>
+<tr class="">
+      <td class="text-center">40</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$157.607,54</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">61.225</td>
+      <td class="text-end">79.231</td>
+      <td class="text-end">1.29x</td>
+      <td class="text-end">513</td>
+      <td class="text-end">0.65%</td>
+      <td class="text-end">$307,23</td>
+    </tr>
+<tr class="">
+      <td class="text-center">41</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$149.870,90</td>
+      <td class="text-end">254</td>
+      <td class="text-end">$590,04</td>
+      <td class="text-end">38.402</td>
+      <td class="text-end">56.286</td>
+      <td class="text-end">1.47x</td>
+      <td class="text-end">486</td>
+      <td class="text-end">0.86%</td>
+      <td class="text-end">$308,38</td>
+    </tr>
+<tr class="">
+      <td class="text-center">42</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de transformar tu pasión en...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$149.813,19</td>
+      <td class="text-end">338</td>
+      <td class="text-end">$443,23</td>
+      <td class="text-end">37.823</td>
+      <td class="text-end">62.054</td>
+      <td class="text-end">1.64x</td>
+      <td class="text-end">449</td>
+      <td class="text-end">0.72%</td>
+      <td class="text-end">$333,66</td>
+    </tr>
+<tr class="">
+      <td class="text-center">43</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de transformar tu pasión en...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$149.746,82</td>
+      <td class="text-end">340</td>
+      <td class="text-end">$440,43</td>
+      <td class="text-end">37.515</td>
+      <td class="text-end">64.633</td>
+      <td class="text-end">1.72x</td>
+      <td class="text-end">413</td>
+      <td class="text-end">0.64%</td>
+      <td class="text-end">$362,58</td>
+    </tr>
+<tr class="">
+      <td class="text-center">44</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$149.730,64</td>
+      <td class="text-end">252</td>
+      <td class="text-end">$594,17</td>
+      <td class="text-end">35.704</td>
+      <td class="text-end">52.645</td>
+      <td class="text-end">1.47x</td>
+      <td class="text-end">452</td>
+      <td class="text-end">0.86%</td>
+      <td class="text-end">$331,26</td>
+    </tr>
+<tr class="">
+      <td class="text-center">45</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$149.702,46</td>
+      <td class="text-end">253</td>
+      <td class="text-end">$591,71</td>
+      <td class="text-end">29.241</td>
+      <td class="text-end">44.860</td>
+      <td class="text-end">1.53x</td>
+      <td class="text-end">444</td>
+      <td class="text-end">0.99%</td>
+      <td class="text-end">$337,17</td>
+    </tr>
+<tr class="">
+      <td class="text-center">46</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. No te pierdas...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$149.656,03</td>
+      <td class="text-end">488</td>
+      <td class="text-end">$306,67</td>
+      <td class="text-end">48.862</td>
+      <td class="text-end">121.258</td>
+      <td class="text-end">2.48x</td>
+      <td class="text-end">531</td>
+      <td class="text-end">0.44%</td>
+      <td class="text-end">$281,84</td>
+    </tr>
+<tr class="">
+      <td class="text-center">47</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$149.619,52</td>
+      <td class="text-end">226</td>
+      <td class="text-end">$662,03</td>
+      <td class="text-end">30.029</td>
+      <td class="text-end">43.328</td>
+      <td class="text-end">1.44x</td>
+      <td class="text-end">367</td>
+      <td class="text-end">0.85%</td>
+      <td class="text-end">$407,68</td>
+    </tr>
+<tr class="">
+      <td class="text-center">48</td>
+      <td class="cell-name"><div class="name-text">Publicación: A tu niño le gustaría aprender a cocinar como un...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$143.357,59</td>
+      <td class="text-end">354</td>
+      <td class="text-end">$404,96</td>
+      <td class="text-end">28.672</td>
+      <td class="text-end">94.004</td>
+      <td class="text-end">3.28x</td>
+      <td class="text-end">599</td>
+      <td class="text-end">0.64%</td>
+      <td class="text-end">$239,33</td>
+    </tr>
+<tr class="">
+      <td class="text-center">49</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$137.389,27</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">48.381</td>
+      <td class="text-end">67.729</td>
+      <td class="text-end">1.40x</td>
+      <td class="text-end">471</td>
+      <td class="text-end">0.70%</td>
+      <td class="text-end">$291,70</td>
+    </tr>
+<tr class="">
+      <td class="text-center">50</td>
+      <td class="cell-name"><div class="name-text">Publicación: ✨ Cocinar con ingredientes que realmente importan...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$130.913,88</td>
+      <td class="text-end">879</td>
+      <td class="text-end">$148,94</td>
+      <td class="text-end">47.324</td>
+      <td class="text-end">65.911</td>
+      <td class="text-end">1.39x</td>
+      <td class="text-end">1.179</td>
+      <td class="text-end">1.79%</td>
+      <td class="text-end">$111,04</td>
+    </tr>
+<tr class="">
+      <td class="text-center">51</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. No te pierdas...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$124.655,41</td>
+      <td class="text-end">391</td>
+      <td class="text-end">$318,81</td>
+      <td class="text-end">34.704</td>
+      <td class="text-end">90.410</td>
+      <td class="text-end">2.61x</td>
+      <td class="text-end">397</td>
+      <td class="text-end">0.44%</td>
+      <td class="text-end">$313,99</td>
+    </tr>
+<tr class="">
+      <td class="text-center">52</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. No te pierdas...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$114.179,09</td>
+      <td class="text-end">348</td>
+      <td class="text-end">$328,10</td>
+      <td class="text-end">43.070</td>
+      <td class="text-end">93.662</td>
+      <td class="text-end">2.17x</td>
+      <td class="text-end">387</td>
+      <td class="text-end">0.41%</td>
+      <td class="text-end">$295,04</td>
+    </tr>
+<tr class="">
+      <td class="text-center">53</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$113.900,65</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">35.291</td>
+      <td class="text-end">45.840</td>
+      <td class="text-end">1.30x</td>
+      <td class="text-end">366</td>
+      <td class="text-end">0.80%</td>
+      <td class="text-end">$311,20</td>
+    </tr>
+<tr class="">
+      <td class="text-center">54</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$113.597,19</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">33.910</td>
+      <td class="text-end">43.620</td>
+      <td class="text-end">1.29x</td>
+      <td class="text-end">323</td>
+      <td class="text-end">0.74%</td>
+      <td class="text-end">$351,69</td>
+    </tr>
+<tr class="">
+      <td class="text-center">55</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de transformar tu pasión en...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$113.306,36</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">34.867</td>
+      <td class="text-end">50.322</td>
+      <td class="text-end">1.44x</td>
+      <td class="text-end">310</td>
+      <td class="text-end">0.62%</td>
+      <td class="text-end">$365,50</td>
+    </tr>
+<tr class="">
+      <td class="text-center">56</td>
+      <td class="cell-name"><div class="name-text">Publicación: A tu niño le gustaría aprender a cocinar como un...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$109.931,62</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">28.178</td>
+      <td class="text-end">41.319</td>
+      <td class="text-end">1.47x</td>
+      <td class="text-end">318</td>
+      <td class="text-end">0.77%</td>
+      <td class="text-end">$345,70</td>
+    </tr>
+<tr class="">
+      <td class="text-center">57</td>
+      <td class="cell-name"><div class="name-text">Publicación: ¡Es el momento de definir tu futuro! 🌟</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$107.726,65</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">18.147</td>
+      <td class="text-end">28.207</td>
+      <td class="text-end">1.55x</td>
+      <td class="text-end">248</td>
+      <td class="text-end">0.88%</td>
+      <td class="text-end">$434,38</td>
+    </tr>
+<tr class="">
+      <td class="text-center">58</td>
+      <td class="cell-name"><div class="name-text">Publicación: 📢 ULTIMOS CUPOS!!</div><div class="obj-tag obj-msg">MENSAJES</div></td>
+      <td class="text-center"><span class="status-badge badge-inactive">INACTIVE</span></td>
+      <td class="text-end fw700 text-violet">$38.963,41</td>
+      <td class="text-end">6</td>
+      <td class="text-end">$6.493,90</td>
+      <td class="text-end">22.324</td>
+      <td class="text-end">23.578</td>
+      <td class="text-end">1.06x</td>
+      <td class="text-end">141</td>
+      <td class="text-end">0.60%</td>
+      <td class="text-end">$276,34</td>
+    </tr>
+<tr class="">
+      <td class="text-center">59</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-eng">ENGAGEMENT</div></td>
+      <td class="text-center"><span class="status-badge badge-archived">ARCHIVED</span></td>
+      <td class="text-end fw700 text-violet">$11.657,20</td>
+      <td class="text-end">31</td>
+      <td class="text-end">$376,04</td>
+      <td class="text-end">7.387</td>
+      <td class="text-end">9.718</td>
+      <td class="text-end">1.32x</td>
+      <td class="text-end">39</td>
+      <td class="text-end">0.40%</td>
+      <td class="text-end">$298,90</td>
+    </tr>
+<tr class="">
+      <td class="text-center">60</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-inactive">INACTIVE</span></td>
+      <td class="text-end fw700 text-violet">$523,66</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">222</td>
+      <td class="text-end">237</td>
+      <td class="text-end">1.07x</td>
+      <td class="text-end">0</td>
+      <td class="text-end">—</td>
+      <td class="text-end">—</td>
+    </tr>
+<tr class="">
+      <td class="text-center">61</td>
+      <td class="cell-name"><div class="name-text">Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...</div><div class="obj-tag obj-traffic">TRÁFICO</div></td>
+      <td class="text-center"><span class="status-badge badge-inactive">INACTIVE</span></td>
+      <td class="text-end fw700 text-violet">$471,23</td>
+      <td class="text-end"><span class="dim">0</span></td>
+      <td class="text-end"><span class="dim">—</span></td>
+      <td class="text-end">204</td>
+      <td class="text-end">212</td>
+      <td class="text-end">1.04x</td>
+      <td class="text-end">3</td>
+      <td class="text-end">1.42%</td>
+      <td class="text-end">$157,08</td>
+    </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 9: ROADMAP DE ACCIÓN -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">09</span>
+      <h2>Roadmap Estratégico de Intervención Recomendado</h2>
+    </div>
+
+    <div class="roadmap-list">
+      <div class="roadmap-step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h4>Fase 1: Consolidación de Infraestructura y Gobierno de Activos</h4>
+          <p>Crear e instituir el Meta Business Portfolio formal a nombre de IGA. Centralizar Cuentas Publicitarias, Páginas de FB, Cuentas de IG, Píxeles e implementar Conversions API (CAPI) con verificación de dominios para ambas filiales.</p>
+        </div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h4>Fase 2: Arquitectura de Pauta en Meta Ads Manager</h4>
+          <p>Eliminar el uso del botón "Promocionar". Reestructurar la pauta en Ads Manager dividiendo campañas por Sede Geográfica (Córdoba vs. Río Cuarto) y por Objetivo de Conversión Directa (Leads de WhatsApp con exclusión de matriculados).</p>
+        </div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h4>Fase 3: Auditoría Numérica e Integración Publicitaria de Río Cuarto</h4>
+          <p>Solicitar los accesos a la cuenta publicitaria de Río Cuarto para realizar el análisis cuantitativo de su pauta y estructurar sus conjuntos de anuncios dedicados en Ads Manager.</p>
+        </div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h4>Fase 4: Reasignación Presupuestaria y Escala de Creativos Ganadores</h4>
+          <p>Redirigir el 42,1% del presupuesto quemado en "Engagement" hacia los creativos ganadores identificados (ej. "Cocineritos en Acción", CPA $1.158 ARS), escalando volumen de prospectos calificados.</p>
+        </div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-number">05</div>
+        <div class="step-content">
+          <h4>Fase 5: Protocolo de Venta Consultiva en WhatsApp</h4>
+          <p>Implementar el protocolo comercial de 5 etapas (Descubrimiento, Recomendación, Beneficios, Objeciones, Cierre Activo y Seguimiento) para eliminar la atención reactiva e incrementar la tasa de matrícula sin aumentar gasto en pauta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>FUNN Agency — Performance & Growth Marketing</strong><br>
+    Documento de Auditoría Técnica 360° preparado para IGA Córdoba e IGA Río Cuarto — Julio 2026
+  </footer>
+
+</div>
+</body>
+</html>
