@@ -49,7 +49,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 12px;
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.03);
-  padding: 64px 60px;
+  padding: 64px 50px;
 }
 
 /* HEADER */
@@ -107,7 +107,7 @@ body {
 /* METADATA GRID */
 .meta-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
   background: var(--surface-card);
   border: 1px solid var(--border-subtle);
@@ -124,7 +124,7 @@ body {
   margin-bottom: 4px;
 }
 .meta-item .meta-val {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-main);
 }
@@ -172,7 +172,7 @@ p strong { color: var(--text-main); }
 /* GLOSSARY BOXES */
 .glossary-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 16px;
   margin-top: 18px;
   margin-bottom: 28px;
@@ -223,7 +223,7 @@ p strong { color: var(--text-main); }
 /* KPI CARDS */
 .kpi-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 14px;
   margin-bottom: 24px;
 }
@@ -300,7 +300,7 @@ p strong { color: var(--text-main); }
 /* FINDINGS & AUDIT CARDS */
 .finding-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   gap: 16px;
   margin-bottom: 24px;
 }
@@ -309,6 +309,7 @@ p strong { color: var(--text-main); }
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
   padding: 20px;
+  overflow: hidden;
 }
 .finding-card.severity-high { border-left: 4px solid var(--accent-red); }
 .finding-card.severity-medium { border-left: 4px solid var(--accent-amber); }
@@ -340,7 +341,7 @@ p strong { color: var(--text-main); }
   line-height: 1.6;
 }
 
-/* TABLES */
+/* TABLES & MINI TABLES FOR OUTLIERS */
 .table-container {
   background: var(--surface-card);
   border: 1px solid var(--border-subtle);
@@ -374,7 +375,37 @@ td {
 }
 tr:hover td { background: rgba(255, 255, 255, 0.015); }
 
-.cell-name { white-space: normal; min-width: 200px; }
+/* MINI TABLES INSIDE CARDS (STRICT SIZING) */
+.mini-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 14px;
+}
+.mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.76rem;
+}
+.mini-table th {
+  background: var(--surface-accent);
+  padding: 6px 8px;
+  font-size: 0.62rem;
+}
+.mini-table td {
+  padding: 7px 8px;
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mini-table col.col-name { width: 44%; }
+.mini-table col.col-cpa { width: 22%; }
+.mini-table col.col-leads { width: 12%; }
+.mini-table col.col-spend { width: 22%; }
+
+.cell-name { white-space: normal; min-width: 180px; }
 .name-text { font-weight: 600; color: var(--text-main); font-size: 0.8rem; }
 .obj-tag { display: inline-block; font-size: 0.62rem; padding: 2px 6px; border-radius: 3px; font-weight: 700; margin-top: 3px; }
 .obj-msg { background: var(--accent-blue-bg); color: var(--accent-blue); }
@@ -399,7 +430,7 @@ tr:hover td { background: rgba(255, 255, 255, 0.015); }
 /* CHAT EVIDENCE GALLERY */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
   margin-top: 18px;
   margin-bottom: 28px;
@@ -509,7 +540,7 @@ footer {
 
 @media (max-width: 580px) {
   body { padding: 8px 4px; }
-  .document-paper { padding: 24px 14px; border-radius: 8px; border: none; box-shadow: none; background: #0A0F19; }
+  .document-paper { padding: 24px 12px; border-radius: 8px; border: none; box-shadow: none; background: #0A0F19; }
   .doc-title { font-size: 1.35rem; }
   .brand-title { font-size: 1.4rem; }
   .meta-grid { grid-template-columns: 1fr; gap: 12px; padding: 14px; }
@@ -904,7 +935,7 @@ footer {
       </div>
     </div>
 
-    <!-- WINNERS & LOSERS CÓRDOBA -->
+    <!-- WINNERS & LOSERS CÓRDOBA (WITH PERFECT COMPACT TABLE FIT) -->
     <h3>Análisis de Creativos Outliers (Ganadores vs. Ineficientes) — Córdoba</h3>
     <div class="finding-grid">
       <div class="finding-card severity-positive">
@@ -912,14 +943,22 @@ footer {
         <div class="finding-title">Creativos de Alta Eficiencia Conversión</div>
         <div class="finding-body">
           Formatos con excelente costo de adquisición que sufrieron de infrapauta por falta de gestión centralizada en Ads Manager:
-          <table style="margin-top:12px">
-            <thead>
-              <tr><th>Creativo</th><th class="text-end">CPA</th><th class="text-end">Leads</th><th class="text-end">Inversión</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Publicación: 󰠉 ¡Nuestros Cocineritos en ...</td><td class="text-end fw700 text-violet">$1.158,41</td><td class="text-end">268</td><td class="text-end">$310.454,55</td></tr><tr><td>Publicación: 👨‍🍳🔥 CONVERTÍ TU PASIÓN E...</td><td class="text-end fw700 text-violet">$2.492,27</td><td class="text-end">423</td><td class="text-end">$1.054.230,64</td></tr><tr><td>Publicación: 📢 ULTIMOS CUPOS!!...</td><td class="text-end fw700 text-violet">$3.749,73</td><td class="text-end">127</td><td class="text-end">$476.215,19</td></tr><tr><td>Publicación: 👨‍🍳✨ HACÉ DE TU PASIÓN UNA...</td><td class="text-end fw700 text-violet">$3.815,95</td><td class="text-end">689</td><td class="text-end">$2.629.189,53</td></tr><tr><td>Publicación: 📢 ULTIMOS CUPOS!!...</td><td class="text-end fw700 text-violet">$4.225,00</td><td class="text-end">116</td><td class="text-end">$490.100,50</td></tr>
-            </tbody>
-          </table>
+          <div class="mini-table-wrap">
+            <table class="mini-table">
+              <colgroup>
+                <col class="col-name">
+                <col class="col-cpa">
+                <col class="col-leads">
+                <col class="col-spend">
+              </colgroup>
+              <thead>
+                <tr><th>Creativo</th><th class="text-end">CPA</th><th class="text-end">Leads</th><th class="text-end">Inversión</th></tr>
+              </thead>
+              <tbody>
+                <tr><td title="Publicación: 󰠉 ¡Nuestros Cocineritos en acción! 🍪 ">Publicación: 󰠉 ¡Nuestros Cocineri...</td><td class="text-end fw700 text-violet">$1.158,41</td><td class="text-end">268</td><td class="text-end">$310.454,55</td></tr><tr><td title="Publicación: 👨‍🍳🔥 CONVERTÍ TU PASIÓN EN TU FUTURO">Publicación: 👨‍🍳🔥 CONVERTÍ TU P...</td><td class="text-end fw700 text-violet">$2.492,27</td><td class="text-end">423</td><td class="text-end">$1.054.230,64</td></tr><tr><td title="Publicación: 📢 ULTIMOS CUPOS!!">Publicación: 📢 ULTIMOS CUPOS!!...</td><td class="text-end fw700 text-violet">$3.749,73</td><td class="text-end">127</td><td class="text-end">$476.215,19</td></tr><tr><td title="Publicación: 👨‍🍳✨ HACÉ DE TU PASIÓN UNA PROFESIÓN">Publicación: 👨‍🍳✨ HACÉ DE TU PAS...</td><td class="text-end fw700 text-violet">$3.815,95</td><td class="text-end">689</td><td class="text-end">$2.629.189,53</td></tr><tr><td title="Publicación: 📢 ULTIMOS CUPOS!!">Publicación: 📢 ULTIMOS CUPOS!!...</td><td class="text-end fw700 text-violet">$4.225,00</td><td class="text-end">116</td><td class="text-end">$490.100,50</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
@@ -928,14 +967,22 @@ footer {
         <div class="finding-title">Creativos con Fuga de Presupuesto</div>
         <div class="finding-body">
           Anuncios con costo por consulta desproporcionado (hasta <strong>8.5x más costosos</strong> que los ganadores):
-          <table style="margin-top:12px">
-            <thead>
-              <tr><th>Creativo</th><th class="text-end">CPA</th><th class="text-end">Leads</th><th class="text-end">Inversión</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Publicación: 📢 ULTIMOS CUPOS!!...</td><td class="text-end fw700 text-violet">$6.493,90</td><td class="text-end">6</td><td class="text-end">$38.963,41</td></tr><tr><td>Publicación: 👨‍🍳✨ HACÉ DE TU PASIÓN UNA...</td><td class="text-end fw700 text-violet">$5.333,09</td><td class="text-end">59</td><td class="text-end">$314.652,03</td></tr><tr><td>Publicación: 🔥 Tu futuro empieza en la c...</td><td class="text-end fw700 text-violet">$4.766,40</td><td class="text-end">105</td><td class="text-end">$500.471,56</td></tr><tr><td>Publicación: 🔥 Tu futuro empieza en la c...</td><td class="text-end fw700 text-violet">$4.713,12</td><td class="text-end">100</td><td class="text-end">$471.311,61</td></tr><tr><td>Publicación: 🔥 Tu futuro empieza en la c...</td><td class="text-end fw700 text-violet">$4.501,19</td><td class="text-end">105</td><td class="text-end">$472.625,25</td></tr>
-            </tbody>
-          </table>
+          <div class="mini-table-wrap">
+            <table class="mini-table">
+              <colgroup>
+                <col class="col-name">
+                <col class="col-cpa">
+                <col class="col-leads">
+                <col class="col-spend">
+              </colgroup>
+              <thead>
+                <tr><th>Creativo</th><th class="text-end">CPA</th><th class="text-end">Leads</th><th class="text-end">Inversión</th></tr>
+              </thead>
+              <tbody>
+                <tr><td title="Publicación: 📢 ULTIMOS CUPOS!!">Publicación: 📢 ULTIMOS CUPOS!!...</td><td class="text-end fw700 text-violet">$6.493,90</td><td class="text-end">6</td><td class="text-end">$38.963,41</td></tr><tr><td title="Publicación: 👨‍🍳✨ HACÉ DE TU PASIÓN UNA PROFESIÓN">Publicación: 👨‍🍳✨ HACÉ DE TU PAS...</td><td class="text-end fw700 text-violet">$5.333,09</td><td class="text-end">59</td><td class="text-end">$314.652,03</td></tr><tr><td title="Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...">Publicación: 🔥 Tu futuro empieza ...</td><td class="text-end fw700 text-violet">$4.766,40</td><td class="text-end">105</td><td class="text-end">$500.471,56</td></tr><tr><td title="Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...">Publicación: 🔥 Tu futuro empieza ...</td><td class="text-end fw700 text-violet">$4.713,12</td><td class="text-end">100</td><td class="text-end">$471.311,61</td></tr><tr><td title="Publicación: 🔥 Tu futuro empieza en la cocina. ¿Estás listo...">Publicación: 🔥 Tu futuro empieza ...</td><td class="text-end fw700 text-violet">$4.501,19</td><td class="text-end">105</td><td class="text-end">$472.625,25</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -1210,7 +1257,7 @@ footer {
         <span class="tag-severity tag-high" style="margin:0;font-size:0.75rem;padding:5px 12px">ESTADO: CRÍTICO POR DEMORA</span>
       </div>
 
-      <p><strong>Diagnóstico Ejecutivo IGA Río Cuarto:</strong> La atención comercial en la filial Río Cuarto presenta demoras extremas en el primer contacto (superiores a 12 horas). La propia asesora incluye una disculpa automatizada por retrasos en la respuesta, evidenciando un problema de capacidad operativa o falta de protocolo diario.</p>
+      <p><strong>Diagnóstico Ejecutivo IGA Río Cuarto:</strong> La atención comercial en la filial Río Cuarto presenta demoras extremas en el primer contacto (superiores a 12 horas). La propia asesora includes una disculpa automatizada por retrasos en la respuesta, evidenciando un problema de capacidad operativa o falta de protocolo diario.</p>
 
       <div class="finding-grid" style="margin-top:16px">
         <div class="finding-card severity-high">
