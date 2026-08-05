@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guión Ejecutivo de Presentación — Auditoría IGA Córdoba & Río Cuarto</title>
+<title>Guión de Presentación — Auditoría Estratégica IGA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,6 @@
   --text-main: #F3F4F6;
   --text-muted: #9CA3AF;
   --accent-green: #10B981;
-  --accent-red: #EF4444;
   --accent-amber: #F59E0B;
 }
 
@@ -28,19 +27,19 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-main);
   font-family: 'Plus Jakarta Sans', sans-serif;
-  line-height: 1.6;
-  padding: 30px 20px;
+  line-height: 1.75;
+  padding: 36px 20px;
 }
 
 .container {
-  max-width: 920px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 40px;
-  padding-bottom: 24px;
+  margin-bottom: 44px;
+  padding-bottom: 28px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -50,37 +49,37 @@ body {
   color: var(--primary-light);
   border: 1px solid rgba(99, 102, 241, 0.3);
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
   font-weight: 700;
   color: #FFF;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .sub-header {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  max-width: 700px;
+  font-size: 1rem;
+  max-width: 720px;
   margin: 0 auto;
 }
 
 .slide-box {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 28px;
-  margin-bottom: 32px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 36px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .slide-tag {
@@ -88,31 +87,27 @@ h1 {
   background: var(--primary);
   color: #FFF;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .slide-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: #FFF;
-  margin-bottom: 18px;
-}
-
-.section-block {
   margin-bottom: 20px;
 }
 
 .block-title {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -120,61 +115,48 @@ h1 {
 
 .title-objetivo { color: var(--primary-light); }
 .title-guion { color: var(--accent-green); }
-.title-defensa { color: var(--accent-amber); }
+
+.objetivo-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.03);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
 
 .speech-box {
   background: rgba(16, 185, 129, 0.05);
   border-left: 4px solid var(--accent-green);
-  padding: 16px 18px;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  color: #E5E7EB;
-  line-height: 1.65;
+  padding: 22px 24px;
+  border-radius: 10px;
+  font-size: 1.02rem;
+  color: #F3F4F6;
+  line-height: 1.8;
 }
 
 .speech-box p {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
+
 .speech-box p:last-child {
   margin-bottom: 0;
 }
 
-.defense-box {
-  background: rgba(245, 158, 11, 0.06);
-  border-left: 4px solid var(--accent-amber);
-  padding: 16px 18px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-}
-
-.qa-item {
-  margin-bottom: 12px;
-}
-.qa-item:last-child { margin-bottom: 0; }
-
-.qa-q {
-  font-weight: 700;
+.speech-box strong {
   color: #FFF;
-  margin-bottom: 4px;
 }
 
-.qa-a {
-  color: var(--text-muted);
-}
-
-.tip-box {
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px dashed rgba(99, 102, 241, 0.3);
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 0.85rem;
+.speech-box em {
+  font-style: normal;
   color: var(--primary-light);
-  margin-top: 12px;
+  font-weight: 600;
 }
 
 @media (max-width: 600px) {
-  body { padding: 16px 12px; }
-  .slide-box { padding: 20px 16px; }
+  body { padding: 20px 14px; }
+  .slide-box { padding: 22px 18px; }
 }
 </style>
 </head>
@@ -184,8 +166,8 @@ h1 {
 
   <div class="header">
     <span class="badge">GUÍA EJECUTIVA DE PRESENTACIÓN</span>
-    <h1>Guión Diapositiva por Diapositiva</h1>
-    <p class="sub-header">Guía práctica paso a paso para presentar la Auditoría Estratégica 360° ante la directiva y dueños de IGA Córdoba e IGA Río Cuarto.</p>
+    <h1>Guión de Exposición Diapositiva por Diapositiva</h1>
+    <p class="sub-header">Discurso completo redactado en primera persona para presentar con fluidez, empatía y autoridad profesional ante la directiva de IGA Córdoba e IGA Río Cuarto.</p>
   </div>
 
   <!-- SLIDE 1 -->
@@ -193,27 +175,14 @@ h1 {
     <span class="slide-tag">DIAPOSITIVA 01</span>
     <h2 class="slide-title">Carátula Principal — Auditoría Estratégica 360°</h2>
 
-    <div class="section-block">
-      <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">Generar empatía profesional, definir el marco de trabajo y transmitir tranquilidad: venimos a mostrar oportunidades de mejora para hacer crecer las matrículas.</p>
-    </div>
+    <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
+    <div class="objetivo-text">Abrir la reunión marcando presencia profesional, definir el propósito del encuentro y transmitir empatía: el foco está en hacer crecer las matrículas optimizando recursos.</div>
 
-    <div class="section-block">
-      <div class="block-title title-guion">🗣️ Guión Hablado (Palabras Clave)</div>
-      <div class="speech-box">
-        <p><em>"Buenos días a todos. Les agradezco mucho este espacio. Hoy queremos presentarles el resultado de una auditoría integral 360° que realizamos sobre la estrategia digital y comercial de IGA Córdoba y Río Cuarto."</em></p>
-        <p><em>"El objetivo de esta reunión no es juzgar lo que se hizo antes, sino mostrarles con números sobre la mesa dónde están parados hoy, qué cosas están funcionando muy bien y dónde estamos perdiendo dinero u oportunidades de matrícula para que puedan tomar decisiones estratégicas e inmediatas."</em></p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <div class="block-title title-defensa">🛡️ Escudo de Defensa (Si cuestionan la auditoría)</div>
-      <div class="defense-box">
-        <div class="qa-item">
-          <div class="qa-q">❓ ¿Por qué hicieron esta auditoría si nosotros venimos vendiendo bien?</div>
-          <div class="qa-a">💬 <strong>Respuesta:</strong> <em>"Justamente porque IGA es una institución consolidada y fuerte en la región. El mercado educativo cambió mucho y realizar este diagnóstico nos permite asegurar que cada peso invertido rinda al máximo y no se pierda nada en el camino a WhatsApp."</em></div>
-        </div>
-      </div>
+    <div class="block-title title-guion">🗣️ Guión de Exposición (Primera Persona)</div>
+    <div class="speech-box">
+      <p>"Buenos días a todos. Les agradezco mucho este espacio para reunirnos hoy."</p>
+      <p>"Les quiero presentar el trabajo de auditoría integral 360° que estuve realizando sobre la estrategia digital y publicitaria de IGA Córdoba e IGA Río Cuarto."</p>
+      <p>"Mi objetivo en esta presentación no es evaluar el pasado ni juzgar lo que se vino haciendo, sino mostrarles de forma muy clara y con números concretos sobre la mesa dónde estamos parados hoy. Quiero mostrarles qué cosas están funcionando excelente, dónde estamos teniendo fugas de presupuesto y qué oportunidades concretas tenemos para multiplicar la captación de nuevos matriculados en ambas filiales."</p>
     </div>
   </div>
 
@@ -222,32 +191,14 @@ h1 {
     <span class="slide-tag">DIAPOSITIVA 02</span>
     <h2 class="slide-title">La Auditoría en Métricas Clave (Radiografía General)</h2>
 
-    <div class="section-block">
-      <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">Dar el marco cuantitativo del estudio (muestra real de 6 meses de $17.7M ARS y 5.962 consultas) y señalar el primer aviso de saturación (Frecuencia 6.65x).</p>
-    </div>
+    <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
+    <div class="objetivo-text">Presentar el volumen total auditado ($17.7M ARS en Córdoba, 5.962 consultas) y señalar el primer indicador crítico de saturación (Frecuencia 6.65x).</div>
 
-    <div class="section-block">
-      <div class="block-title title-guion">🗣️ Guión Hablado (Palabras Clave)</div>
-      <div class="speech-box">
-        <p><em>"Para que tengan una dimensión clara: analizamos la pauta publicitaria oficial de los últimos 6 meses en Córdoba. Estamos hablando de una inversión real auditada de <strong>17,7 millones de pesos</strong>."</em></p>
-        <p><em>"Esa inversión generó <strong>5.962 consultas</strong> directas. El costo mediano por cada consulta entrante fue de <strong>$3.816 pesos</strong>."</em></p>
-        <p><em>"Pero miren este último dato clave: la <strong>frecuencia fue de 6,65 veces</strong>. Significa que, en promedio, la misma persona vio el mismo anuncio casi 7 veces en su pantalla. Esto nos indica una saturación de la audiencia porque no se estaban excluyendo a las personas que ya consultaron o se matricularon."</em></p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <div class="block-title title-defensa">🛡️ Escudo de Defensa (Si preguntan por los $17,7M o la Frecuencia)</div>
-      <div class="defense-box">
-        <div class="qa-item">
-          <div class="qa-q">❓ ¿De dónde sale esa cifra de $17,7 millones?</div>
-          <div class="qa-a">💬 <strong>Respuesta:</strong> <em>"Sale del reporte oficial exportado directamente del Administrador de Anuncios de Meta. Es dinero efectivamente facturado y ejecutado en pauta entre febrero y julio."</em></div>
-        </div>
-        <div class="qa-item" style="margin-top:8px;">
-          <div class="qa-q">❓ ¿Es malo que una persona vea el anuncio 6 veces?</div>
-          <div class="qa-a">💬 <strong>Respuesta:</strong> <em>"Una frecuencia de 2 a 3 veces es sana para que te recuerden. Pero arriba de 6 veces es quemar presupuesto: la persona ya vio el anuncio, si no hizo clic es porque se aburrió del gráfico o porque ya es alumno activo de IGA y le seguimos mostrando publicidad."</em></div>
-        </div>
-      </div>
+    <div class="block-title title-guion">🗣️ Guión de Exposición (Primera Persona)</div>
+    <div class="speech-box">
+      <p>"Para empezar, quiero que veamos los números consolidados de los últimos 6 meses en la sede Córdoba. Estuve auditando una muestra de inversión real ejecutada de <strong>17,7 millones de pesos</strong>."</p>
+      <p>"Con esa inversión se generaron un total de <strong>5.962 consultas directas</strong>, lo que nos da un costo mediano por consulta entrante a WhatsApp de <strong>$3.816 pesos</strong>."</p>
+      <p>"Ahora bien, hay una métrica muy reveladora que detecté: la <strong>frecuencia publicitaria alcanzó 6,65 veces</strong>. ¿Qué me indica esto? Que la misma persona estuvo viendo exactamente el mismo anuncio casi 7 veces en su pantalla. Esto ocurre porque no estábamos aplicando reglas de exclusión para dejar de mostrarle anuncios a quienes ya se habían matriculado o ya habían consultado en los últimos meses."</p>
     </div>
   </div>
 
@@ -256,30 +207,15 @@ h1 {
     <span class="slide-tag">DIAPOSITIVA 03</span>
     <h2 class="slide-title">El Bucle de Ineficiencia Publicidad–Ventas</h2>
 
-    <div class="section-block">
-      <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">Explicar el círculo vicioso entre anuncios de baja intención y vendedores que se desgastan respondiendo mensajes sin cerrar matrículas.</p>
-    </div>
+    <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
+    <div class="objetivo-text">Explicar la causa de por qué mayor presupuesto publicitario no genera automáticamente el doble de matriculados, conectando anuncios con la dinámica comercial.</div>
 
-    <div class="section-block">
-      <div class="block-title title-guion">🗣️ Guión Hablado (Palabras Clave)</div>
-      <div class="speech-box">
-        <p><em>"Acá descubrimos lo que llamamos el <strong>Bucle de Ineficiencia</strong>. ¿Por qué poner más plata en publicidad no trajo automáticamente el doble de matriculados?"</em></p>
-        <p><em>"Paso 1: Se promocionan publicaciones desde la app móvil con el botón 'Promocionar'. Meta busca gente propensa a dar 'me gusta', no gente interesada en matricularse."</em></p>
-        <p><em>"Paso 2: WhatsApp se llena de mensajes de curiosos que preguntan '¿precio?' y desaparecen."</em></p>
-        <p><em>"Paso 3: El equipo comercial se agota de responder a 50 curiosos al día y entra en modo 'informador pasivo' (manda el PDF y la lista de precios)."</em></p>
-        <p><em>"Paso 4: Cuando finalmente entra un prospecto valioso listo para inscribirse, se le atiende con la misma inercia pasiva y se pierde la matrícula."</em></p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <div class="block-title title-defensa">🛡️ Escudo de Defensa (Si los comerciales se sienten atacados)</div>
-      <div class="defense-box">
-        <div class="qa-item">
-          <div class="qa-q">❓ ¿Están diciendo que nuestras vendedoras trabajan mal?</div>
-          <div class="qa-a">💬 <strong>Respuesta:</strong> <em>"Para nada. El equipo hace un esfuerzo enorme. El problema es el filtro inicial: si les mandamos 100 consultas sin filtro, es humano que se agoten enviando precios. Lo que proponemos es mandarles leads mucho más calificados para que su tiempo rinda en cierres."</em></div>
-        </div>
-      </div>
+    <div class="block-title title-guion">🗣️ Guión de Exposición (Primera Persona)</div>
+    <div class="speech-box">
+      <p>"Analizando todo el circuito, descubrí lo que definí como un <strong>Bucle de Ineficiencia</strong> entre la pauta publicitaria y el canal de ventas. Les explico cómo funciona este círculo:"</p>
+      <p>"En primer lugar, cuando promocionamos publicaciones directamente desde la aplicación del celular con el botón 'Promocionar', el algoritmo de Meta nos busca usuarios propensos a dar 'likes' o comentar, pero no personas con intención real de compra o inscripción."</p>
+      <p>"Eso provoca que WhatsApp se llene de mensajes de curiosos que preguntan '¿precio?' y no responden más. Ante ese volumen de mensajes poco calificados, el equipo comercial se agota y entra en un rol reactivo de 'informador pasivo' (envía el archivo PDF y la lista de precios)."</p>
+      <p>"El problema final es que cuando entra un prospecto valioso, con intención real de inscribirse, se le atiende con esa misma inercia y terminamos perdiendo matrículas potenciales por falta de un seguimiento activo."</p>
     </div>
   </div>
 
@@ -288,29 +224,14 @@ h1 {
     <span class="slide-tag">DIAPOSITIVA 04</span>
     <h2 class="slide-title">Meta Business Portfolios Independientes por Sede</h2>
 
-    <div class="section-block">
-      <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">Aclarar que cada filial es independiente y requiere su PROPIO Meta Business Portfolio legal y separado (Córdoba completar vinculaciones vs Río Cuarto crear desde cero).</p>
-    </div>
+    <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
+    <div class="objetivo-text">Establecer que Córdoba y Río Cuarto son filiales independientes que requieren su PROPIO Business Portfolio legal y dedicado, sin compartir estructuras.</div>
 
-    <div class="section-block">
-      <div class="block-title title-guion">🗣️ Guión Hablado (Palabras Clave)</div>
-      <div class="speech-box">
-        <p><em>"Un punto crítico de infraestructura: IGA Córdoba e IGA Río Cuarto son dos filiales independientes. Por lo tanto, <strong>cada sede debe contar con su propio Meta Business Portfolio 100% separado y dedicado</strong>."</em></p>
-        <p><em>"<strong>En Córdoba:</strong> El Portfolio ya está creado, pero faltan vincular correctamente la cuenta publicitaria, la Fanpage, Instagram y el Píxel bajo el mismo techo."</em></p>
-        <p><em>"<strong>En Río Cuarto:</strong> Todavía no tienen Portfolio propio y la pauta se maneja desde celulares personales."</em></p>
-        <p><em>"Tener un Portfolio propio garantiza la propiedad legal de las páginas en cada sede, la autonomía contable y evita que si un empleado se va, se lleve los accesos o seguidores."</em></p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <div class="block-title title-defensa">🛡️ Escudo de Defensa (Si preguntan si pueden compartir un solo Portfolio)</div>
-      <div class="defense-box">
-        <div class="qa-item">
-          <div class="qa-q">❓ ¿No sería más fácil tener un solo Business Portfolio para ambas ciudades?</div>
-          <div class="qa-a">💬 <strong>Respuesta:</strong> <em>"No es recomendable por razones contables e institucionales. Cada sede es una unidad de negocio con su facturación y su equipo. Portfolios separados garantizan orden financiero total y que la pauta de una sede jamás interfiera con la otra."</em></div>
-        </div>
-      </div>
+    <div class="block-title title-guion">🗣️ Guión de Exposición (Primera Persona)</div>
+    <div class="speech-box">
+      <p>"Un aspecto central de orden institucional que quiero remarcar es la estructura de los <strong>Meta Business Portfolios</strong>. IGA Córdoba e IGA Río Cuarto son dos unidades de negocio independientes. Por lo tanto, <em>mi recomendación firme es que cada filial cuente con su propio Business Portfolio 100% separado y dedicado</em>."</p>
+      <p>"En el caso de <strong>Córdoba</strong>, el Business Portfolio ya está creado, pero requiere que completemos la vinculación formal de la cuenta publicitaria, la página de Facebook, la cuenta de Instagram y el Píxel bajo el mismo techo corporativo."</p>
+      <p>"En <strong>Río Cuarto</strong>, no contamos aún con un Portfolio propio e institucional, y la pauta se viene realizando desde cuentas personales. Instituir el Portfolio propio de Río Cuarto desde cero les dará a los dueños la propiedad legal sobre sus páginas y la independencia contable para administrar sus propios recursos sin depender de nadie."</p>
     </div>
   </div>
 
@@ -319,29 +240,15 @@ h1 {
     <span class="slide-tag">DIAPOSITIVA 05</span>
     <h2 class="slide-title">Inteligencia de Audiencias y Portfolio (Fundamentación Clave)</h2>
 
-    <div class="section-block">
-      <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">Demostrar el verdadero valor del Business Portfolio: activar la Inteligencia Artificial de Meta para buscar a los mejores alumnos y ahorrar entre un 30% y 40% en exclusiones.</p>
-    </div>
+    <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
+    <div class="objetivo-text">Explicar el valor estratégico del Business Portfolio: activar el algoritmo de Meta para buscar a los mejores alumnos y ahorrar entre 30% y 40% recortando desvíos.</div>
 
-    <div class="section-block">
-      <div class="block-title title-guion">🗣️ Guión Hablado (Palabras Clave)</div>
-      <div class="speech-box">
-        <p><em>"Esta es la razón N°1 por la cual el Business Portfolio es vital: <strong>activa la Inteligencia de Audiencias de Meta</strong>. Sin Portfolio, la plataforma promociona a ciegas."</em></p>
-        <p><em>"1. <strong>Públicos Personalizados:</strong> Nos permite subir la lista de alumnos matriculados y consultas de WhatsApp para volver a impactar a quienes mostraron verdadero interés."</em></p>
-        <p><em>"2. <strong>Públicos Similares (Lookalikes):</strong> Le pedimos a la Inteligencia Artificial de Meta que busque en Córdoba o Río Cuarto a miles de personas que se parezcan sociodemográficamente a los mejores alumnos que ya se inscribieron en IGA."</em></p>
-        <p><em>"3. <strong>Exclusión de Matriculados:</strong> Le ordenamos a Meta que NO le muestre publicidad a quienes ya son alumnos activos de IGA. Solo con esta regla nos ahorramos entre un 30% y 40% del presupuesto que antes se tiraba a la basura."</em></p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <div class="block-title title-defensa">🛡️ Escudo de Defensa (Si dudan sobre subir la base de datos de alumnos)</div>
-      <div class="defense-box">
-        <div class="qa-item">
-          <div class="qa-q">❓ ¿Es seguro subir la base de datos de los alumnos a Meta?</div>
-          <div class="qa-a">💬 <strong>Respuesta:</strong> <em>"Totalmente seguro. Meta procesa las listas mediante un sistema de encriptación llamado Hashing. Nadie ve los datos privados, solo se usan de forma matemática para emparejar perfiles."</em></div>
-        </div>
-      </div>
+    <div class="block-title title-guion">🗣️ Guión de Exposición (Primera Persona)</div>
+    <div class="speech-box">
+      <p>"Les quiero explicar por qué tener este Business Portfolio bien configurado en cada sede cambia por completo la rentabilidad de las audiencias:"</p>
+      <p>"1. <strong>Públicos Personalizados:</strong> Nos permite cargar las bases de datos de los alumnos ya matriculados en IGA. Con esto podemos hacer campañas de retargeting de alta intención sobre personas que consultaron pero aún no se inscribieron."</p>
+      <p>"2. <strong>Públicos Similares (Lookalikes 1%-3%):</strong> Le ordenamos a la Inteligencia Artificial de Meta que analice el perfil socio-demográfico de nuestros mejores alumnos y busque en Córdoba y Río Cuarto a miles de personas que tengan exactamente los mismos intereses y comportamientos de compra."</p>
+      <p>"3. <strong>Exclusión de Matriculados:</strong> Le indicamos a Meta que NO le muestre publicidad a quienes ya son alumnos activos de la institución. Solamente con esta regla nos ahorramos entre un 30% y un 40% del presupuesto que antes gastábamos en mostrarle anuncios a personas que ya pagan su cuota."</p>
     </div>
   </div>
 
@@ -350,59 +257,32 @@ h1 {
     <span class="slide-tag">DIAPOSITIVA 06</span>
     <h2 class="slide-title">Rendimiento Creativo por Formato (Reels vs Carruseles vs Estáticos)</h2>
 
-    <div class="section-block">
-      <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">Demostrar empíricamente que los videos verticales (Reels) consiguen leads 8.5 veces más baratos que los gráficos estáticos.</p>
-    </div>
+    <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
+    <div class="objetivo-text">Demostrar con datos empíricos que los Reels en video son el formato ganador ($1.158 CPA) frente a las imágenes estáticas ($9.896 CPA).</div>
 
-    <div class="section-block">
-      <div class="block-title title-guion">🗣️ Guión Hablado (Palabras Clave)</div>
-      <div class="speech-box">
-        <p><em>"Analizamos qué formatos de anuncios rinden mejor y la conclusión es contundente:"</em></p>
-        <p><em>"🎬 <strong>REELS (Video Corto 9:16): ES EL GANADOR ABSOLUTO.</strong> El anuncio de 'Cocineritos en Acción' en video logró un costo por consulta récord de <strong>$1.158 pesos</strong>. Mostrar la experiencia real de cocina genera emoción inmediata."</em></p>
-        <p><em>"🎴 <strong>CARRUSELES: EFICIENCIA MEDIA.</strong> Con costos de $2.492 a $3.500 pesos. Funcionan muy bien para mostrar la oferta completa de cursos."</em></p>
-        <p><em>"🖼️ <strong>IMÁGENES ESTÁTICAS (Banners): SON MUY INEFICIENTES.</strong> Anuncios como 'Últimos Cupos' alcanzaron un costo por consulta disparado de <strong>$9.896 pesos</strong> (8.5 veces más caro). La gente ya no mira flyers estáticos."</em></p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <div class="block-title title-defensa">🛡️ Escudo de Defensa (Si dicen que no tienen equipo para hacer videos)</div>
-      <div class="defense-box">
-        <div class="qa-item">
-          <div class="qa-q">❓ Grabar videos es muy difícil y no tenemos tiempo.</div>
-          <div class="qa-a">💬 <strong>Respuesta:</strong> <em>"No necesitamos producciones de cine. Los Reels que mejor funcionan son los grabados con un celular mostrando a los chicos cocinando o a los profesores en acción. Son auténticos, económicos y generan 8 veces más consultas por el mismo presupuesto."</em></div>
-        </div>
-      </div>
+    <div class="block-title title-guion">🗣️ Guión de Exposición (Primera Persona)</div>
+    <div class="speech-box">
+      <p>"Cuando analicé el rendimiento según el formato del anuncio, los datos fueron contundentes:"</p>
+      <p>"🎬 <strong>REELS (Video Corto 9:16) — EL FORMATO GANADOR:</strong> El anuncio en video de 'Cocineritos en Acción' logró un costo por consulta récord de <strong>$1.158 pesos</strong>. Mostrar la experiencia real de la clase de cocina genera un impacto emocional y una tasa de respuesta inmediata."</p>
+      <p>"🎴 <strong>CARRUSELES — MEDIANA EFICIENCIA:</strong> Tuvieron costos entre <strong>$2.492 y $3.500 pesos</strong>. Son excelentes para mostrar la oferta completa de carreras y talleres."</p>
+      <p>"🖼️ <strong>IMÁGENES ESTÁTICAS (Banners) — MUY INEFICIENTES:</strong> Piezas como 'Últimos Cupos' alcanzaron costos por consulta desorbitados de <strong>$9.896 pesos</strong> (8.5 veces más caros). Hoy la gente ignora los gráficos estáticos porque sufren de ceguera de banner."</p>
     </div>
   </div>
 
   <!-- SLIDE 7 -->
   <div class="slide-box">
     <span class="slide-tag">DIAPOSITIVA 07</span>
-    <h2 class="slide-title">Mystery Shopping Comercial en WhatsApp (Córdoba vs Río Cuarto)</h2>
+    <h2 class="slide-title">Embudo Completo de Conversión Educativa (Estrategia de Contenido)</h2>
 
-    <div class="section-block">
-      <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">Mostrar los resultados del Comprador Incógnito en WhatsApp, señalando la falta de cierre en Córdoba y la demora crítica de +12hs en Río Cuarto.</p>
-    </div>
+    <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
+    <div class="objetivo-text">Presentar la arquitectura de contenido por etapas (ToFU, MoFU, BoFU) para conducir al usuario de forma natural desde la atracción hasta la matrícula.</div>
 
-    <div class="section-block">
-      <div class="block-title title-guion">🗣️ Guión Hablado (Palabras Clave)</div>
-      <div class="speech-box">
-        <p><em>"Hicimos una prueba de Mystery Shopping o Cliente Incógnito consultando por WhatsApp como usuarios reales en ambas sedes:"</em></p>
-        <p><em>"<strong>En Córdoba (Puntaje 5.8 / 10):</strong> La atención fue rápida pero puramente pasiva. Enviaron el folleto en PDF e información de precios. Cuando nuestra auditora dijo 'estoy casi segura de empezar', en lugar de matricularla le preguntaron '¿qué dudas te quedaron?'."</em></p>
-        <p><em>"<strong>En Río Cuarto (Puntaje 4.0 / 10):</strong> Encontramos una demora crítica. El primer mensaje enviado a las 9:32 AM fue respondido recién a las 21:20 PM (más de 12 horas de espera). En ventas digitales, tardar más de 15 minutos en responder hace caer la posibilidad de inscripción en un 70%."</em></p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <div class="block-title title-defensa">🛡️ Escudo de Defensa (Si en Río Cuarto justifican la demora por estar ocupados)</div>
-      <div class="defense-box">
-        <div class="qa-item">
-          <div class="qa-q">❓ Ese día la secretaria estaba sola atendiendo alumnos presenciales.</div>
-          <div class="qa-a">💬 <strong>Respuesta:</strong> <em>"Es comprensible. Por eso la solución no es exigirle más a una sola persona, sino organizar alertas de guardias o derivación para que una consulta de WhatsApp no quede 12 horas enfriándose mientras busca otra opción en Google."</em></div>
-        </div>
-      </div>
+    <div class="block-title title-guion">🗣️ Guión de Exposición (Primera Persona)</div>
+    <div class="speech-box">
+      <p>"Para solucionar esto, estructuré una estrategia de contenido basada en un <strong>Embudo de Conversión Educativa completo</strong> dividido en 3 etapas:"</p>
+      <p>"🚀 <strong>Etapa 1 — Atracción (ToFU):</strong> Usaremos únicamente Reels en video vertical mostrando los talleres prácticos, la infraestructura y el ambiente real de las cocinas. Es el imán para captar tráfico nuevo con costos bajísimos."</p>
+      <p>"🎴 <strong>Etapa 2 — Consideración (MoFU):</strong> Impactaremos a ese público interesado con Carruseles informativos y testimoniales de egresados que cuentan cómo consiguieron trabajo tras estudiar en IGA. Esto genera confianza y disipa dudas."</p>
+      <p>"💬 <strong>Etapa 3 — Conversión Directa (BoFU):</strong> Dirigiremos campañas específicas de llamada a la acción a WhatsApp, aplicando exclusiones estrictas para concentrar el presupuesto en cerrar matrículas."</p>
     </div>
   </div>
 
@@ -411,28 +291,14 @@ h1 {
     <span class="slide-tag">DIAPOSITIVA 08</span>
     <h2 class="slide-title">Roadmap Estratégico Segmentado por Sede (Plan de Acción)</h2>
 
-    <div class="section-block">
-      <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">Presentar los planes de acción ejecutivos independientes para la directiva de Córdoba y la directiva de Río Cuarto.</p>
-    </div>
+    <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
+    <div class="objetivo-text">Presentar las acciones prioritarias e independientes para la directiva de Córdoba y la directiva de Río Cuarto.</div>
 
-    <div class="section-block">
-      <div class="block-title title-guion">🗣️ Guión Hablado (Palabras Clave)</div>
-      <div class="speech-box">
-        <p><em>"Basado en este diagnóstico, armamos un Roadmap de intervención con planes de acción 100% dedicados para cada filial:"</em></p>
-        <p><em>"📍 <strong>Plan IGA Córdoba:</strong> 1) Completar las vinculaciones del Portfolio propio de Córdoba. 2) Apagar los anuncios ineficientes de $9.896 y volcar presupuesto a Reels ($1.158 CPA). 3) Capacitar al equipo en un protocolo de venta consultiva de 5 etapas para cerrar matrículas en WhatsApp."</em></p>
-        <p><em>"📍 <strong>Plan IGA Río Cuarto:</strong> 1) Crear el Business Portfolio propio de Río Cuarto desde cero y eliminar el botón 'Promocionar'. 2) Exportar historial de 6 meses para auditoría profunda. 3) Plan de choque urgente en WhatsApp para lograr respuestas en menos de 15 minutos."</em></p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <div class="block-title title-defensa">🛡️ Escudo de Defensa (Si preguntan cuánto tiempo toma implementar esto)</div>
-      <div class="defense-box">
-        <div class="qa-item">
-          <div class="qa-q">❓ ¿Cuánto tiempo nos va a llevar poner todo esto en marcha?</div>
-          <div class="qa-a">💬 <strong>Respuesta:</strong> <em>"Las primeras dos fases (Portfolios y reestructuración de anuncios) se resuelven en las primeras 2 semanas. El entrenamiento de WhatsApp se implementa durante el segundo mes. Los resultados en reducción de costos se ven desde la primera semana."</em></div>
-        </div>
-      </div>
+    <div class="block-title title-guion">🗣️ Guión de Exposición (Primera Persona)</div>
+    <div class="speech-box">
+      <p>"Sobre la base de este diagnóstico, diseñé un Roadmap de intervención con planes de acción 100% dedicados para cada filial:"</p>
+      <p>"📍 <strong>Para IGA Córdoba:</strong> Mi plan contempla: 1) Completar la vinculación de activos en su Portfolio propio. 2) Apagar de inmediato los anuncios estáticos de $9.896 y reasignar el 42% del presupuesto a los Reels de $1.158. 3) Capacitar al equipo en un protocolo de venta consultiva de 5 etapas para cerrar más matrículas por WhatsApp."</p>
+      <p>"📍 <strong>Para IGA Río Cuarto:</strong> Mi plan contempla: 1) Instituir el Business Portfolio propio desde cero y eliminar el botón 'Promocionar'. 2) Exportar el historial de 6 meses para la auditoría semestral completa. 3) Implementar un plan de choque comercial en WhatsApp enfocado en responder en menos de 15 minutos."</p>
     </div>
   </div>
 
@@ -441,30 +307,16 @@ h1 {
     <span class="slide-tag">DIAPOSITIVA 09</span>
     <h2 class="slide-title">Cierre y Resultado Esperado</h2>
 
-    <div class="section-block">
-      <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
-      <p style="font-size: 0.9rem; color: var(--text-muted);">Cerrar la presentación con una propuesta de valor clara y dar paso a la firma / aprobación de la intervención.</p>
-    </div>
+    <div class="block-title title-objetivo">🎯 Objetivo de la Diapositiva</div>
+    <div class="objetivo-text">Cerrar la presentación destacando los 3 grandes beneficios tangibles para los dueños y abrir el espacio para iniciar la ejecución.</div>
 
-    <div class="section-block">
-      <div class="block-title title-guion">🗣️ Guión Hablado (Palabras Clave)</div>
-      <div class="speech-box">
-        <p><em>"Para resumir, ¿qué va a lograr IGA con esta intervención?"</em></p>
-        <p><em>"1. <strong>Más Matrículas con la Misma Inversión:</strong> Reasignando el 42% del dinero que antes se desperdiciaba en anuncios ineficientes hacia los Reels que sí convierten."</em></p>
-        <p><em>"2. <strong>Atención Ágil (&lt; 15 min):</strong> Captando el interés de los prospectos antes de que se enfríen."</em></p>
-        <p><em>"3. <strong>Control y Seguridad Total:</strong> Portfolios propios e independientes para Córdoba y Río Cuarto, garantizando el dominio institucional sobre los activos digitales."</em></p>
-        <p><em>"Estamos listos para comenzar con la Fase 1 esta misma semana. Les agradezco mucho y quedo a disposición para responder cualquier duda que tengan."</em></p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <div class="block-title title-defensa">🛡️ Escudo de Defensa (Si preguntan por la inversión adicional)</div>
-      <div class="defense-box">
-        <div class="qa-item">
-          <div class="qa-q">❓ ¿Tenemos que poner más dinero en publicidad en Meta?</div>
-          <div class="qa-a">💬 <strong>Respuesta:</strong> <em>"No hace falta aumentar el presupuesto publicitario. La meta de esta intervención es hacer rendir el mismo presupuesto actual de forma inteligente, cortando los desvíos y duplicando la eficiencia."</em></div>
-        </div>
-      </div>
+    <div class="block-title title-guion">🗣️ Guión de Exposición (Primera Persona)</div>
+    <div class="speech-box">
+      <p>"Para resumir nuestra propuesta, ¿qué va a lograr IGA con la implementación de este plan?"</p>
+      <p>"1. <strong>Más Matrículas con la Misma Inversión:</strong> Al reasignar el 42% del dinero que hoy se pierde en anuncios ineficientes hacia los contenidos en video que sí convierten."</p>
+      <p>"2. <strong>Atención Comercial Eficiente (&lt; 15 min):</strong> Captando a los prospectos en su momento de mayor entusiasmo antes de que busquen alternativas."</p>
+      <p>"3. <strong>Control Institucional y Seguridad:</strong> Portfolios propios e independientes para Córdoba y Río Cuarto, garantizando el orden contable y la propiedad legal de todos sus activos digitales."</p>
+      <p>"Les agradezco enormemente su atención. Estoy lista para que comencemos con la primera fase esta misma semana y quedo abierta a escuchar sus comentarios."</p>
     </div>
   </div>
 
