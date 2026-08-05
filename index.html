@@ -594,15 +594,74 @@ tr:hover td { background: rgba(255, 255, 255, 0.015); }
   justify-content: center;
 }
 .step-content h4 {
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   color: #FFF;
   font-weight: 700;
-  margin-bottom: 4px;
+  margin: 0;
 }
 .step-content p {
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   color: var(--text-muted);
-  margin: 0;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.step-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.tag-time {
+  background: var(--primary-glow);
+  color: var(--primary-light);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.roadmap-actions {
+  margin: 10px 0 14px 18px;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.roadmap-actions li {
+  margin-bottom: 6px;
+}
+.roadmap-actions li strong {
+  color: var(--text-main);
+}
+.roadmap-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.8rem;
+}
+.meta-box {
+  background: var(--surface-accent);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+.meta-box-title {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  color: var(--primary-light);
+  margin-bottom: 4px;
+}
+.meta-box-text {
+  color: var(--text-main);
+  line-height: 1.45;
 }
 
 /* FOOTER */
@@ -2374,42 +2433,166 @@ footer {
       <h2>Roadmap Estratégico de Intervención Recomendado</h2>
     </div>
 
+    <p style="margin-bottom: 20px; color: var(--text-muted);">Plan ejecutivo de 5 fases diseñado específicamente para que la directiva de <strong>IGA Córdoba e IGA Río Cuarto</strong> tome decisiones inmediatas de gobernanza, eficiencia publicitaria y aceleración comercial.</p>
+
     <div class="roadmap-list">
+
+      <!-- FASE 1 -->
       <div class="roadmap-step">
         <div class="step-number">01</div>
         <div class="step-content">
-          <h4>Fase 1: Consolidación de Infraestructura y Gobierno de Activos</h4>
-          <p>Crear e instituir el Meta Business Portfolio formal a nombre de IGA. Centralizar Cuentas Publicitarias, Páginas de FB, Cuentas de IG, Píxeles e implementar Conversions API (CAPI) con verificación de dominios para ambas filiales.</p>
+          <div class="step-header-flex">
+            <h4>Fase 1: Consolidación de Infraestructura Digital y Gobierno de Activos</h4>
+            <span class="tag-time">Semana 1 · Días 1 a 7</span>
+          </div>
+          <p><strong>Objetivo Principal:</strong> Instituir la propiedad institucional de todos los activos digitales de IGA y eliminar el riesgo operativo de operar sobre perfiles personales o accesos informales.</p>
+          
+          <ul class="roadmap-actions">
+            <li><strong>Creación del Portfolio Centralizado:</strong> Constituir e instituir el <code>Meta Business Portfolio</code> formal a nombre de la razón social de IGA.</li>
+            <li><strong>Vinculación de Activos Digitales:</strong> Reclamar y centralizar la propiedad técnica de Cuentas Publicitarias, Páginas de Facebook, Cuentas de Instagram (Córdoba y Río Cuarto) y Píxeles de seguimiento.</li>
+            <li><strong>Verificación de Dominio Institucional:</strong> Realizar el proceso de verificación del dominio web de IGA ante Meta mediante registros DNS.</li>
+            <li><strong>Implementación de Conversions API (CAPI):</strong> Configurar el seguimiento de servidor a servidor para recuperar entre un 20% y 35% de los eventos de conversión que actualmente bloquean los navegadores y iOS.</li>
+          </ul>
+
+          <div class="roadmap-meta">
+            <div class="meta-box">
+              <div class="meta-box-title">Impacto en Negocio</div>
+              <div class="meta-box-text">Seguridad total sobre los activos de marca, gobierno centralizado de permisos y medición exacta del retorno publicitario.</div>
+            </div>
+            <div class="meta-box">
+              <div class="meta-box-title">Checkpoint de Control</div>
+              <div class="meta-box-text">Tilde verde de Dominio Verificado en Meta Business Manager y CAPI reportando eventos de servidor en tiempo real.</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- FASE 2 -->
       <div class="roadmap-step">
         <div class="step-number">02</div>
         <div class="step-content">
-          <h4>Fase 2: Arquitectura de Pauta en Meta Ads Manager</h4>
-          <p>Eliminar el uso del botón "Promocionar" en ambas sedes. Reestructurar la pauta en Ads Manager dividiendo campañas por Sede Geográfica (Córdoba vs. Río Cuarto) y por Objetivo de Conversión Directa (Leads de WhatsApp con exclusión de matriculados).</p>
+          <div class="step-header-flex">
+            <h4>Fase 2: Arquitectura de Pauta Profesional en Meta Ads Manager</h4>
+            <span class="tag-time">Semana 2 · Días 7 a 14</span>
+          </div>
+          <p><strong>Objetivo Principal:</strong> Erradicar la pauta informal ("Botón Promocionar") e implementar una estructura profesional orientada 100% a la captación de leads calificados por WhatsApp.</p>
+          
+          <ul class="roadmap-actions">
+            <li><strong>Cese del Botón Promocionar:</strong> Eliminar de forma definitiva el uso de "Promocionar Publicación" en las aplicaciones móviles de Facebook e Instagram en ambas filiales.</li>
+            <li><strong>Segmentación Geográfica Dedicada:</strong> Estructurar campañas independientes en Ads Manager para Córdoba Capital y Río Cuarto, evitando la sobreposición o canibalización de presupuestos.</li>
+            <li><strong>Alineación Algorítmica de Conversión:</strong> Configurar el 100% de la pauta bajo el objetivo de <code>Generación de Clientes Potenciales / Mensajes Directos a WhatsApp</code> (descartando la compra de likes vacíos de "Interacción").</li>
+            <li><strong>Reglas de Exclusión Activa de Audiencia:</strong> Aplicar filtros obligatorios para excluir de los anuncios a alumnos matriculados actuales y bases de contactos recientes, evitando malgastar dinero en quien ya es cliente.</li>
+          </ul>
+
+          <div class="roadmap-meta">
+            <div class="meta-box">
+              <div class="meta-box-title">Impacto en Negocio</div>
+              <div class="meta-box-text">Eliminación inmediata de clics accidentales. Entrada exclusiva de prospectos con intención real de matricularse.</div>
+            </div>
+            <div class="meta-box">
+              <div class="meta-box-title">Checkpoint de Control</div>
+              <div class="meta-box-text">Estructura activa en Ads Manager con objetivo Leads y reglas de exclusión verificables.</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- FASE 3 -->
       <div class="roadmap-step">
         <div class="step-number">03</div>
         <div class="step-content">
-          <h4>Fase 3: Auditoría Numérica Semestral e Integración de Río Cuarto</h4>
-          <p>Solicitar el acceso formal al historial publicitario de 6 meses de IGA Río Cuarto para realizar el análisis cuantitativo completo y estructurar sus campañas dedicadas en Ads Manager.</p>
+          <div class="step-header-flex">
+            <h4>Fase 3: Auditoría Numérica Semestral e Integración de IGA Río Cuarto</h4>
+            <span class="tag-time">Semana 3 · Días 14 a 21</span>
+          </div>
+          <p><strong>Objetivo Principal:</strong> Otorgar a la filial de Río Cuarto el mismo nivel de trazabilidad cuantitativa y control estadístico desarrollado en esta auditoría para Córdoba.</p>
+          
+          <ul class="roadmap-actions">
+            <li><strong>Acceso Histórico Semestral:</strong> Gestionar el acceso administrativo formal al historial publicitario de los últimos 6 meses de IGA Río Cuarto.</li>
+            <li><strong>Consolidación Cuantitativa N=Río4:</strong> Realizar el análisis de dispersión, medianas de CPA/CTR/CPC y detección de anuncios outliers en Río Cuarto.</li>
+            <li><strong>Creación de Cuenta Publicitaria Dedicada:</strong> Estructurar la cuenta publicitaria de Río Cuarto bajo el mismo Business Portfolio central pero con administración de presupuesto independiente.</li>
+          </ul>
+
+          <div class="roadmap-meta">
+            <div class="meta-box">
+              <div class="meta-box-title">Impacto en Negocio</div>
+              <div class="meta-box-text">Visibilidad ejecutiva comparativa en tiempo real entre Córdoba y Río Cuarto para redistribuir presupuesto hacia la plaza más rentable.</div>
+            </div>
+            <div class="meta-box">
+              <div class="meta-box-title">Checkpoint de Control</div>
+              <div class="meta-box-text">Informe cuantitativo semestral de Río Cuarto presentado e integración completa a la plataforma centralizada.</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- FASE 4 -->
       <div class="roadmap-step">
         <div class="step-number">04</div>
         <div class="step-content">
-          <h4>Fase 4: Reasignación Presupuestaria y Escala de Creativos Ganadores</h4>
-          <p>Redirigir el 42,1% del presupuesto quemado en "Engagement" hacia los creativos ganadores identificados (ej. "Cocineritos en Acción", CPA $1.158 ARS), escalando volumen de prospectos calificados.</p>
+          <div class="step-header-flex">
+            <h4>Fase 4: Reasignación Presupuestaria y Escala de Creativos Ganadores</h4>
+            <span class="tag-time">Semanas 3 y 4 · Días 15 a 30</span>
+          </div>
+          <p><strong>Objetivo Principal:</strong> Recuperar el 42,1% del presupuesto desperdiciado en campañas ineficientes y volcarlo hacia las piezas creativas de alta conversión comprobada.</p>
+          
+          <ul class="roadmap-actions">
+            <li><strong>Apagado de Anuncios Ineficientes:</strong> Desactivar de inmediato todos los anuncios categorizados como outliers ineficientes (CPA > $4.750 ARS, con picos de hasta $9.896 ARS).</li>
+            <li><strong>Inyección en Anuncios Ganadores:</strong> Reasignar el presupuesto liberado hacia las piezas de alto rendimiento validadas (ej. *"Cocineritos en Acción"* con CPA de $1.158 ARS y *"Convertí tu pasión"* con CPA de $2.492 ARS).</li>
+            <li><strong>Producción Continua de Variaciones:</strong> Generar nuevas piezas visuales en formato Reels (9:16) basadas en los ángulos de los anuncios ganadores (testimonios reales, talleres prácticos en vivo).</li>
+            <li><strong>Protocolo de Reglas Automáticas:</strong> Programar reglas en Ads Manager para pausar automáticamente cualquier anuncio que supere un CPA de $4.750 ARS en 48 horas.</li>
+          </ul>
+
+          <div class="roadmap-meta">
+            <div class="meta-box">
+              <div class="meta-box-title">Impacto en Negocio</div>
+              <div class="meta-box-text">Reducción del costo promedio por consulta en un 30% a 40%, generando más consultas sin requerir mayor presupuesto a los dueños.</div>
+            </div>
+            <div class="meta-box">
+              <div class="meta-box-title">Checkpoint de Control</div>
+              <div class="meta-box-text">CPA mediano consolidado mensual por debajo de los $2.500 ARS en ambas sedes.</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- FASE 5 -->
       <div class="roadmap-step">
         <div class="step-number">05</div>
         <div class="step-content">
-          <h4>Fase 5: Protocolo de Venta Consultiva en WhatsApp</h4>
-          <p>Implementar el protocolo comercial de 5 etapas (Descubrimiento, Recomendación, Beneficios, Objeciones, Cierre Activo y Seguimiento) para eliminar la atención reactiva e incrementar la tasa de matrícula sin aumentar gasto en pauta.</p>
+          <div class="step-header-flex">
+            <h4>Fase 5: Protocolo de Venta Consultiva y Control Operativo en WhatsApp</h4>
+            <span class="tag-time">Mes 2 · Transición Comercial</span>
+          </div>
+          <p><strong>Objetivo Principal:</strong> Transformar la atención comercial de un esquema pasivo ("informadores de precios") a un proceso proactivo de venta consultiva con tiempos de respuesta estrictos.</p>
+          
+          <ul class="roadmap-actions">
+            <li><strong>Estándar de Tiempo de Respuesta:</strong> Fijar como meta operativa un tiempo de respuesta inicial menor a 15 minutos en horario comercial (erradicando la demora de +12hs detectada en Río Cuarto).</li>
+            <li><strong>Protocolo Comercial de 5 Etapas:</strong>
+              <ul>
+                <li><code>1. Descubrimiento:</code> Indagar la motivación del cliente (salida laboral vs. afición personal).</li>
+                <li><code>2. Recomendación:</code> Presentar el programa o taller ajustado a su expectativa.</li>
+                <li><code>3. Argumentación de Valor:</code> Destacar beneficios exclusivos (título, instalaciones, insumos incluidos).</li>
+                <li><code>4. Manejo de Objeciones:</code> Resolver dudas sobre costos o flexibilidades horarias.</li>
+                <li><code>5. Cierre Activo:</code> Invitar a la reserva de vacante o enviar link de pre-inscripción directa.</li>
+              </ul>
+            </li>
+            <li><strong>Cadencia de Seguimiento Proactivo (3 Contactos):</strong> Implementar una secuencia de seguimiento estructurada (a las 24hs, 48hs y 5 días) para recuperar prospectos que no respondieron de inmediato.</li>
+          </ul>
+
+          <div class="roadmap-meta">
+            <div class="meta-box">
+              <div class="meta-box-title">Impacto en Negocio</div>
+              <div class="meta-box-text">Incremento de la tasa de conversión de consulta a matrícula del 20% al 35%, convirtiendo más ventas con la misma pauta.</div>
+            </div>
+            <div class="meta-box">
+              <div class="meta-box-title">Checkpoint de Control</div>
+              <div class="meta-box-text">Segunda auditoría Mystery Shopping con puntajes de atención comercial superiores a 8.5/10 en ambas filiales.</div>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
