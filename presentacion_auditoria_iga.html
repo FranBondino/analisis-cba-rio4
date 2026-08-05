@@ -10,9 +10,9 @@
 <style>
 :root {
   --bg-dark: #05070B;
-  --bg-card: #0D121D;
+  --bg-card: rgba(13, 18, 29, 0.85);
   --surface-accent: #141A28;
-  --border: #232D42;
+  --border: rgba(255, 255, 255, 0.08);
   --primary: #6366F1;
   --primary-light: #818CF8;
   --text-main: #F3F4F6;
@@ -41,6 +41,7 @@ html, body {
   height: 100dvh;
   position: relative;
   overflow: hidden;
+  background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, rgba(5, 7, 11, 1) 70%);
 }
 
 /* SLIDE BASE */
@@ -59,7 +60,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 20px 75px 20px;
+  padding: 40px 50px 85px 50px;
   overflow-y: auto;
 }
 
@@ -72,7 +73,7 @@ html, body {
 
 .slide-content {
   width: 100%;
-  max-width: 1040px;
+  max-width: 1140px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -89,25 +90,25 @@ html, body {
   color: var(--primary-light);
   border: 1px solid rgba(99, 102, 241, 0.25);
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(0.6rem, 2.5vw, 0.75rem);
+  font-size: clamp(0.65rem, 2.2vw, 0.78rem);
   font-weight: 700;
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   align-self: flex-start;
   max-width: 100%;
 }
 
 h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.4rem, 5.5vw, 3rem);
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: clamp(1.8rem, 6vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.25;
   color: #FFF;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
   word-break: normal;
   overflow-wrap: break-word;
 }
@@ -116,11 +117,11 @@ h1 span { color: var(--primary-light); }
 
 h2 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.15rem, 4vw, 2.1rem);
-  font-weight: 700;
+  font-size: clamp(1.3rem, 4.5vw, 2.3rem);
+  font-weight: 800;
   color: #FFF;
-  margin-bottom: 10px;
-  letter-spacing: -0.3px;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
   word-break: normal;
   overflow-wrap: break-word;
 }
@@ -128,43 +129,50 @@ h2 {
 h2 span { color: var(--primary-light); }
 
 p.subtitle {
-  font-size: clamp(0.85rem, 2.8vw, 1.08rem);
+  font-size: clamp(0.9rem, 2.8vw, 1.12rem);
   color: var(--text-muted);
-  line-height: 1.6;
-  max-width: 860px;
-  margin-bottom: 22px;
+  line-height: 1.65;
+  max-width: 900px;
+  margin-bottom: 26px;
 }
 
 /* GRIDS & CARDS */
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
   width: 100%;
 }
 
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   width: 100%;
 }
 
 .grid-4 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
   width: 100%;
 }
 
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 18px;
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 22px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .card.accent-red { border-left: 4px solid var(--accent-red); }
@@ -173,54 +181,54 @@ p.subtitle {
 .card.accent-primary { border-left: 4px solid var(--primary); }
 
 .card-title {
-  font-size: clamp(0.7rem, 2.3vw, 0.82rem);
+  font-size: clamp(0.72rem, 2.2vw, 0.85rem);
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 1px;
   color: var(--text-muted);
   font-weight: 700;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .stat-num {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.4rem, 5vw, 2.4rem);
-  font-weight: 700;
+  font-size: clamp(1.6rem, 5.5vw, 2.6rem);
+  font-weight: 800;
   color: #FFF;
-  margin: 6px 0 4px 0;
+  margin: 8px 0 6px 0;
 }
 
 .card-subtext {
-  font-size: clamp(0.72rem, 2.3vw, 0.82rem);
+  font-size: clamp(0.76rem, 2.4vw, 0.86rem);
   color: var(--text-muted);
-  line-height: 1.45;
+  line-height: 1.55;
 }
 
 /* LOOP DIAGRAM */
 .loop-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   width: 100%;
 }
 
 .loop-step {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px 16px;
+  border-radius: 12px;
+  padding: 16px 20px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
 }
 
 .loop-step-num {
   background: var(--primary);
   color: #FFF;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(0.8rem, 2.8vw, 1rem);
+  font-size: clamp(0.85rem, 2.8vw, 1.05rem);
   font-weight: 700;
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -230,46 +238,15 @@ p.subtitle {
 
 .loop-step-text strong {
   color: #FFF;
-  font-size: clamp(0.8rem, 2.6vw, 0.94rem);
+  font-size: clamp(0.85rem, 2.6vw, 0.98rem);
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 .loop-step-text span {
   color: var(--text-muted);
-  font-size: clamp(0.72rem, 2.3vw, 0.84rem);
-  line-height: 1.4;
-}
-
-/* ROADMAP LIST */
-.roadmap-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-
-.roadmap-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px 16px;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.roadmap-num {
-  background: rgba(99, 102, 241, 0.15);
-  color: var(--primary-light);
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 4px;
-  flex-shrink: 0;
-  letter-spacing: 0.5px;
+  font-size: clamp(0.76rem, 2.3vw, 0.86rem);
+  line-height: 1.5;
 }
 
 /* NAVIGATION UI */
@@ -278,37 +255,37 @@ p.subtitle {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 54px;
+  height: 60px;
   background: rgba(5, 7, 11, 0.95);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 24px;
   z-index: 100;
 }
 
 .nav-counter {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   font-weight: 600;
 }
 
 .nav-buttons {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .nav-btn {
   background: var(--bg-card);
   border: 1px solid var(--border);
   color: var(--text-main);
-  padding: 6px 14px;
-  border-radius: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -321,7 +298,7 @@ p.subtitle {
 
 .logo-footer {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -329,68 +306,21 @@ p.subtitle {
 
 .logo-footer span { color: var(--primary-light); }
 
-/* COMPARISON TABLE */
-.table-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-table.slide-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 8px;
-  font-size: clamp(0.72rem, 2.3vw, 0.84rem);
-}
-
-table.slide-table th {
-  background: var(--surface-accent);
-  color: #FFF;
-  padding: 10px 12px;
-  text-align: left;
-  font-family: 'Space Grotesk', sans-serif;
-  border-bottom: 1px solid var(--border);
-  font-size: clamp(0.65rem, 2vw, 0.75rem);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-table.slide-table td {
-  padding: 10px 12px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-muted);
-  line-height: 1.45;
-}
-
-table.slide-table td strong { color: #FFF; }
-
-.pill-tag {
-  display: inline-block;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.pill-green { background: rgba(16, 185, 129, 0.15); color: var(--accent-green); border: 1px solid rgba(16, 185, 129, 0.3); }
-.pill-red { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); border: 1px solid rgba(239, 68, 68, 0.3); }
-
 /* MOBILE RESPONSIVE ADAPTATIONS */
-@media (max-width: 600px) {
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .grid-3 { grid-template-columns: 1fr; }
-  .grid-2 { grid-template-columns: 1fr; }
+@media (max-width: 768px) {
+  .slide { padding: 24px 20px 80px 20px; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .grid-3 { grid-template-columns: 1fr; gap: 12px; }
+  .grid-2 { grid-template-columns: 1fr; gap: 12px; }
+  .card { padding: 16px 18px; }
   .logo-footer { display: none; }
-  .slide { padding: 14px 14px 65px 14px; }
-  .badge { max-width: 100%; white-space: normal; }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 650px) {
   .slide-content { max-height: 85vh; }
-  p.subtitle { margin-bottom: 8px; }
-  h2 { margin-bottom: 4px; }
-  .badge { margin-bottom: 4px; }
+  p.subtitle { margin-bottom: 12px; }
+  h2 { margin-bottom: 6px; }
+  .badge { margin-bottom: 6px; }
 }
 </style>
 </head>
@@ -450,7 +380,7 @@ table.slide-table td strong { color: #FFF; }
         <div class="loop-step">
           <div class="loop-step-num">1</div>
           <div class="loop-step-text">
-            <strong>Pauta ejecutada por "Boton Promocionar" (Boosted Posts)</strong>
+            <strong>Pauta ejecutada por "Botón Promocionar" (Boosted Posts)</strong>
             <span>Optimizada por el algoritmo para generar interacción (likes), no prospectos con intención de compra real.</span>
           </div>
         </div>
@@ -479,7 +409,7 @@ table.slide-table td strong { color: #FFF; }
     </div>
   </div>
 
-  <!-- SLIDE 4: INFRAESTRUCTURA TÉCNICA Y BUSINESS PORTFOLIO POR SEDE -->
+  <!-- SLIDE 4: INFRAESTRUCTURA TÉCNICA Y PORTFOLIOS POR SEDE -->
   <div class="slide">
     <div class="slide-content">
       <div class="badge">03. INFRAESTRUCTURA TÉCNICA</div>
@@ -489,21 +419,21 @@ table.slide-table td strong { color: #FFF; }
       <div class="grid-3">
         <div class="card accent-primary">
           <div class="card-title">Propiedad Legal por Filial</div>
-          <div style="font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted); margin-top: 6px;">
-            Evita operar sobre cuentas personales. Garantiza que páginas, Instagram y píxeles pertenezcan formalmente a la razón social de cada franquicia.
+          <div class="card-subtext">
+            Evita operar sobre cuentas personales de empleados o agencias. Garantiza que páginas, Instagram y píxeles pertenezcan formalmente a la razón social de cada franquicia.
           </div>
         </div>
 
         <div class="card accent-green">
           <div class="card-title">Conversions API (CAPI) & DNS</div>
-          <div style="font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted); margin-top: 6px;">
+          <div class="card-subtext">
             Verificación de dominios e instalación de CAPI servidor-servidor para recuperar entre un <strong>20% y 35% de conversiones</strong> bloqueadas en cada sede.
           </div>
         </div>
 
         <div class="card accent-amber">
           <div class="card-title">Autonomía Financiera & Contable</div>
-          <div style="font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted); margin-top: 6px;">
+          <div class="card-subtext">
             Portfolios 100% SEPARADOS. Ninguna sede comparte tarjeta, facturación ni accesos con la otra, manteniendo independencia total de gestión.
           </div>
         </div>
@@ -511,32 +441,32 @@ table.slide-table td strong { color: #FFF; }
     </div>
   </div>
 
-  <!-- SLIDE 5: IMPORTANCIA DE LAS AUDIENCIAS -->
+  <!-- SLIDE 5: FUNDAMENTACIÓN DE PORTFOLIO PARA INTELIGENCIA DE AUDIENCIAS -->
   <div class="slide">
     <div class="slide-content">
-      <div class="badge">04. INTELIGENCIA DE AUDIENCIAS</div>
-      <h2>Por qué <span>HOY NO TIENEN Audiencias</span> y cómo Solucionarlo</h2>
-      <p class="subtitle">Sin Portfolios vinculados ni Ads Manager, ambas filiales operan promocionando "a ciegas".</p>
+      <div class="badge">04. INTELIGENCIA DE AUDIENCIAS Y PORTFOLIO</div>
+      <h2>Por qué el Portfolio es <span>Vital para tus Audiencias</span></h2>
+      <p class="subtitle">Sin Business Portfolio ni Ads Manager, Meta opera "a ciegas" sin poder utilizar la Inteligencia Artificial de audiencias.</p>
 
       <div class="grid-3">
         <div class="card accent-red">
-          <div class="card-title" style="color:var(--accent-red);">Sin Públicos Personalizados</div>
-          <div style="font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted); margin-top: 6px;">
-            Sin Portfolio propio es IMPOSIBLE subir la base de datos de alumnos matriculados de cada sede para hacer retargeting o exclusiones.
+          <div class="card-title" style="color:var(--accent-red);">🎯 Públicos Personalizados (CRM)</div>
+          <div class="card-subtext">
+            El Business Portfolio permite subir las listas de alumnos matriculados y consultas de WhatsApp. Permite hacer retargeting exacto de alta intención y campañas de reacondicionamiento.
           </div>
         </div>
 
         <div class="card accent-amber">
-          <div class="card-title" style="color:var(--accent-amber);">Sin Públicos Similares (Lookalikes)</div>
-          <div style="font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted); margin-top: 6px;">
-            Imposible pedirle al algoritmo que busque personas idénticas (Lookalikes 1%-3%) a los mejores alumnos de cada ciudad.
+          <div class="card-title" style="color:var(--accent-amber);">🤖 Públicos Similares (Lookalikes 1%-3%)</div>
+          <div class="card-subtext">
+            Permite pedirle a la Inteligencia Artificial de Meta que busque en Córdoba y Río Cuarto a personas con el perfil socio-demográfico e intereses exactos de los mejores alumnos de IGA.
           </div>
         </div>
 
         <div class="card accent-green">
-          <div class="card-title" style="color:var(--accent-green);">Sin Exclusión de Matriculados</div>
-          <div style="font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted); margin-top: 6px;">
-            Malgasto de dinero mostrando anuncios a alumnos activos por no contar con audiencias de exclusión configuradas en cada Portfolio.
+          <div class="card-title" style="color:var(--accent-green);">🚫 Exclusión de Matriculados (Ahorro 30%-40%)</div>
+          <div class="card-subtext">
+            Evita el quemado de presupuesto al excluir automáticamente de los anuncios a quienes ya son alumnos activos o ya consultaron en los últimos 90 días.
           </div>
         </div>
       </div>
@@ -553,7 +483,7 @@ table.slide-table td strong { color: #FFF; }
       <div class="grid-3">
         <div class="card accent-green">
           <div class="card-title" style="color:var(--accent-green);">🎬 REELS (Video 9:16) — GANADOR</div>
-          <div style="font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted); margin-top: 6px;">
+          <div class="card-subtext">
             <strong>CPA Récord: $1.158 ARS</strong> (*"Cocineritos en Acción"*).<br>
             Gancho visual inmediato y alta conexión emocional mostrando la experiencia real en cocina.
           </div>
@@ -561,7 +491,7 @@ table.slide-table td strong { color: #FFF; }
 
         <div class="card accent-amber">
           <div class="card-title" style="color:var(--accent-amber);">🎴 CARRUSELES — MEDIANA EFICIENCIA</div>
-          <div style="font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted); margin-top: 6px;">
+          <div class="card-subtext">
             <strong>CPA Rango: $2.492 ARS a $3.500 ARS</strong>.<br>
             Formato interactivo ideal para mostrar el catálogo completo de talleres o carreras cortas.
           </div>
@@ -569,7 +499,7 @@ table.slide-table td strong { color: #FFF; }
 
         <div class="card accent-red">
           <div class="card-title" style="color:var(--accent-red);">🖼️ ESTÁTICOS / BANNERS — INEFICIENTES</div>
-          <div style="font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted); margin-top: 6px;">
+          <div class="card-subtext">
             <strong>CPA Desorbitado: hasta $9.896 ARS</strong> (*"Últimos Cupos"*).<br>
             Sufren de ceguera de banner y fatiga visual rápida, generando costo por lead 8.5x superior.
           </div>
@@ -588,17 +518,17 @@ table.slide-table td strong { color: #FFF; }
       <div class="grid-2">
         <div class="card accent-amber">
           <div class="card-title">Sede Córdoba (Puntaje: 5.8 / 10)</div>
-          <div style="margin-top: 6px; font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted);">
+          <div class="card-subtext">
             <p><strong>Atención Rápida pero Pasiva:</strong> Envío inmediato de folletos PDF sin indagar motivaciones del cliente.</p>
-            <p style="margin-top: 4px;"><strong>Falla de Cierre:</strong> Ante una clienta lista para inscribirse, se respondió <em>"¿qué dudas te quedaron?"</em> en lugar de matricular.</p>
+            <p style="margin-top: 6px;"><strong>Falla de Cierre:</strong> Ante una clienta lista para inscribirse, se respondió <em>"¿qué dudas te quedaron?"</em> en lugar de matricular.</p>
           </div>
         </div>
 
         <div class="card accent-red">
           <div class="card-title">Sede Río Cuarto (Puntaje: 4.0 / 10)</div>
-          <div style="margin-top: 6px; font-size: clamp(0.72rem, 2.3vw, 0.84rem); line-height: 1.45; color: var(--text-muted);">
+          <div class="card-subtext">
             <p><strong>Demora Crítica (+12 Horas):</strong> El primer mensaje tardó más de 12 horas en ser respondido durante el horario laboral.</p>
-            <p style="margin-top: 4px;"><strong>Impacto Directo:</strong> Responder con más de 15 min de demora provoca la pérdida inmediata del 70% de las matrículas potenciales.</p>
+            <p style="margin-top: 6px;"><strong>Impacto Directo:</strong> Responder con más de 15 min de demora provoca la pérdida inmediata del 70% de las matrículas potenciales.</p>
           </div>
         </div>
       </div>
@@ -615,149 +545,129 @@ table.slide-table td strong { color: #FFF; }
       <div class="grid-2">
         <div class="card accent-primary">
           <div class="card-title" style="color:var(--primary-light);">📍 Plan Sede Córdoba Capital</div>
-          <div style="margin-top: 6px; font-size: clamp(0.7rem, 2.2vw, 0.82rem); line-height: 1.45; color: var(--text-muted);">
-            <div>1. Completar vinculación de activos en Portfolio propio de Córdoba ($17.7M).</div>
-            <div>2. Apagar anuncios ineficientes ($9.896 CPA) e inyectar en Reels (*Cocineritos* $1.158 CPA).</div>
+          <div class="card-subtext">
+            <div style="margin-bottom: 4px;">1. Completar vinculación de activos en Portfolio propio de Córdoba ($17.7M).</div>
+            <div style="margin-bottom: 4px;">2. Apagar anuncios ineficientes ($9.896 CPA) e inyectar en Reels (*Cocineritos* $1.158 CPA).</div>
             <div>3. Implementar protocolo comercial de 5 etapas en WhatsApp para cierre activo.</div>
           </div>
         </div>
 
         <div class="card accent-amber">
           <div class="card-title" style="color:var(--accent-amber);">📍 Plan Sede Río Cuarto</div>
-          <div style="margin-top: 6px; font-size: clamp(0.7rem, 2.2vw, 0.82rem); line-height: 1.45; color: var(--text-muted);">
-            <div>1. Crear Portfolio propio de Río Cuarto desde cero y migrar pauta a Ads Manager.</div>
-            <div>2. Exportar historial de 6 meses para auditoría cuantitativa semestral.</div>
-            <div>3. Plan de choque en WhatsApp: respuesta < 15 min y guardias de atención.</div>
+          <div class="card-subtext">
+            <div style="margin-bottom: 4px;">1. Crear Portfolio propio de Río Cuarto desde cero y migrar pauta a Ads Manager.</div>
+            <div style="margin-bottom: 4px;">2. Exportar historial de 6 meses para auditoría cuantitativa semestral.</div>
+            <div>3. Plan de choque en WhatsApp: respuesta &lt; 15 min y guardias de atención.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SLIDE 8: CIERRE -->
+  <!-- SLIDE 9: CIERRE Y RESULTADO ESPERADO -->
   <div class="slide">
     <div class="slide-content" style="text-align: center; align-items: center;">
       <div class="badge">FUNN AGENCY — RESULTADO ESPERADO</div>
       <h1>¿Qué Lograremos con esta <span>Intervención?</span></h1>
       
-      <div class="grid-3" style="margin-top: 14px; text-align: left;">
+      <div class="grid-3" style="margin-top: 18px; text-align: left;">
         <div class="card accent-green">
           <div class="card-title">Más Matrículas</div>
-          <div style="font-size: clamp(0.9rem, 3vw, 1.2rem); font-weight: 700; color: #FFF; margin-top: 4px;">Misma Inversión</div>
-          <div class="card-subtext" style="margin-top: 4px;">Optimizando el costo por lead y eliminando el desperdicio del 42.1%.</div>
+          <div style="font-size: clamp(1rem, 3.2vw, 1.3rem); font-weight: 700; color: #FFF; margin-top: 6px;">Misma Inversión</div>
+          <div class="card-subtext" style="margin-top: 6px;">Optimizando el costo por lead y eliminando el desperdicio del 42.1%.</div>
         </div>
 
         <div class="card accent-primary">
           <div class="card-title">Atención Ágil</div>
-          <div style="font-size: clamp(0.9rem, 3vw, 1.2rem); font-weight: 700; color: #FFF; margin-top: 4px;">Respuestas en &lt; 15 min</div>
-          <div class="card-subtext" style="margin-top: 4px;">Recuperando prospectos calificados antes de que pierdan interés.</div>
+          <div style="font-size: clamp(1rem, 3.2vw, 1.3rem); font-weight: 700; color: #FFF; margin-top: 6px;">Respuestas en &lt; 15 min</div>
+          <div class="card-subtext" style="margin-top: 6px;">Recuperando prospectos calificados antes de que pierdan interés.</div>
         </div>
 
         <div class="card accent-amber">
           <div class="card-title">Control Total</div>
-          <div style="font-size: clamp(0.9rem, 3vw, 1.2rem); font-weight: 700; color: #FFF; margin-top: 4px;">Ecosistema Profesional</div>
-          <div class="card-subtext" style="margin-top: 4px;">Gobierno institucional de activos y medición precisa en tiempo real.</div>
+          <div style="font-size: clamp(1rem, 3.2vw, 1.3rem); font-weight: 700; color: #FFF; margin-top: 6px;">Portfolios Propios</div>
+          <div class="card-subtext" style="margin-top: 6px;">Autonomía técnica y seguridad legal para Córdoba y Río Cuarto.</div>
         </div>
       </div>
-
-      <div style="margin-top: 20px; color: var(--text-muted); font-size: clamp(0.78rem, 2.4vw, 0.95rem);">
-        Espacio abierto para consultas y coordinación de primeros pasos.
-      </div>
-    </div>
-  </div>
-
-  <!-- NAVIGATION BAR -->
-  <div class="nav-bar">
-    <div class="logo-footer">FUNN <span>AGENCY</span></div>
-    <div class="nav-counter"><span id="current-slide">1</span> / <span id="total-slides">8</span></div>
-    <div class="nav-buttons">
-      <button class="nav-btn" id="prev-btn">Anterior</button>
-      <button class="nav-btn" id="next-btn">Siguiente</button>
     </div>
   </div>
 
 </div>
 
+<!-- NAVIGATION UI -->
+<div class="nav-bar">
+  <div class="logo-footer">FUNN <span>AGENCY</span></div>
+  <div class="nav-counter"><span id="current-slide">1</span> / <span id="total-slides">9</span></div>
+  <div class="nav-buttons">
+    <button class="nav-btn" id="prev-btn">Anterior</button>
+    <button class="nav-btn" id="next-btn">Siguiente</button>
+  </div>
+</div>
+
 <script>
-  let currentSlide = 0;
+document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
-  document.getElementById('total-slides').textContent = totalSlides;
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const currentSlideEl = document.getElementById('current-slide');
+  const totalSlidesEl = document.getElementById('total-slides');
 
-  // Sync active slide index on load
-  slides.forEach((slide, i) => {
-    if (slide.classList.contains('active')) {
-      currentSlide = i;
-    }
-  });
+  let currentIndex = 0;
+  totalSlidesEl.textContent = slides.length;
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      if (i === index) {
+  function updateSlides() {
+    slides.forEach((slide, idx) => {
+      if (idx === currentIndex) {
         slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
       }
     });
-    document.getElementById('current-slide').textContent = index + 1;
+    currentSlideEl.textContent = currentIndex + 1;
   }
 
-  showSlide(currentSlide);
-
-  document.getElementById('prev-btn').addEventListener('click', () => {
-    if (currentSlide > 0) {
-      currentSlide--;
-      showSlide(currentSlide);
+  function nextSlide() {
+    if (currentIndex < slides.length - 1) {
+      currentIndex++;
+      updateSlides();
     }
-  });
+  }
 
-  document.getElementById('next-btn').addEventListener('click', () => {
-    if (currentSlide < totalSlides - 1) {
-      currentSlide++;
-      showSlide(currentSlide);
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlides();
     }
-  });
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight' || e.key === ' ') {
-      if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        showSlide(currentSlide);
-      }
+    if (e.key === 'ArrowRight' || e.key === 'Space') {
+      nextSlide();
     } else if (e.key === 'ArrowLeft') {
-      if (currentSlide > 0) {
-        currentSlide--;
-        showSlide(currentSlide);
-      }
+      prevSlide();
     }
   });
 
-  // Touch Swipe Support for Mobile
   let touchStartX = 0;
   let touchEndX = 0;
 
-  document.addEventListener('touchstart', e => {
+  document.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
-  }, false);
+  }, { passive: true });
 
-  document.addEventListener('touchend', e => {
+  document.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, false);
-
-  function handleSwipe() {
-    if (touchEndX < touchStartX - 40) {
-      if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        showSlide(currentSlide);
-      }
+    if (touchStartX - touchEndX > 50) {
+      nextSlide();
+    } else if (touchEndX - touchStartX > 50) {
+      prevSlide();
     }
-    if (touchEndX > touchStartX + 40) {
-      if (currentSlide > 0) {
-        currentSlide--;
-        showSlide(currentSlide);
-      }
-    }
-  }
+  }, { passive: true });
+});
 </script>
+
 </body>
 </html>
