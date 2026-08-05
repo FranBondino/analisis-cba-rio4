@@ -59,7 +59,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: clamp(16px, 4vh, 40px) clamp(16px, 5vw, 60px) clamp(60px, 10vh, 80px);
+  padding: clamp(16px, 4vh, 40px) clamp(16px, 4vw, 60px) clamp(65px, 10vh, 85px);
   overflow-y: auto;
 }
 
@@ -88,66 +88,70 @@ html, body {
   color: var(--primary-light);
   border: 1px solid rgba(99, 102, 241, 0.25);
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(0.65rem, 1vw, 0.78rem);
+  font-size: clamp(0.62rem, 0.9vw, 0.78rem);
   font-weight: 700;
   padding: 4px 12px;
   border-radius: 20px;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  margin-bottom: clamp(10px, 2vh, 16px);
+  margin-bottom: clamp(8px, 1.8vh, 16px);
   align-self: flex-start;
 }
 
 h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-size: clamp(1.6rem, 3.8vw, 3.2rem);
   font-weight: 700;
   line-height: 1.15;
   color: #FFF;
   margin-bottom: clamp(10px, 2vh, 16px);
   letter-spacing: -0.5px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 h1 span { color: var(--primary-light); }
 
 h2 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.35rem, 2.5vw, 2.2rem);
+  font-size: clamp(1.25rem, 2.3vw, 2.2rem);
   font-weight: 700;
   color: #FFF;
-  margin-bottom: clamp(8px, 1.5vh, 14px);
+  margin-bottom: clamp(6px, 1.2vh, 14px);
   letter-spacing: -0.3px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 h2 span { color: var(--primary-light); }
 
 p.subtitle {
-  font-size: clamp(0.85rem, 1.3vw, 1.1rem);
+  font-size: clamp(0.82rem, 1.2vw, 1.1rem);
   color: var(--text-muted);
   line-height: 1.55;
   max-width: 820px;
-  margin-bottom: clamp(14px, 2.5vh, 24px);
+  margin-bottom: clamp(12px, 2.2vh, 24px);
 }
 
 /* GRIDS & CARDS */
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(10px, 2vw, 18px);
   width: 100%;
 }
 
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: clamp(10px, 1.5vw, 16px);
   width: 100%;
 }
 
 .grid-4 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: clamp(10px, 1.5vw, 16px);
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: clamp(8px, 1.2vw, 16px);
   width: 100%;
 }
 
@@ -155,7 +159,7 @@ p.subtitle {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: clamp(14px, 2vw, 20px);
+  padding: clamp(12px, 1.8vw, 20px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -167,7 +171,7 @@ p.subtitle {
 .card.accent-primary { border-left: 4px solid var(--primary); }
 
 .card-title {
-  font-size: clamp(0.68rem, 0.9vw, 0.8rem);
+  font-size: clamp(0.65rem, 0.85vw, 0.78rem);
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--text-muted);
@@ -176,14 +180,14 @@ p.subtitle {
 
 .stat-num {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-size: clamp(1.4rem, 2.5vw, 2.4rem);
   font-weight: 700;
   color: #FFF;
   margin: 6px 0 2px 0;
 }
 
 .card-subtext {
-  font-size: clamp(0.72rem, 1vw, 0.82rem);
+  font-size: clamp(0.7rem, 0.95vw, 0.82rem);
   color: var(--text-muted);
   line-height: 1.4;
 }
@@ -192,7 +196,7 @@ p.subtitle {
 .loop-container {
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1.2vh, 12px);
+  gap: clamp(6px, 1vh, 12px);
   width: 100%;
 }
 
@@ -200,20 +204,20 @@ p.subtitle {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: clamp(10px, 1.5vh, 14px) clamp(14px, 2vw, 20px);
+  padding: clamp(8px, 1.2vh, 14px) clamp(12px, 1.8vw, 18px);
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .loop-step-num {
   background: var(--primary);
   color: #FFF;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  font-size: clamp(0.85rem, 1.1vw, 1.05rem);
   font-weight: 700;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -223,14 +227,14 @@ p.subtitle {
 
 .loop-step-text strong {
   color: #FFF;
-  font-size: clamp(0.85rem, 1.1vw, 0.98rem);
+  font-size: clamp(0.8rem, 1.05vw, 0.96rem);
   display: block;
   margin-bottom: 2px;
 }
 
 .loop-step-text span {
   color: var(--text-muted);
-  font-size: clamp(0.75rem, 0.95vw, 0.85rem);
+  font-size: clamp(0.72rem, 0.9vw, 0.84rem);
   line-height: 1.35;
 }
 
@@ -238,7 +242,7 @@ p.subtitle {
 .roadmap-grid {
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1.2vh, 12px);
+  gap: clamp(6px, 1vh, 12px);
   width: 100%;
 }
 
@@ -246,10 +250,10 @@ p.subtitle {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: clamp(10px, 1.5vh, 14px) clamp(14px, 2vw, 18px);
+  padding: clamp(8px, 1.2vh, 14px) clamp(12px, 1.8vw, 16px);
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 12px;
 }
 
 .roadmap-num {
@@ -257,7 +261,7 @@ p.subtitle {
   color: var(--primary-light);
   border: 1px solid rgba(99, 102, 241, 0.3);
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 4px;
@@ -271,20 +275,20 @@ p.subtitle {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  background: rgba(5, 7, 11, 0.92);
+  height: 56px;
+  background: rgba(5, 7, 11, 0.94);
   backdrop-filter: blur(8px);
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 clamp(16px, 4vw, 40px);
+  padding: 0 clamp(14px, 3vw, 40px);
   z-index: 100;
 }
 
 .nav-counter {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(0.75rem, 1vw, 0.85rem);
+  font-size: clamp(0.75rem, 0.95vw, 0.85rem);
   color: var(--text-muted);
   font-weight: 600;
 }
@@ -301,7 +305,7 @@ p.subtitle {
   padding: 6px 14px;
   border-radius: 6px;
   font-weight: 600;
-  font-size: clamp(0.75rem, 1vw, 0.82rem);
+  font-size: clamp(0.72rem, 0.95vw, 0.82rem);
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-flex;
@@ -317,7 +321,7 @@ p.subtitle {
 
 .logo-footer {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+  font-size: clamp(0.68rem, 0.85vw, 0.8rem);
   color: var(--text-muted);
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -335,24 +339,24 @@ p.subtitle {
 table.slide-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 8px;
-  font-size: clamp(0.72rem, 0.95vw, 0.84rem);
+  margin-top: 6px;
+  font-size: clamp(0.7rem, 0.9vw, 0.82rem);
 }
 
 table.slide-table th {
   background: var(--surface-accent);
   color: #FFF;
-  padding: 8px 12px;
+  padding: 8px 10px;
   text-align: left;
   font-family: 'Space Grotesk', sans-serif;
   border-bottom: 1px solid var(--border);
-  font-size: clamp(0.68rem, 0.85vw, 0.78rem);
+  font-size: clamp(0.65rem, 0.8vw, 0.75rem);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 table.slide-table td {
-  padding: 8px 12px;
+  padding: 8px 10px;
   border-bottom: 1px solid var(--border);
   color: var(--text-muted);
 }
@@ -363,7 +367,7 @@ table.slide-table td strong { color: #FFF; }
   display: inline-block;
   padding: 2px 6px;
   border-radius: 4px;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -378,14 +382,14 @@ table.slide-table td strong { color: #FFF; }
   .grid-2 { grid-template-columns: 1fr; }
   .nav-bar { padding: 0 12px; }
   .logo-footer { display: none; }
-  .slide { padding-bottom: 75px; }
+  .slide { padding-bottom: 70px; }
 }
 
 @media (max-height: 640px) {
-  .slide-content { max-height: 80vh; }
-  p.subtitle { margin-bottom: 10px; }
-  h2 { margin-bottom: 6px; }
-  .badge { margin-bottom: 6px; }
+  .slide-content { max-height: 82vh; }
+  p.subtitle { margin-bottom: 8px; }
+  h2 { margin-bottom: 4px; }
+  .badge { margin-bottom: 4px; }
 }
 </style>
 </head>
@@ -400,10 +404,10 @@ table.slide-table td strong { color: #FFF; }
       <h1>Auditoría Estratégica <span>360°</span></h1>
       <p class="subtitle" style="text-align: center;">Diagnóstico Integral de Infraestructura Digital, Meta Ads y Atención Comercial en WhatsApp para <strong>IGA Córdoba</strong> e <strong>IGA Río Cuarto</strong>.</p>
       
-      <div style="display: flex; gap: 16px; margin-top: 16px; font-size: clamp(0.72rem, 0.9vw, 0.82rem); color: var(--text-muted); flex-wrap: wrap; justify-content: center;">
-        <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px;">Emisión: <strong>Julio 2026</strong></div>
-        <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px;">Muestra Publicitaria: <strong>$17.7M ARS (6 meses)</strong></div>
-        <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 6px 12px; border-radius: 6px;">Auditoría Comercial: <strong>Mystery Shopping</strong></div>
+      <div style="display: flex; gap: 12px; margin-top: 14px; font-size: clamp(0.7rem, 0.85vw, 0.8rem); color: var(--text-muted); flex-wrap: wrap; justify-content: center;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 5px 10px; border-radius: 6px;">Emisión: <strong>Julio 2026</strong></div>
+        <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 5px 10px; border-radius: 6px;">Muestra Publicitaria: <strong>$17.7M ARS (6 meses)</strong></div>
+        <div style="background: var(--bg-card); border: 1px solid var(--border); padding: 5px 10px; border-radius: 6px;">Auditoría Comercial: <strong>Mystery Shopping</strong></div>
       </div>
     </div>
   </div>
@@ -533,10 +537,10 @@ table.slide-table td strong { color: #FFF; }
       <div class="grid-2">
         <div class="card accent-green">
           <div class="card-title" style="color: var(--accent-green);">Top Creativos Ganadores</div>
-          <div style="margin-top: 10px; font-size: clamp(0.78rem, 1vw, 0.88rem); line-height: 1.6; color: var(--text-muted);">
+          <div style="margin-top: 8px; font-size: clamp(0.75rem, 0.95vw, 0.85rem); line-height: 1.55; color: var(--text-muted);">
             <div style="padding: 4px 0; border-bottom: 1px solid var(--border);"><strong>"Cocineritos en Acción":</strong> CPA <strong>$1.158 ARS</strong> (268 leads)</div>
             <div style="padding: 4px 0;"><strong>"Convertí tu pasión en tu futuro":</strong> CPA <strong>$2.492 ARS</strong> (423 leads)</div>
-            <div style="margin-top: 10px; padding: 8px 12px; background: rgba(16,185,129,0.08); border-left: 3px solid var(--accent-green); border-radius: 4px; color: var(--text-main); font-weight: 600;">
+            <div style="margin-top: 8px; padding: 8px 12px; background: rgba(16,185,129,0.08); border-left: 3px solid var(--accent-green); border-radius: 4px; color: var(--text-main); font-weight: 600;">
               Oportunidad: Escalar inversión en estos formatos para reducir el costo general de adquisición.
             </div>
           </div>
@@ -544,10 +548,10 @@ table.slide-table td strong { color: #FFF; }
 
         <div class="card accent-red">
           <div class="card-title" style="color: var(--accent-red);">Creativos Ineficientes (Fuga de Presupuesto)</div>
-          <div style="margin-top: 10px; font-size: clamp(0.78rem, 1vw, 0.88rem); line-height: 1.6; color: var(--text-muted);">
+          <div style="margin-top: 8px; font-size: clamp(0.75rem, 0.95vw, 0.85rem); line-height: 1.55; color: var(--text-muted);">
             <div style="padding: 4px 0; border-bottom: 1px solid var(--border);"><strong>"Últimos Cupos":</strong> CPA <strong>$6.493 ARS</strong> (Solo 6 leads)</div>
             <div style="padding: 4px 0;"><strong>"Hacé de tu pasión una profesión":</strong> CPA <strong>$5.333 ARS</strong></div>
-            <div style="margin-top: 10px; padding: 8px 12px; background: rgba(239,68,68,0.08); border-left: 3px solid var(--accent-red); border-radius: 4px; color: var(--text-main); font-weight: 600;">
+            <div style="margin-top: 8px; padding: 8px 12px; background: rgba(239,68,68,0.08); border-left: 3px solid var(--accent-red); border-radius: 4px; color: var(--text-main); font-weight: 600;">
               Acción: Apagar anuncios de alto costo y redistribuir presupuesto a los creativos validados.
             </div>
           </div>
@@ -566,17 +570,17 @@ table.slide-table td strong { color: #FFF; }
       <div class="grid-2">
         <div class="card accent-amber">
           <div class="card-title">Sede Córdoba (Puntaje: 5.8 / 10)</div>
-          <div style="margin-top: 10px; font-size: clamp(0.78rem, 1vw, 0.86rem); line-height: 1.55; color: var(--text-muted);">
+          <div style="margin-top: 8px; font-size: clamp(0.75rem, 0.95vw, 0.85rem); line-height: 1.5; color: var(--text-muted);">
             <p><strong>Fortaleza:</strong> Entrega rápida de folletos digitales y estructura de costos.</p>
-            <p style="margin-top: 6px;"><strong>Falla Crítica:</strong> Nulo intento de cierre comercial. Ante una clienta que declaró <em>"estoy casi segura de empezar"</em>, la asesora respondió <em>"¿qué dudas te quedaron?"</em> en lugar de proceder a matricular.</p>
+            <p style="margin-top: 4px;"><strong>Falla Crítica:</strong> Nulo intento de cierre comercial. Ante una clienta que declaró <em>"estoy casi segura de empezar"</em>, la asesora respondió <em>"¿qué dudas te quedaron?"</em> en lugar de proceder a matricular.</p>
           </div>
         </div>
 
         <div class="card accent-red">
           <div class="card-title">Sede Río Cuarto (Puntaje: 4.0 / 10)</div>
-          <div style="margin-top: 10px; font-size: clamp(0.78rem, 1vw, 0.86rem); line-height: 1.55; color: var(--text-muted);">
+          <div style="margin-top: 8px; font-size: clamp(0.75rem, 0.95vw, 0.85rem); line-height: 1.5; color: var(--text-muted);">
             <p><strong>Demora Extremadamente Alta:</strong> Más de 12 horas para responder el primer mensaje (ingresó a las 9:32 AM y respondió a las 21:20 PM).</p>
-            <p style="margin-top: 6px;"><strong>Impacto:</strong> En ventas digitales, responder con más de 15 minutos de demora reduce la probabilidad de conversión en un 80%.</p>
+            <p style="margin-top: 4px;"><strong>Impacto:</strong> En ventas digitales, responder con más de 15 minutos de demora reduce la probabilidad de conversión en un 80%.</p>
           </div>
         </div>
       </div>
@@ -595,28 +599,28 @@ table.slide-table td strong { color: #FFF; }
           <div class="roadmap-num">FASE 1</div>
           <div>
             <strong style="color:#FFF;">Instituir Meta Business Portfolio Centralizado</strong>
-            <div style="font-size:clamp(0.75rem, 0.9vw, 0.84rem); color:var(--text-muted);">Garantizar la propiedad de activos, píxeles e implementar Conversions API (CAPI).</div>
+            <div style="font-size:clamp(0.72rem, 0.88vw, 0.82rem); color:var(--text-muted);">Garantizar la propiedad de activos, píxeles e implementar Conversions API (CAPI).</div>
           </div>
         </div>
         <div class="roadmap-item">
           <div class="roadmap-num">FASE 2</div>
           <div>
             <strong style="color:#FFF;">Migración Total a Meta Ads Manager</strong>
-            <div style="font-size:clamp(0.75rem, 0.9vw, 0.84rem); color:var(--text-muted);">Eliminar el botón "Promocionar" y lanzar campañas por Leads Calificados con exclusión de matriculados.</div>
+            <div style="font-size:clamp(0.72rem, 0.88vw, 0.82rem); color:var(--text-muted);">Eliminar el botón "Promocionar" y lanzar campañas por Leads Calificados con exclusión de matriculados.</div>
           </div>
         </div>
         <div class="roadmap-item">
           <div class="roadmap-num">FASE 3</div>
           <div>
             <strong style="color:#FFF;">Reasignación de Presupuesto a Creativos Ganadores</strong>
-            <div style="font-size:clamp(0.75rem, 0.9vw, 0.84rem); color:var(--text-muted);">Escalar inversión en los anuncios validados (CPA $1.158) y desactivar creativos ineficientes.</div>
+            <div style="font-size:clamp(0.72rem, 0.88vw, 0.82rem); color:var(--text-muted);">Escalar inversión en los anuncios validados (CPA $1.158) y desactivar creativos ineficientes.</div>
           </div>
         </div>
         <div class="roadmap-item">
           <div class="roadmap-num">FASE 4</div>
           <div>
             <strong style="color:#FFF;">Protocolo de Venta Consultiva en WhatsApp</strong>
-            <div style="font-size:clamp(0.75rem, 0.9vw, 0.84rem); color:var(--text-muted);">Capacitar al equipo comercial en las 5 etapas de venta para transformar informadores en cerradores activos.</div>
+            <div style="font-size:clamp(0.72rem, 0.88vw, 0.82rem); color:var(--text-muted);">Capacitar al equipo comercial en las 5 etapas de venta para transformar informadores en cerradores activos.</div>
           </div>
         </div>
       </div>
@@ -629,27 +633,27 @@ table.slide-table td strong { color: #FFF; }
       <div class="badge">FUNN AGENCY — RESULTADO ESPERADO</div>
       <h1>¿Qué Lograremos con esta <span>Intervención?</span></h1>
       
-      <div class="grid-3" style="margin-top: 20px; text-align: left;">
+      <div class="grid-3" style="margin-top: 16px; text-align: left;">
         <div class="card accent-green">
           <div class="card-title">Más Matrículas</div>
-          <div style="font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 700; color: #FFF; margin-top: 6px;">Misma Inversión</div>
+          <div style="font-size: clamp(0.95rem, 1.3vw, 1.2rem); font-weight: 700; color: #FFF; margin-top: 4px;">Misma Inversión</div>
           <div class="card-subtext" style="margin-top: 4px;">Optimizando el costo por lead y eliminando el desperdicio del 42.1%.</div>
         </div>
 
         <div class="card accent-primary">
           <div class="card-title">Atención Ágil</div>
-          <div style="font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 700; color: #FFF; margin-top: 6px;">Respuestas en &lt; 15 min</div>
+          <div style="font-size: clamp(0.95rem, 1.3vw, 1.2rem); font-weight: 700; color: #FFF; margin-top: 4px;">Respuestas en &lt; 15 min</div>
           <div class="card-subtext" style="margin-top: 4px;">Recuperando prospectos calificados antes de que pierdan interés.</div>
         </div>
 
         <div class="card accent-amber">
           <div class="card-title">Control Total</div>
-          <div style="font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 700; color: #FFF; margin-top: 6px;">Ecosistema Profesional</div>
+          <div style="font-size: clamp(0.95rem, 1.3vw, 1.2rem); font-weight: 700; color: #FFF; margin-top: 4px;">Ecosistema Profesional</div>
           <div class="card-subtext" style="margin-top: 4px;">Gobierno institucional de activos y medición precisa en tiempo real.</div>
         </div>
       </div>
 
-      <div style="margin-top: 30px; color: var(--text-muted); font-size: clamp(0.85rem, 1.1vw, 1rem);">
+      <div style="margin-top: 24px; color: var(--text-muted); font-size: clamp(0.8rem, 1vw, 0.95rem);">
         Espacio abierto para consultas y coordinación de primeros pasos.
       </div>
     </div>
@@ -673,6 +677,13 @@ table.slide-table td strong { color: #FFF; }
   const totalSlides = slides.length;
   document.getElementById('total-slides').textContent = totalSlides;
 
+  // Sync active slide index on load
+  slides.forEach((slide, i) => {
+    if (slide.classList.contains('active')) {
+      currentSlide = i;
+    }
+  });
+
   function showSlide(index) {
     slides.forEach((slide, i) => {
       slide.classList.remove('active');
@@ -682,6 +693,8 @@ table.slide-table td strong { color: #FFF; }
     });
     document.getElementById('current-slide').textContent = index + 1;
   }
+
+  showSlide(currentSlide);
 
   document.getElementById('prev-btn').addEventListener('click', () => {
     if (currentSlide > 0) {
