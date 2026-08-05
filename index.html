@@ -482,6 +482,94 @@ tr:hover td { background: rgba(255, 255, 255, 0.015); }
   border-top: 1px solid var(--border-subtle);
 }
 
+/* MODULE BANNERS & HIGHLIGHT BOXES */
+.module-banner {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-left: 6px solid var(--primary);
+  border-radius: 10px;
+  padding: 18px 24px;
+  margin: 44px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.module-banner.banner-rio4 {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.08) 100%);
+  border-color: rgba(245, 158, 11, 0.4);
+  border-left-color: var(--accent-amber);
+}
+.module-banner.banner-mystery {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.08) 100%);
+  border-color: rgba(16, 185, 129, 0.4);
+  border-left-color: var(--accent-green);
+}
+.module-banner.banner-roadmap {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.1) 100%);
+  border-color: rgba(168, 85, 247, 0.4);
+  border-left-color: var(--primary-light);
+}
+.module-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  background: var(--primary-glow);
+  color: var(--primary-light);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+.module-banner.banner-rio4 .module-tag {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--accent-amber);
+}
+.module-banner.banner-mystery .module-tag {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--accent-green);
+}
+.module-banner.banner-roadmap .module-tag {
+  background: rgba(168, 85, 247, 0.2);
+  color: #C084FC;
+}
+.module-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: #FFF;
+  margin: 0;
+}
+
+.highlight-box-winner {
+  background: rgba(16, 185, 129, 0.04);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-left: 5px solid var(--accent-green);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+.highlight-box-loser {
+  background: rgba(239, 68, 68, 0.04);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-left: 5px solid var(--accent-red);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+.highlight-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.highlight-box-winner .highlight-title { color: var(--accent-green); }
+.highlight-box-loser .highlight-title { color: var(--accent-red); }
+
 /* LIGHTBOX MODAL STYLES */
 .lightbox-modal {
   position: fixed;
@@ -735,6 +823,15 @@ footer {
     <div class="meta-item"><div class="meta-label">Muestra Publicitaria</div><div class="meta-val">N = 77 Campañas (CBA) · 2 Ad Sets Activos (Río 4)</div></div>
     <div class="meta-item"><div class="meta-label">Muestra Comercial</div><div class="meta-val">Mystery Shopping WhatsApp (CBA & Río 4)</div></div>
     <div class="meta-item"><div class="meta-label">Emisión del Informe</div><div class="meta-val">28 de Julio de 2026</div></div>
+  </div>
+
+  <!-- BANNER MÓDULO 1: CÓRDOBA ADS -->
+  <div class="module-banner">
+    <div>
+      <h3 class="module-title">MÓDULO 01 | IGA CÓRDOBA — AUDITORÍA Y ANÁLISIS DE PAUTA META ADS (6 MESES)</h3>
+      <div style="font-size:0.84rem; color:var(--text-muted); margin-top:4px;">Evaluación cuantitativa y de eficiencia publicitaria sobre la muestra histórica N = 77 ($17.73M ARS ejecutados).</div>
+    </div>
+    <span class="module-tag">FILIAL CÓRDOBA</span>
   </div>
 
   <!-- SECCIÓN 1: EXECUTIVE SUMMARY -->
@@ -1160,6 +1257,15 @@ footer {
     </div>
   </section>
 
+  <!-- BANNER MÓDULO 2: RÍO CUARTO ADS -->
+  <div class="module-banner banner-rio4">
+    <div>
+      <h3 class="module-title">MÓDULO 02 | IGA RÍO CUARTO — AUDITORÍA DE PAUTA Y ANUNCIOS ACTIVOS</h3>
+      <div style="font-size:0.84rem; color:var(--text-muted); margin-top:4px;">Diagnóstico técnico de pauta ejecutada mediante botón "Promocionar" y rendimiento de creativos vigentes.</div>
+    </div>
+    <span class="module-tag">FILIAL RÍO CUARTO</span>
+  </div>
+
   <!-- SECCIÓN 5: ANÁLISIS DE ANUNCIOS ACTIVOS RÍO CUARTO CON JUSTIFICACIÓN OPERATIVA -->
   <section class="section">
     <div class="section-header">
@@ -1168,11 +1274,27 @@ footer {
     </div>
 
     <!-- JUSTIFICACIÓN OPERATIVA FORMAL DE DISPONIBILIDAD DE DATOS -->
-    <div style="background:var(--surface-accent);border:1px solid var(--border);border-left:4px solid var(--accent-amber);border-radius:6px;padding:18px 22px;margin-bottom:30px;font-size:0.88rem;line-height:1.65;color:var(--text-main)">
+    <div style="background:var(--surface-accent);border:1px solid var(--border);border-left:4px solid var(--accent-amber);border-radius:6px;padding:18px 22px;margin-bottom:24px;font-size:0.88rem;line-height:1.65;color:var(--text-main)">
       <strong>Justificación Operativa sobre la Muestra de Río Cuarto:</strong> Debido a que en la filial de IGA Río Cuarto la pauta se ejecuta promocionando publicaciones de manera directa desde las aplicaciones móviles de Instagram y Facebook, no se cuenta con una cuenta publicitaria integrada a un Meta Ads Manager centralizado desde la cual exportar reportes masivos históricos de 6 meses (como sí se realizó con IGA Córdoba). Por esta limitación técnica de acceso, la auditoría publicitaria para Río Cuarto se restringe al análisis cuantitativo de la muestra de anuncios activos visibles en la plataforma al momento de la auditoría (creados el 10 de Julio por Andrés Mora, con 19 a 21 días de actividad).
     </div>
 
-    <p>A continuación se presenta el desglose de rendimiento sobre las 2 campañas activas de Río Cuarto identificadas en la plataforma:</p>
+    <!-- HIGHLIGHTS DE ANUNCIOS GANADORES VS PERDEDORES RÍO CUARTO -->
+    <div class="highlight-box-winner">
+      <div class="highlight-title">🟢 Anuncios y Formatos que MEJOR Funcionan en IGA Río Cuarto</div>
+      <div style="font-size:0.86rem; color:var(--text-muted); line-height:1.6;">
+        <strong>Anuncio Reel "Taller de Cocineritos en Acción" (Video):</strong> Absorbió el <strong>59% de la inversión</strong> del grupo ($128.235,72 ARS de los $216.439 ARS totales), generando <strong>107 conversaciones</strong> con un CPA óptimo de <strong>$1.198,46 ARS</strong>. El formato de video corto mostrando la experiencia práctica de los niños en la cocina de la sede genera un gancho afectivo y una respuesta directa de padres consultando por horarios.
+      </div>
+    </div>
+
+    <div class="highlight-box-loser">
+      <div class="highlight-title">🔴 Anuncios y Formatos que PEOR Funcionan en IGA Río Cuarto</div>
+      <div style="font-size:0.86rem; color:var(--text-muted); line-height:1.6;">
+        <strong>1. Variación Estática "Convertí tu pasión en tu futuro":</strong> Tuvo un CPA de <strong>$2.097,42 ARS</strong> por conversación (un <strong>75% más costoso</strong> que el anuncio de Cocineritos en el mismo conjunto).<br>
+        <strong>2. Publicaciones Promocionadas bajo objetivo de "Interacción":</strong> Generan un volumen de likes y comentarios informales (*"qué lindo"*, *"suerte chicos"*), pero al no estar configuradas en Ads Manager con derivación directa a WhatsApp ni formularios, <strong>el 100% de esos usuarios se pierde</strong> sin convertirse en prospectos comercializables.
+      </div>
+    </div>
+
+    <p style="margin-top:20px">A continuación se presenta el desglose técnico sobre las 2 campañas activas de Río Cuarto identificadas en la plataforma:</p>
 
     <!-- DETALLE TÉCNICO DE LA MUESTRA RÍO 4 -->
     <div class="finding-grid">
@@ -1270,11 +1392,61 @@ footer {
     </div>
   </section>
 
+  <!-- BANNER MÓDULO 3: MYSTERY SHOPPING WHATSAPP -->
+  <div class="module-banner banner-mystery">
+    <div>
+      <h3 class="module-title">MÓDULO 03 | AUDITORÍA MYSTERY SHOPPING — ATENCIÓN COMERCIAL EN WHATSAPP</h3>
+      <div style="font-size:0.84rem; color:var(--text-muted); margin-top:4px;">Evaluación de tiempos de respuesta, proactividad comercial, venta consultiva y tasa de cierre en ambas filiales.</div>
+    </div>
+    <span class="module-tag">PROCESO COMERCIAL</span>
+  </div>
+
   <!-- SECCIÓN 7: AUDITORÍA MYSTERY SHOPPING CÓRDOBA -->
   <section class="section">
     <div class="section-header">
       <span class="section-tag">07</span>
       <h2>Auditoría Mystery Shopping — WhatsApp IGA Córdoba</h2>
+    </div>
+
+    <!-- CUADRO COMPARATIVO DE ATENCIÓN COMERCIAL CÓRDOBA VS RÍO CUARTO -->
+    <h3 style="margin-top:0">Resumen Comparativo de Gestión Comercial en WhatsApp (Córdoba vs. Río Cuarto)</h3>
+    <div class="table-container" style="margin-bottom:28px">
+      <table>
+        <thead>
+          <tr>
+            <th>Parámetro Operativo Commercial</th>
+            <th>IGA Córdoba (Atención WhatsApp)</th>
+            <th>IGA Río Cuarto (Atención WhatsApp)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tiempo de Respuesta Inicial</strong></td>
+            <td><span class="pill-tag pill-green">RÁPIDO (&lt; 15 min en horario)</span><br><small style="color:var(--text-muted)">Demora puntual de 18hs en prospecto nocturno.</small></td>
+            <td><span class="pill-tag pill-red">CRÍTICO (+12 HORAS)</span><br><small style="color:var(--text-muted)">Falla operativa grave en horario laboral comercial.</small></td>
+          </tr>
+          <tr>
+            <td><strong>Estilo de Atención</strong></td>
+            <td>Informador Pasivo (Envío masivo de folletos PDF)</td>
+            <td>Lento y Desestructurado (Pérdida de la inercia del lead)</td>
+          </tr>
+          <tr>
+            <td><strong>Detección de Necesidades</strong></td>
+            <td>Deficiente (No se indaga si busca empleo o hobbie)</td>
+            <td>Nula (Sin preguntas de calificación comercial)</td>
+          </tr>
+          <tr>
+            <td><strong>Proactividad en el Cierre</strong></td>
+            <td>Baja (Responde <em>"¿qué dudas te quedaron?"</em>)</td>
+            <td>Nula (Abandono del prospecto sin llamada a la acción)</td>
+          </tr>
+          <tr>
+            <td><strong>Seguimiento Post-Contacto</strong></td>
+            <td>Inexistente (Sin mensaje a las 24-48 horas)</td>
+            <td>Inexistente (Sin recupero de consultas frías)</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- CASO 1 CÓRDOBA -->
@@ -2425,6 +2597,15 @@ footer {
       </table>
     </div>
   </section>
+
+  <!-- BANNER MÓDULO 4: ROADMAP -->
+  <div class="module-banner banner-roadmap">
+    <div>
+      <h3 class="module-title">MÓDULO 04 | ROADMAP ESTRATÉGICO Y ACCIONES DE INTERVENCIÓN RECOMENDADAS</h3>
+      <div style="font-size:0.84rem; color:var(--text-muted); margin-top:4px;">Plan ejecutivo de 5 fases estructurado con acciones, plazos, impactos de negocio y checkpoints de control.</div>
+    </div>
+    <span class="module-tag">PLAN DE ACCIÓN</span>
+  </div>
 
   <!-- SECCIÓN 10: ROADMAP DE ACCIÓN -->
   <section class="section">
