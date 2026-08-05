@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Presentación Ejecutivo — Auditoría Estratégica IGA Córdoba & Río Cuarto</title>
+<title>Presentación Ejecutiva — Auditoría Estratégica IGA Córdoba & Río Cuarto</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg-dark: #070A10;
-  --bg-card: rgba(16, 22, 34, 0.75);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(99, 102, 241, 0.3);
+  --bg-card: rgba(16, 22, 34, 0.85);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-active: rgba(99, 102, 241, 0.4);
   --text-main: #F3F4F6;
   --text-muted: #9CA3AF;
   --primary: #4F46E5;
@@ -33,8 +33,8 @@ body {
   height: 100vh;
   width: 100vw;
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(79, 70, 229, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+    radial-gradient(circle at 15% 15%, rgba(79, 70, 229, 0.1) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.08) 0%, transparent 45%);
 }
 
 .deck {
@@ -51,7 +51,7 @@ body {
   height: 100%;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   transform: scale(0.98);
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@ body {
 }
 
 .slide-content {
-  max-width: 1060px;
+  max-width: 1080px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -82,22 +82,22 @@ body {
   color: var(--primary-light);
   border: 1px solid var(--border-active);
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
   font-weight: 700;
-  color: #FFF;
+  color: #FFFFFF;
   line-height: 1.15;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   letter-spacing: -0.5px;
 }
 
@@ -107,20 +107,20 @@ h1 span, h2 span {
 
 h2 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
   font-weight: 700;
-  color: #FFF;
+  color: #FFFFFF;
   line-height: 1.2;
   margin-bottom: 8px;
   letter-spacing: -0.5px;
 }
 
 p.subtitle {
-  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  font-size: clamp(0.92rem, 1.8vw, 1.08rem);
   color: var(--text-muted);
-  margin-bottom: 24px;
-  max-width: 800px;
-  line-height: 1.5;
+  margin-bottom: 26px;
+  max-width: 820px;
+  line-height: 1.55;
 }
 
 /* CARDS GRID SYSTEM */
@@ -134,14 +134,14 @@ p.subtitle {
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 20px;
   width: 100%;
 }
 
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 22px;
   width: 100%;
 }
 
@@ -149,9 +149,9 @@ p.subtitle {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 22px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  padding: 24px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.35);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -175,65 +175,71 @@ p.subtitle {
 
 .card-label {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   color: var(--text-muted);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .card-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #FFF;
-  margin-bottom: 8px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  line-height: 1.3;
 }
 
 .stat-num {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-size: clamp(2rem, 3.8vw, 2.6rem);
   font-weight: 700;
-  color: #FFF;
+  color: #FFFFFF;
   line-height: 1.1;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .card-subtext {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.55;
+  line-height: 1.6;
+}
+
+.card-subtext strong {
+  color: #FFFFFF;
+  font-weight: 700;
 }
 
 /* LOOP STEPS SYSTEM */
 .loop-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   width: 100%;
 }
 
 .loop-step {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 20px;
+  border-radius: 12px;
+  padding: 18px 22px;
   display: flex;
   align-items: center;
-  gap: 16px;
-  backdrop-filter: blur(12px);
+  gap: 18px;
+  backdrop-filter: blur(16px);
 }
 
 .loop-step-num {
-  width: 34px;
-  height: 34px;
-  border-radius: 6px;
-  background: var(--surface-card, #1A2234);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(99, 102, 241, 0.12);
   border: 1px solid var(--border-active);
   color: var(--primary-light);
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -243,14 +249,15 @@ p.subtitle {
 
 .loop-step-text strong {
   display: block;
-  font-size: 0.95rem;
-  color: #FFF;
-  margin-bottom: 2px;
+  font-size: 0.98rem;
+  color: #FFFFFF;
+  margin-bottom: 3px;
 }
 
 .loop-step-text span {
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   color: var(--text-muted);
+  line-height: 1.5;
 }
 
 /* NAVIGATION FOOTER */
@@ -263,26 +270,26 @@ p.subtitle {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(7, 10, 16, 0.85);
+  background: rgba(7, 10, 16, 0.9);
   border-top: 1px solid var(--border);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
   z-index: 100;
 }
 
 .nav-buttons {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .nav-btn {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--text-main);
   border: 1px solid var(--border);
-  padding: 8px 18px;
+  padding: 9px 20px;
   border-radius: 6px;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -290,19 +297,19 @@ p.subtitle {
 .nav-btn:hover {
   background: var(--primary-glow);
   border-color: var(--primary-light);
-  color: #FFF;
+  color: #FFFFFF;
 }
 
 .nav-counter {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .logo-footer {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -313,18 +320,18 @@ p.subtitle {
 /* MOBILE ADAPTATIONS */
 @media (max-width: 768px) {
   .slide { padding: 24px 20px 80px 20px; }
-  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .grid-3 { grid-template-columns: 1fr; gap: 10px; }
-  .grid-2 { grid-template-columns: 1fr; gap: 10px; }
-  .card { padding: 16px; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .grid-3 { grid-template-columns: 1fr; gap: 12px; }
+  .grid-2 { grid-template-columns: 1fr; gap: 12px; }
+  .card { padding: 18px; }
   .logo-footer { display: none; }
 }
 
 @media (max-height: 650px) {
   .slide-content { max-height: 85vh; }
-  p.subtitle { margin-bottom: 12px; }
+  p.subtitle { margin-bottom: 14px; }
   h2 { margin-bottom: 6px; }
-  .badge { margin-bottom: 6px; }
+  .badge { margin-bottom: 8px; }
 }
 </style>
 </head>
@@ -388,7 +395,7 @@ p.subtitle {
         <div class="loop-step">
           <div class="loop-step-num">1</div>
           <div class="loop-step-text">
-            <strong>Pauta ejecutada por "Botón Promocionar" (Boosted Posts)</strong>
+            <strong>Pauta ejecutada por Botón Promocionar (Boosted Posts)</strong>
             <span>Optimizada por el algoritmo para generar interacción (likes), no prospectos con intención de compra real.</span>
           </div>
         </div>
@@ -403,7 +410,7 @@ p.subtitle {
           <div class="loop-step-num">3</div>
           <div class="loop-step-text">
             <strong>Desgaste del Asesor y Atención Pasiva</strong>
-            <span>El vendedor adopta un rol puramente "informador" (envía precios/PDF) sin indagar necesidades ni cerrar.</span>
+            <span>El vendedor adopta un rol puramente informador (envía precios o PDF) sin indagar necesidades ni cerrar.</span>
           </div>
         </div>
         <div class="loop-step">
@@ -457,7 +464,7 @@ p.subtitle {
     <div class="slide-content">
       <div class="badge">04. INTELIGENCIA DE AUDIENCIAS Y PORTFOLIO</div>
       <h2>Por qué el Portfolio es <span>Vital para tus Audiencias</span></h2>
-      <p class="subtitle">Sin Business Portfolio ni Ads Manager, Meta opera "a ciegas" sin poder utilizar la Inteligencia Artificial de audiencias.</p>
+      <p class="subtitle">Sin Business Portfolio ni Ads Manager, Meta opera sin poder utilizar la Inteligencia Artificial de audiencias.</p>
 
       <div class="grid-3">
         <div class="card accent-red">
@@ -499,7 +506,7 @@ p.subtitle {
           <div class="card-label" style="color:var(--accent-green);">FORMATO LÍDER</div>
           <div class="card-title">REELS (Video Vertical 9:16)</div>
           <div class="card-subtext">
-            <strong>CPA Récord: $1.158 ARS</strong>.<br>
+            <strong>CPA Récord: $1.158 ARS</strong> (validado en pruebas históricas de video).<br>
             Gancho visual inmediato y alta conexión emocional mostrando la experiencia real en cocinas y talleres prácticos.
           </div>
         </div>
@@ -584,7 +591,7 @@ p.subtitle {
           <div class="card-subtext">
             <div style="margin-bottom: 6px;">1. Crear Portfolio propio de Río Cuarto desde cero y migrar pauta a Ads Manager.</div>
             <div style="margin-bottom: 6px;">2. Exportar e integrar el historial de 6 meses para auditoría cuantitativa semestral.</div>
-            <div>3. Plan de choque en WhatsApp: respuesta &lt; 15 min y guardias de atención.</div>
+            <div>3. Plan de choque en WhatsApp: respuesta menor a 15 min y guardias de atención.</div>
           </div>
         </div>
       </div>
@@ -601,21 +608,21 @@ p.subtitle {
         <div class="card accent-green">
           <div class="card-label" style="color:var(--accent-green);">RETORNO DE INVERSIÓN</div>
           <div class="card-title">Más Matrículas</div>
-          <div style="font-size: clamp(1rem, 3.2vw, 1.25rem); font-weight: 700; color: #FFF; margin-top: 4px;">Misma Inversión</div>
+          <div style="font-size: clamp(1rem, 3.2vw, 1.25rem); font-weight: 700; color: #FFFFFF; margin-top: 4px;">Misma Inversión</div>
           <div class="card-subtext" style="margin-top: 6px;">Optimizando el costo por lead y eliminando el desperdicio del 42.1%.</div>
         </div>
 
         <div class="card accent-primary">
           <div class="card-label" style="color:var(--primary-light);">EFICIENCIA COMERCIAL</div>
           <div class="card-title">Atención Ágil</div>
-          <div style="font-size: clamp(1rem, 3.2vw, 1.25rem); font-weight: 700; color: #FFF; margin-top: 4px;">Respuestas en &lt; 15 min</div>
+          <div style="font-size: clamp(1rem, 3.2vw, 1.25rem); font-weight: 700; color: #FFFFFF; margin-top: 4px;">Respuestas en menor a 15 min</div>
           <div class="card-subtext" style="margin-top: 6px;">Recuperando prospectos calificados antes de que pierdan interés.</div>
         </div>
 
         <div class="card accent-amber">
           <div class="card-label" style="color:var(--accent-amber);">GOBIERNO DIGITAL</div>
           <div class="card-title">Control Total</div>
-          <div style="font-size: clamp(1rem, 3.2vw, 1.25rem); font-weight: 700; color: #FFF; margin-top: 4px;">Portfolios Propios</div>
+          <div style="font-size: clamp(1rem, 3.2vw, 1.25rem); font-weight: 700; color: #FFFFFF; margin-top: 4px;">Portfolios Propios</div>
           <div class="card-subtext" style="margin-top: 6px;">Autonomía técnica y seguridad legal para Córdoba y Río Cuarto.</div>
         </div>
       </div>
