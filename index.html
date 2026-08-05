@@ -1440,7 +1440,28 @@ footer {
       <h2>Anexo: Base de Datos de Campañas Auditadas — IGA Córdoba (N = 61)</h2>
     </div>
 
-    <p style="font-size:0.8rem;color:var(--text-dim)">Visualización completa de las 61 campañas con ejecución presupuestaria en los últimos 6 meses (IGA Córdoba). Filas verdes indican creativos con CPA &lt; Q₁ ($1.620,98). Filas rojas indican creativos con CPA &gt; Q₃ + 1.5×IQR ($9.896,98).</p>
+    <div style="background:var(--surface-accent); border:1px solid var(--border); border-left:4px solid var(--primary); border-radius:8px; padding:18px 22px; margin-bottom:24px; font-size:0.88rem; line-height:1.6; color:var(--text-main);">
+      <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.98rem; color:#FFF; margin-bottom:8px;">
+        Guía de Lectura Ejecutiva y Criterios de Clasificación (Tabla N = 61):
+      </div>
+      <p style="margin-bottom:12px; color:var(--text-muted); font-size:0.86rem;">
+        El siguiente anexo detalla la totalidad de las 61 campañas con inversión ejecutada en IGA Córdoba durante el semestre auditado. Para facilitar la toma de decisiones directivas, las filas se clasificaron visualmente según la eficiencia de su costo por consulta (CPA):
+      </p>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; align-items:flex-start; gap:10px; background:rgba(16,185,129,0.06); padding:10px 14px; border-radius:6px; border:1px solid rgba(16,185,129,0.2);">
+          <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--accent-green); margin-top:5px; flex-shrink:0;"></span>
+          <span style="font-size:0.84rem;"><strong>Filas Verdes (Anuncios Ganadores / Alta Eficiencia):</strong> Campañas con un costo por consulta <strong>inferior a $2.470 ARS</strong> (primer cuartil $Q_1$, con rendimientos sobresalientes de hasta <strong>$1.158 ARS</strong> por chat).</span>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:10px; background:rgba(239,68,68,0.06); padding:10px 14px; border-radius:6px; border:1px solid rgba(239,68,68,0.2);">
+          <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--accent-red); margin-top:5px; flex-shrink:0;"></span>
+          <span style="font-size:0.84rem;"><strong>Filas Rojas (Anuncios Ineficientes / Fuga de Presupuesto):</strong> Campañas con costo por consulta desproporcionado <strong>superior a los $4.750 ARS</strong> (tercer cuartil $Q_3$, alcanzando desvíos atípicos de hasta <strong>$9.896 ARS</strong> por consulta).</span>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:10px; background:rgba(255,255,255,0.02); padding:10px 14px; border-radius:6px; border:1px solid var(--border-subtle);">
+          <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:var(--text-dim); margin-top:5px; flex-shrink:0;"></span>
+          <span style="font-size:0.84rem;"><strong>Filas Neutras:</strong> Campañas que operan dentro del rango de costo intermedio esperable ($2.470 ARS a $4.750 ARS).</span>
+        </div>
+      </div>
+    </div>
 
     <div class="table-container">
       <table>
@@ -1475,7 +1496,7 @@ footer {
       <td class="text-end">1.11%</td>
       <td class="text-end">$154,91</td>
     </tr>
-<tr class="">
+<tr class="row-winner">
       <td class="text-center">2</td>
       <td class="cell-name"><div class="name-text">Publicación: 👨‍🍳🔥 CONVERTÍ TU PASIÓN EN TU FUTURO</div><div class="obj-tag obj-msg">MENSAJES</div></td>
       <td class="text-center"><span class="status-badge badge-completed">COMPLETED</span></td>
@@ -1671,7 +1692,7 @@ footer {
       <td class="text-end">1.42%</td>
       <td class="text-end">$107,02</td>
     </tr>
-<tr class="">
+<tr class="row-danger">
       <td class="text-center">16</td>
       <td class="cell-name"><div class="name-text">Publicación: 👨‍🍳✨ HACÉ DE TU PASIÓN UNA PROFESIÓN</div><div class="obj-tag obj-msg">MENSAJES</div></td>
       <td class="text-center"><span class="status-badge badge-completed">COMPLETED</span></td>
@@ -2259,7 +2280,7 @@ footer {
       <td class="text-end">0.88%</td>
       <td class="text-end">$434,38</td>
     </tr>
-<tr class="">
+<tr class="row-danger">
       <td class="text-center">58</td>
       <td class="cell-name"><div class="name-text">Publicación: 📢 ULTIMOS CUPOS!!</div><div class="obj-tag obj-msg">MENSAJES</div></td>
       <td class="text-center"><span class="status-badge badge-inactive">INACTIVE</span></td>
