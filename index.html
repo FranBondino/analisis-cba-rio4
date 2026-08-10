@@ -433,8 +433,8 @@ tr:hover td { background: rgba(255, 255, 255, 0.015); }
 /* CHAT EVIDENCE GALLERY */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   margin-top: 18px;
   margin-bottom: 28px;
 }
@@ -448,14 +448,33 @@ tr:hover td { background: rgba(255, 255, 255, 0.015); }
 }
 .chat-header {
   background: var(--surface-accent);
-  padding: 10px 14px;
+  padding: 12px 14px;
   border-bottom: 1px solid var(--border);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--text-main);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+.chat-header > span:first-child {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.35;
+  flex: 1;
+}
+.chat-header .dim {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--primary-light);
+  background: var(--primary-glow);
+  border: 1px solid var(--border-active);
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-start;
 }
 .chat-body {
   padding: 14px;
@@ -1021,7 +1040,11 @@ footer {
           <span class="glossary-acronym">INFRAESTRUCTURA</span>
         </div>
         <div class="glossary-def">
-          El panel empresarial de propiedad institucional donde cada filial (Córdoba y Río Cuarto) debe registrar legalmente y por separado sus páginas de Facebook, perfiles de Instagram, tarje      <div class="glossary-card">
+          El panel empresarial de propiedad institucional donde cada filial (Córdoba y Río Cuarto) debe registrar legalmente y por separado sus páginas de Facebook, perfiles de Instagram, tarjetas de pago y píxeles de medición.
+        </div>
+      </div>
+
+      <div class="glossary-card">
         <div class="glossary-term">
           <span>Atribución y Trazabilidad Comercial</span>
           <span class="glossary-acronym">MEDICIÓN</span>
@@ -1371,6 +1394,9 @@ footer {
         <div class="chat-header"><span>Captura 4 — Resultados Anuncio Sushi</span><span class="dim">Río Cuarto</span></div>
         <div class="chat-body"><img src="img/rio4_resultados_2.png" class="chat-img" alt="Resultados Río Cuarto 2"></div>
         <div class="chat-caption">Detalle de rendimiento del anuncio de Sushi: $43.217,28 ARS gastados en 21 días para 28 conversaciones.</div>
+      </div>
+    </div>
+
     <!-- ESTRATEGIA DE ARQUITECTURA DE EMBUDO EDUCACIONAL -->
     <div class="finding-card severity-medium" style="margin-top: 32px; margin-bottom: 28px;">
       <span class="tag-severity tag-low" style="background:var(--primary-glow); color:var(--primary-light); border-color:rgba(79,70,229,0.3);">Arquitectura Recomendada</span>
