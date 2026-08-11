@@ -15,6 +15,7 @@
   --surface-accent: #1C263B;
   --border: #25334E;
   --border-subtle: #1C273C;
+  --border-active: #3B82F6;
   --text-main: #F3F4F6;
   --text-heading: #FFFFFF;
   --text-muted: #9CA3AF;
@@ -364,6 +365,7 @@ p strong { color: var(--text-main); }
 .tag-high { background: var(--accent-red-bg); color: var(--accent-red); border: 1px solid rgba(239,68,68,0.2); }
 .tag-medium { background: var(--accent-amber-bg); color: var(--accent-amber); border: 1px solid rgba(245,158,11,0.2); }
 .tag-positive { background: var(--accent-green-bg); color: var(--accent-green); border: 1px solid rgba(16,185,129,0.2); }
+.tag-low { background: rgba(59,130,246,0.08); color: var(--accent-blue); border: 1px solid rgba(59,130,246,0.2); }
 
 /* TABLES */
 .table-container {
@@ -623,35 +625,6 @@ tr:nth-child(even) { background: rgba(255, 255, 255, 0.015); }
   color: #FFF;
   margin-bottom: 6px;
 }
-.step-header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-.tag-time {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  background: rgba(99, 102, 241, 0.15);
-  color: var(--primary-light);
-  border: 1px solid var(--border-active);
-  padding: 3px 9px;
-  border-radius: 4px;
-}
-.roadmap-actions {
-  margin-top: 10px;
-  margin-bottom: 12px;
-  padding-left: 18px;
-}
-.roadmap-actions li {
-  font-size: 0.86rem;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
 .roadmap-meta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -755,7 +728,7 @@ footer {
     <span class="module-tag">FILIAL CÓRDOBA</span>
   </div>
 
-  <!-- SECCIÓN 1: EXECUTIVE SUMMARY -->
+  <!-- SECCIÓN 01: EXECUTIVE SUMMARY -->
   <section class="section">
     <div class="section-header">
       <span class="section-tag">01</span>
@@ -813,10 +786,144 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 2: GLOSARIO EJECUTIVO Y MARCO CONCEPTUAL -->
+  <!-- SECCIÓN 02: MATRIZ DE HALLAZGOS Y PRIORIDADES -->
   <section class="section">
     <div class="section-header">
       <span class="section-tag">02</span>
+      <h2>Matriz de Hallazgos y Prioridades Consolidadas</h2>
+    </div>
+
+    <p>Consolidado ejecutivo de los 14 hallazgos y oportunidades de mejora detectados en la auditoría 360°, estructurados por área técnica, nivel de gravedad y prioridad de resolución estratégica.</p>
+
+    <!-- GUÍA DE LECTURA BOX -->
+    <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:8px; padding:18px 22px; margin-bottom:20px; font-size:0.86rem; line-height:1.6;">
+      <strong style="color:#FFF; display:block; margin-bottom:8px; font-family:'Space Grotesk',sans-serif; font-size:0.95rem;">
+        Criterios de Lectura de la Matriz:
+      </strong>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+        <div>
+          <span style="color:var(--primary-light); font-weight:700;">Nivel de Gravedad:</span>
+          <ul style="margin-top:4px; padding-left:18px; color:var(--text-muted); font-size:0.82rem;">
+            <li><strong style="color:var(--accent-red);">Alta:</strong> Impacto directo sobre inversión, generación/conversión de leads o continuidad operativa.</li>
+            <li><strong style="color:var(--accent-amber);">Media:</strong> Oportunidad relevante de mejora, pero sin impacto crítico inmediato.</li>
+          </ul>
+        </div>
+        <div>
+          <span style="color:var(--primary-light); font-weight:700;">Nivel de Prioridad:</span>
+          <ul style="margin-top:4px; padding-left:18px; color:var(--text-muted); font-size:0.82rem;">
+            <li><strong style="color:var(--accent-red);">Inmediata:</strong> Resolver antes de continuar escalando inversión.</li>
+            <li><strong style="color:var(--accent-amber);">Alta:</strong> Implementar en la primera etapa de optimización.</li>
+            <li><strong style="color:var(--accent-blue);">Media:</strong> Incorporar posteriormente al plan de mejora.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLA MATRIZ -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Hallazgo Detectado</th>
+            <th>Área</th>
+            <th class="text-center">Gravedad</th>
+            <th class="text-center">Prioridad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Business Portfolios y activos de Meta desordenados</strong>, con problemas de propiedad y accesos</td>
+            <td>Infraestructura</td>
+            <td class="text-center"><span class="tag-severity tag-high">Alta</span></td>
+            <td class="text-center"><span class="tag-severity tag-high" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">Inmediata</span></td>
+          </tr>
+          <tr>
+            <td><strong>Uso de "Promocionar"</strong> en lugar de una estructura profesional de campañas</td>
+            <td>Meta Ads</td>
+            <td class="text-center"><span class="tag-severity tag-high">Alta</span></td>
+            <td class="text-center"><span class="tag-severity tag-high" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">Inmediata</span></td>
+          </tr>
+          <tr>
+            <td><strong>Inversión concentrada en campañas con CPA</strong> por encima del nivel eficiente</td>
+            <td>Meta Ads</td>
+            <td class="text-center"><span class="tag-severity tag-high">Alta</span></td>
+            <td class="text-center"><span class="tag-severity tag-medium">Alta</span></td>
+          </tr>
+          <tr>
+            <td><strong>Falta de una arquitectura de campañas</strong> diferenciada por etapa del funnel (ToFU-MoFU-BoFU)</td>
+            <td>Meta Ads</td>
+            <td class="text-center"><span class="tag-severity tag-medium">Media</span></td>
+            <td class="text-center"><span class="tag-severity tag-medium">Alta</span></td>
+          </tr>
+          <tr>
+            <td><strong>Creativos con diferencias significativas</strong> de rendimiento ($1.158 vs $9.896 CPA)</td>
+            <td>Creativos</td>
+            <td class="text-center"><span class="tag-severity tag-medium">Media</span></td>
+            <td class="text-center"><span class="tag-severity tag-medium">Alta</span></td>
+          </tr>
+          <tr>
+            <td><strong>Tiempos de respuesta elevados</strong> en determinados canales/sedes (hasta +12 horas)</td>
+            <td>Comercial</td>
+            <td class="text-center"><span class="tag-severity tag-high">Alta</span></td>
+            <td class="text-center"><span class="tag-severity tag-high" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">Inmediata</span></td>
+          </tr>
+          <tr>
+            <td><strong>Respuestas que no siempre resuelven</strong> exactamente la consulta del interesado</td>
+            <td>Comercial</td>
+            <td class="text-center"><span class="tag-severity tag-high">Alta</span></td>
+            <td class="text-center"><span class="tag-severity tag-high" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">Inmediata</span></td>
+          </tr>
+          <tr>
+            <td><strong>Atención predominantemente informativa</strong> y poco consultiva</td>
+            <td>Comercial</td>
+            <td class="text-center"><span class="tag-severity tag-high">Alta</span></td>
+            <td class="text-center"><span class="tag-severity tag-medium">Alta</span></td>
+          </tr>
+          <tr>
+            <td><strong>Falta de seguimiento sistemático</strong> de leads que no convierten en el primer contacto</td>
+            <td>Comercial</td>
+            <td class="text-center"><span class="tag-severity tag-high">Alta</span></td>
+            <td class="text-center"><span class="tag-severity tag-high" style="background:rgba(239,68,68,0.15); color:var(--accent-red);">Inmediata</span></td>
+          </tr>
+          <tr>
+            <td><strong>Leads sin gestión/actualización adecuada</strong> dentro del CRM IgaCloud</td>
+            <td>CRM</td>
+            <td class="text-center"><span class="tag-severity tag-high">Alta</span></td>
+            <td class="text-center"><span class="tag-severity tag-medium">Alta</span></td>
+          </tr>
+          <tr>
+            <td><strong>Falta de segmentación y explotación de bases</strong> para reactivación de contactos</td>
+            <td>CRM</td>
+            <td class="text-center"><span class="tag-severity tag-medium">Media</span></td>
+            <td class="text-center"><span class="tag-severity tag-low">Media</span></td>
+          </tr>
+          <tr>
+            <td><strong>Falta de sincronización sistemática</strong> entre Marketing y Comercial</td>
+            <td>Marketing / Ventas</td>
+            <td class="text-center"><span class="tag-severity tag-high">Alta</span></td>
+            <td class="text-center"><span class="tag-severity tag-medium">Alta</span></td>
+          </tr>
+          <tr>
+            <td><strong>Pixel, eventos y CAPI no verificables</strong> de forma concluyente por activos y permisos</td>
+            <td>Medición</td>
+            <td class="text-center"><span class="tag-severity tag-medium">Media</span></td>
+            <td class="text-center"><span class="tag-severity tag-medium">Alta</span></td>
+          </tr>
+          <tr>
+            <td><strong>Diferencias de performance y gestión</strong> entre sede Córdoba y sede Río Cuarto</td>
+            <td>Gestión</td>
+            <td class="text-center"><span class="tag-severity tag-high">Alta</span></td>
+            <td class="text-center"><span class="tag-severity tag-medium">Alta</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 03: GLOSARIO EJECUTIVO Y MARCO CONCEPTUAL -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">03</span>
       <h2>Glosario Ejecutivo y Marco Conceptual de Métricas</h2>
     </div>
 
@@ -935,16 +1042,35 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 3: INFRAESTRUCTURA Y SALUD TÉCNICA -->
+  <!-- SECCIÓN 04: INFRAESTRUCTURA Y SALUD TÉCNICA -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">03</span>
+      <span class="section-tag">04</span>
       <h2>Diagnóstico de Infraestructura y Salud Técnica</h2>
     </div>
 
     <p>El análisis técnico de la pauta revela vulnerabilidades estructurales en la configuración de la publicidad digital y en la administración de los activos institucionales.</p>
 
     <div class="finding-grid">
+
+      <!-- TARJETA SALUD TÉCNICA DE META -->
+      <div class="finding-card severity-high" style="border-left-color: var(--accent-amber);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
+          <span class="tag-severity tag-medium">
+            Salud Técnica de Meta
+          </span>
+          <span style="font-size:0.75rem; font-weight:700; color:var(--accent-amber); background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.25); padding:3px 10px; border-radius:4px;">
+            Estado: ⚠️ Requiere Regularización
+          </span>
+        </div>
+        <div class="finding-title">Validación de Pixel, Eventos y Conversiones (CAPI)</div>
+        <div class="finding-body">
+          No fue posible validar de forma concluyente Pixel, Eventos y CAPI debido a inconsistencias en la estructura de Business Portfolios y permisos de acceso detectadas durante la auditoría.
+          <br><br>
+          <strong>Prioridad Operativa:</strong> Regularizar la infraestructura de Meta y, posteriormente, realizar la validación técnica de los eventos y conversiones.
+        </div>
+      </div>
+
       <div class="finding-card severity-high">
         <span class="tag-severity tag-high">Error Fundacional de Base (Diagnóstico por Sede)</span>
         <div class="finding-title">Estado del Meta Business Portfolio e Impacto del Error Fundacional</div>
@@ -972,10 +1098,10 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 4: ANÁLISIS ESTADÍSTICO CÓRDOBA -->
+  <!-- SECCIÓN 05: ANÁLISIS ESTADÍSTICO CÓRDOBA -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">04</span>
+      <span class="section-tag">05</span>
       <h2>Análisis Estadístico de Rendimiento Publicitario — IGA Córdoba</h2>
     </div>
 
@@ -1063,10 +1189,10 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 5: FUGAS DE PRESUPUESTO Y DESPERDICIO OPERATIVO -->
+  <!-- SECCIÓN 06: FUGAS DE PRESUPUESTO Y DESPERDICIO OPERATIVO -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">05</span>
+      <span class="section-tag">06</span>
       <h2>Fugas de Presupuesto y Desperdicio Operativo</h2>
     </div>
 
@@ -1091,17 +1217,17 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 6: ESTRATEGIA DE EMBUDO EDUCACIONAL -->
+  <!-- SECCIÓN 07: ESTRATEGIA DE EMBUDO EDUCACIONAL -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">06</span>
+      <span class="section-tag">07</span>
       <h2>Módulo 02 | IGA Río Cuarto — Anuncios Activos y Estrategia de Embudo</h2>
     </div>
 
     <p>Análisis de la muestra de anuncios activos en Río Cuarto y diseño formal del embudo secuencial de conversión educativa.</p>
 
     <div class="finding-card severity-medium" style="margin-bottom: 28px;">
-      <span class="tag-severity tag-low" style="background:var(--primary-glow); color:var(--primary-light); border-color:rgba(79,70,229,0.3);">Arquitectura Recomendada</span>
+      <span class="tag-severity tag-low">Arquitectura Recomendada</span>
       <div class="finding-title">Estrategia de Embudo de Conversión Educativa Completo (ToFU — MoFU — BoFU)</div>
       <div class="finding-body">
         Para solucionar la ineficiencia del impacto estático directo y maximizar el retorno de inversión publicitaria (ROAS), se establece una arquitectura estructurada de contenidos secuenciales por etapas de maduración del prospecto:
@@ -1151,10 +1277,10 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 7: MYSTERY SHOPPING CÓRDOBA -->
+  <!-- SECCIÓN 08: MYSTERY SHOPPING CÓRDOBA -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">07</span>
+      <span class="section-tag">08</span>
       <h2>Auditoría Mystery Shopping — WhatsApp IGA Córdoba</h2>
     </div>
 
@@ -1188,10 +1314,10 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 8: MYSTERY SHOPPING RÍO CUARTO -->
+  <!-- SECCIÓN 09: MYSTERY SHOPPING RÍO CUARTO -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">08</span>
+      <span class="section-tag">09</span>
       <h2>Auditoría Mystery Shopping — WhatsApp IGA Río Cuarto</h2>
     </div>
 
@@ -1227,10 +1353,10 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 9: AUDITORÍA TÉCNICA DE CRM E IGACLOUD -->
+  <!-- SECCIÓN 10: AUDITORÍA TÉCNICA DE CRM E IGACLOUD -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">09</span>
+      <span class="section-tag">10</span>
       <h2>Módulo 03 | Auditoría Técnica de CRM e IgaCloud (Gestión de Datos y Seguimiento)</h2>
     </div>
 
@@ -1260,8 +1386,6 @@ footer {
           Se constató que la asignación de etapas dentro de IgaCloud no es gestionada operativamente. Prácticamente el <strong>100% de las fichas permanecen estancadas indefinidamente en la etapa inicial ("Nueva")</strong>, omitiendo la actualización según la evolución del ciclo de vida del prospecto. Esta falla anula los tableros de control del CRM y sobreestima los leads pendientes.
         </div>
       </div>
-
-      </div>
     </div>
 
     <h3>Evidencia Gráfica — Auditoría del CRM IgaCloud por Filial</h3>
@@ -1279,10 +1403,10 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 10: ANEXO TABLA COMPLETA CÓRDOBA -->
+  <!-- SECCIÓN 11: ANEXO TABLA COMPLETA CÓRDOBA -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">10</span>
+      <span class="section-tag">11</span>
       <h2>Anexo: Base de Datos de Campañas Auditadas — IGA Córdoba (N = 61)</h2>
     </div>
 
@@ -1331,10 +1455,10 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 11: ROADMAP ESTRATÉGICO Y PLAN DE INTERVENCIÓN -->
+  <!-- SECCIÓN 12: ROADMAP ESTRATÉGICO Y PLAN DE INTERVENCIÓN -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">11</span>
+      <span class="section-tag">12</span>
       <h2>Módulo 04 | Roadmap Estratégico y Objetivos de Mejora</h2>
     </div>
 
@@ -1409,10 +1533,10 @@ footer {
     </div>
   </section>
 
-  <!-- SECCIÓN 12: ANEXO A - MANUAL DE PROTOCOLO COMERCIAL Y MANEJO DE OBJECIONES -->
+  <!-- SECCIÓN 13: ANEXO A - MANUAL DE PROTOCOLO COMERCIAL Y MANEJO DE OBJECIONES -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">12</span>
+      <span class="section-tag">13</span>
       <h2>Anexo A | Manual de Protocolo Comercial y Manejo de Objeciones (IGA)</h2>
     </div>
 
@@ -1471,7 +1595,7 @@ footer {
           <em>Recomendar:</em> "Claro. ¿Qué aspecto querés evaluar antes de tomar la decisión?" (Identificar si es precio, horario o modalidad). <em>Cierre:</em> "¿Te parece que te contacte mañana para saber si pudiste revisarlo?"
         </li>
         <li style="margin-top:10px;"><strong>Objeción: "No tengo tiempo"</strong><br>
-          <em>Recomendar:</em> "Entiendo. ¿Qué días y horarios tenés disponibles habitualmente?" Offrecer la alternativa que mejor se adapte.
+          <em>Recomendar:</em> "Entiendo. ¿Qué días y horarios tenés disponibles habitualmente?" Ofrecer la alternativa que mejor se adapte.
         </li>
         <li style="margin-top:10px;"><strong>Objeción: "No sé cuál curso elegir"</strong><br>
           <em>Recomendar:</em> "Para recomendarte el que mejor se adapte a vos, contame: ¿qué experiencia tenés actualmente y qué te gustaría lograr con la formación?"
@@ -1505,10 +1629,118 @@ footer {
     </ul>
   </section>
 
-  <!-- SECCIÓN 13: CONCLUSIONES, ALCANCE Y PRÓXIMOS PASOS -->
+  <!-- SECCIÓN 14: ANEXO B - PROTOCOLO DE SINCRONIZACIÓN MARKETING -> COMERCIAL -->
   <section class="section">
     <div class="section-header">
-      <span class="section-tag">13</span>
+      <span class="section-tag">14</span>
+      <h2>Anexo B | Protocolo de Sincronización Marketing → Comercial</h2>
+    </div>
+
+    <div style="background:var(--surface-accent); border:1px solid var(--border); border-left:4px solid var(--primary-light); border-radius:10px; padding:22px 26px; margin-bottom:28px;">
+      <h3 style="font-family:'Space Grotesk',sans-serif; font-size:1.15rem; font-weight:700; color:#FFF; margin:0 0 8px 0;">
+        OBJETIVO DEL PROTOCOLO DE ALINEACIÓN INTERNA
+      </h3>
+      <p style="font-size:0.9rem; color:var(--text-muted); margin:0;">
+        <strong>Garantizar que el equipo comercial conozca qué se está comunicando, qué se está promocionando y cómo responder ante los leads generados por las campañas.</strong> Marketing genera la demanda y Comercial convierte esa demanda. Ambos equipos deben trabajar rigurosamente sobre la misma versión de la información.
+      </p>
+    </div>
+
+    <h3>1. ¿Qué debe comunicar Marketing al Equipo Comercial?</h3>
+    <p>Cada vez que se activa o modifica una campaña publicitaria, el área de Marketing debe enviar una ficha sintética con:</p>
+
+    <div class="mini-table-wrap" style="margin-bottom:24px;">
+      <table class="mini-table" style="table-layout:auto;">
+        <thead>
+          <tr>
+            <th>Variable de Campaña</th>
+            <th>Información Específica que debe recibir Comercial</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Campaña activa</strong></td><td>Nombre interno / denominación de la campaña.</td></tr>
+          <tr><td><strong>Curso promocionado</strong></td><td>Formación específica o taller que se está impulsando.</td></tr>
+          <tr><td><strong>Oferta y beneficio</strong></td><td>Precio, descuento, bonificación o beneficio vigente.</td></tr>
+          <tr><td><strong>Vigencia</strong></td><td>Fecha exacta de inicio y finalización de la promoción.</td></tr>
+          <tr><td><strong>Modalidad y Horarios</strong></td><td>Modalidad de cursado (presencial/virtual) y días/horarios disponibles.</td></tr>
+          <tr><td><strong>Público objetivo</strong></td><td>A quién está dirigida la propuesta (jóvenes, profesionales, principiantes).</td></tr>
+          <tr><td><strong>Mensaje clave</strong></td><td>Qué propuesta de valor o promesa está viendo el usuario en el anuncio.</td></tr>
+          <tr><td><strong>Preguntas frecuentes</strong></td><td>Respuestas sugeridas para objeciones o consultas esperables.</td></tr>
+          <tr><td><strong>Información a evitar</strong></td><td>Promociones vencidas o condiciones que ya no aplican.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2. ¿Cuándo se debe comunicar?</h3>
+    <ul style="margin-left:20px; margin-bottom:24px; color:var(--text-muted); font-size:0.88rem;">
+      <li><strong>Antes de activar una campaña:</strong> El equipo comercial debe conocer la oferta y el mensaje antes de que ingresen los primeros leads.</li>
+      <li><strong>Ante cualquier cambio:</strong> Modificaciones de precio, promociones, fechas, horarios, cupos disponibles o condiciones comerciales.</li>
+      <li><strong>Una vez por semana:</strong> Enviar un resumen semanal consolidado de campañas activas y principales novedades.</li>
+      <li><strong>Ante promociones flash / corta duración:</strong> Comunicación inmediata previa a la activación del anuncio.</li>
+    </ul>
+
+    <h3>3. Canal Oficial de Comunicación</h3>
+    <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:8px; padding:18px 22px; margin-bottom:24px; font-size:0.88rem;">
+      Definir un <strong>único canal oficial exclusivo</strong> para estas comunicaciones institucionales (ej. Grupo interno oficial de WhatsApp "Marketing & Ventas IGA"). Lo fundamental es erradicar que la información comercial quede dispersa en conversaciones individuales.
+    </div>
+
+    <h3>4. Matriz de Responsabilidades por Área</h3>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-bottom:24px;">
+      <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-top:3px solid var(--primary-light); border-radius:8px; padding:18px;">
+        <strong style="color:#FFF; display:block; margin-bottom:8px; font-family:'Space Grotesk',sans-serif;">MARKETING</strong>
+        <ul style="font-size:0.84rem; color:var(--text-muted); padding-left:16px;">
+          <li>Informar campañas y cambios previamente.</li>
+          <li>Mantener actualizada la información comercial.</li>
+          <li>Comunicar promociones vigentes.</li>
+          <li>Anticipar posibles consultas u objeciones.</li>
+        </ul>
+      </div>
+      <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-top:3px solid var(--accent-green); border-radius:8px; padding:18px;">
+        <strong style="color:#FFF; display:block; margin-bottom:8px; font-family:'Space Grotesk',sans-serif;">EQUIPO COMERCIAL</strong>
+        <ul style="font-size:0.84rem; color:var(--text-muted); padding-left:16px;">
+          <li>Leer y utilizar la información actualizada.</li>
+          <li>Responder exactamente según la oferta vigente.</li>
+          <li>Informar dudas o inconsistencias detectadas.</li>
+          <li>Registrar datos relevantes del lead en CRM.</li>
+        </ul>
+      </div>
+      <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-top:3px solid var(--accent-amber); border-radius:8px; padding:18px;">
+        <strong style="color:#FFF; display:block; margin-bottom:8px; font-family:'Space Grotesk',sans-serif;">COORDINACIÓN / DIRECCIÓN</strong>
+        <ul style="font-size:0.84rem; color:var(--text-muted); padding-left:16px;">
+          <li>Verificar que ambos equipos trabajen sincronizados.</li>
+          <li>Resolver diferencias entre pauta y ventas.</li>
+          <li>Garantizar el cumplimiento del protocolo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>5. Actualización Semanal y Regla de Oro</h3>
+    <div style="background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.25); border-radius:8px; padding:18px 22px; margin-bottom:24px; font-size:0.88rem;">
+      <strong style="color:var(--accent-red); display:block; margin-bottom:6px; font-family:'Space Grotesk',sans-serif;">
+        🚨 REGLA PRINCIPAL DE SINCRONIZACIÓN:
+      </strong>
+      <em>"Ningún asesor comercial debería enterarse por un cliente de un cambio en una campaña, precio, promoción, horario o condición comercial. La información siempre debe llegar primero al equipo interno."</em>
+      <br><br>
+      <strong>Reunión semanal de 10-15 min:</strong> Repasar qué se promociona, qué cambió, qué consultas ingresan y qué objeciones aparecen.
+    </div>
+
+    <h3>6. Flujo de Sincronización Recomendado</h3>
+    <div style="background:var(--surface-card); border:1px solid var(--border-subtle); border-radius:8px; padding:20px; margin-bottom:24px; text-align:center; font-size:0.85rem; font-family:'Space Grotesk',sans-serif; color:var(--primary-light);">
+      MARKETING → Campaña / Oferta / Mensaje → COMUNICACIÓN INTERNA → Equipo Comercial Informado → ATENCIÓN DEL LEAD → Registro en CRM → FEEDBACK A MARKETING → Optimización
+    </div>
+
+    <h3>7. KPIs Recomendados para Control del Protocolo</h3>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-bottom:24px;">
+      <div style="background:var(--surface-accent); padding:14px; border-radius:6px; font-size:0.82rem;">📊 <strong>% Campañas comunicadas</strong> antes de activarse.</div>
+      <div style="background:var(--surface-accent); padding:14px; border-radius:6px; font-size:0.82rem;">⏱️ <strong>Tiempo promedio</strong> entre cambio y aviso interno.</div>
+      <div style="background:var(--surface-accent); padding:14px; border-radius:6px; font-size:0.82rem;">⚠️ <strong>Cantidad de inconsistencias</strong> pauta vs. atención.</div>
+      <div style="background:var(--surface-accent); padding:14px; border-radius:6px; font-size:0.82rem;">💡 <strong>Principales objeciones</strong> reportadas por campaña.</div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 15: CONCLUSIONES, ALCANCE Y PRÓXIMOS PASOS -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-tag">15</span>
       <h2>Conclusiones, Alcance y Próximos Pasos</h2>
     </div>
 
@@ -1523,6 +1755,7 @@ footer {
         <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.2); padding:10px 14px; border-radius:6px; font-size:0.84rem;">✔️ <strong>CRM / IgaCloud:</strong> Carga, Etapas y Trazabilidad.</div>
         <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.2); padding:10px 14px; border-radius:6px; font-size:0.84rem;">✔️ <strong>Flujo Mkt → Ventas:</strong> Embudo ToFU/MoFU/BoFU.</div>
         <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.2); padding:10px 14px; border-radius:6px; font-size:0.84rem;">✔️ <strong>Manual de Objeciones:</strong> Protocolo de 17 Puntos.</div>
+        <div style="background:rgba(16,185,129,0.06); border:1px solid rgba(16,185,129,0.2); padding:10px 14px; border-radius:6px; font-size:0.84rem;">✔️ <strong>Sincronización Mkt-Ventas:</strong> Protocolo de Alineación.</div>
       </div>
     </div>
 
