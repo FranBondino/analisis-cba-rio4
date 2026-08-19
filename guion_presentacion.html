@@ -469,16 +469,42 @@ body.is-locked > *:not(#private-lock-overlay) {
 (function() {
   const SECRET_KEY = 'funn-bloqueo-2026';
   const STORAGE_KEY = 'funn_private_unlocked_v2';
+  const EXPIRY_KEY = 'funn_private_expiry_v2';
+  const SESSION_DURATION_MS = 30 * 60 * 1000; // 30 minutos
+
+  // Limpiar cualquier residuo de versiones anteriores
+  try {
+    sessionStorage.removeItem('funn_private_unlocked');
+    localStorage.removeItem('funn_private_unlocked');
+  } catch(e) {}
 
   function isUnlocked() {
-    return sessionStorage.getItem(STORAGE_KEY) === 'true' || localStorage.getItem(STORAGE_KEY) === 'true';
+    try {
+      const isOk = sessionStorage.getItem(STORAGE_KEY) === 'true' || localStorage.getItem(STORAGE_KEY) === 'true';
+      const expiry = parseInt(sessionStorage.getItem(EXPIRY_KEY) || localStorage.getItem(EXPIRY_KEY) || '0', 10);
+      if (isOk && expiry && Date.now() < expiry) {
+        return true;
+      }
+      // Si expiró o no coincide la versión, forzar reseteo
+      sessionStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem(STORAGE_KEY);
+      sessionStorage.removeItem(EXPIRY_KEY);
+      localStorage.removeItem(EXPIRY_KEY);
+      return false;
+    } catch(e) {
+      return false;
+    }
   }
 
-  function initLock() {
+  function applyLock() {
     const overlay = document.getElementById('private-lock-overlay');
     if (!isUnlocked()) {
       document.body.classList.add('is-locked');
-      if (overlay) overlay.style.display = 'flex';
+      if (overlay) {
+        overlay.style.display = 'flex';
+        overlay.style.opacity = '1';
+        overlay.style.transform = 'none';
+      }
     } else {
       document.body.classList.remove('is-locked');
       if (overlay) overlay.style.display = 'none';
@@ -492,8 +518,12 @@ body.is-locked > *:not(#private-lock-overlay) {
 
     const val = input.value.trim();
     if (val === SECRET_KEY || val.toLowerCase() === SECRET_KEY) {
+      const expiryTime = Date.now() + SESSION_DURATION_MS;
       sessionStorage.setItem(STORAGE_KEY, 'true');
       localStorage.setItem(STORAGE_KEY, 'true');
+      sessionStorage.setItem(EXPIRY_KEY, expiryTime.toString());
+      localStorage.setItem(EXPIRY_KEY, expiryTime.toString());
+
       const overlay = document.getElementById('private-lock-overlay');
       if (overlay) {
         overlay.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
@@ -513,8 +543,16 @@ body.is-locked > *:not(#private-lock-overlay) {
     }
   };
 
-  initLock();
-  document.addEventListener('DOMContentLoaded', initLock);
+  // Ejecutar de inmediato
+  applyLock();
+  document.addEventListener('DOMContentLoaded', applyLock);
+
+  // Verificación constante periódica, al cambiar de pestaña o al recuperar foco
+  setInterval(applyLock, 5000);
+  window.addEventListener('focus', applyLock);
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) applyLock();
+  });
 })();
 </script>
 
