@@ -467,8 +467,8 @@ body.is-locked > *:not(#private-lock-overlay) {
 <script>
 /* PRIVATE ACCESS LOCK LOGIC */
 (function() {
-  const SECRET_KEY = 'funn2026';
-  const STORAGE_KEY = 'funn_private_unlocked';
+  const SECRET_KEY = 'funn-bloqueo-2026';
+  const STORAGE_KEY = 'funn_private_unlocked_v2';
 
   function isUnlocked() {
     return sessionStorage.getItem(STORAGE_KEY) === 'true' || localStorage.getItem(STORAGE_KEY) === 'true';
